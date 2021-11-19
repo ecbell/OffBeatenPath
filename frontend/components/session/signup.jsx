@@ -41,11 +41,8 @@ class Signup extends React.Component {
   }
 
   createLink() {
-    if (this.props.formType === 'signup') {
-      return <Link to='/login'>Log In</Link>
-    } else {
-      return <Link to='/signup'>Sign Up</Link>
-    }
+    return <Link to='/login'>Log In</Link>
+    
   }
 
   render() {
@@ -75,7 +72,7 @@ class Signup extends React.Component {
           </label>
           <input type='submit' value={this.props.formType} />
         </form>
-        {this.createLink()}
+        <p>Already have an account? {this.createLink()}</p>
         <ul>
           {this.errors()}
         </ul>

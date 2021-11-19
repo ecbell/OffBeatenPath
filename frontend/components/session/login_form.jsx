@@ -10,7 +10,13 @@ class SessionForm extends React.Component {
       password: ""
     };
 
+    this.demoUser = { 
+      email: 'demo@demo.com', 
+      password: 'password' 
+    };
+    
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demologin = this.demologin.bind(this)
   }
 
   handleSubmit(e) {
@@ -37,11 +43,13 @@ class SessionForm extends React.Component {
   }
 
   createLink() {
-    if (this.props.formType === 'signup') {
-      return <Link to='/login'>Log In</Link>
-    } else {
-      return <Link to='/signup'>Sign Up</Link>
-    }
+    return <Link to='/signup'>Sign up for free</Link>
+   
+  }
+
+  demologin(e) {
+    e.preventDefault();
+    this.props.processForm(this.demoUser)
   }
 
   render() {
@@ -59,7 +67,8 @@ class SessionForm extends React.Component {
           </label>
           <input type='submit' value={this.props.formType} />
         </form>
-        {this.createLink()}
+        <button onClick={this.demologin}>Login as Demo User</button>
+        <p>Don't have an account? {this.createLink()}</p>
         <ul>
           {this.errors()}
         </ul>
