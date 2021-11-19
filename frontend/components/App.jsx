@@ -8,7 +8,7 @@ import { AuthRoute } from '../util/root_util';
 const App = () => (
   <div>
     <Link to="/" className='header-link'>
-      <h1>OffBeaten Path</h1>
+      <h1>Off The Beaten Path</h1>
     </Link>
     <NavBarContainer/>
     
