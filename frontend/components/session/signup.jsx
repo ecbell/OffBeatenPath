@@ -64,12 +64,12 @@ class Signup extends React.Component {
           <label>Email:
             <input type='text' value={this.state.email} onChange={this.handleInput('email')} />
           </label>
-          <label>City:
+          {/* <label>City:
             <input type='text' value={this.state.city} onChange={this.handleInput('city')} />
           </label>
           <label>State:
             <input type='text' value={this.state.state} onChange={this.handleInput('state')} />
-          </label>
+          </label> */}
           <label>Password:
             <input type='password' value={this.state.password} onChange={this.handleInput('password')} />
           </label>
