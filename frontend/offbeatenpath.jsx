@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.postSession = postSession
   window.deleteSession = deleteSession
   window.login = login
+  
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
