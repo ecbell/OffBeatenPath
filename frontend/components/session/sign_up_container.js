@@ -6,7 +6,7 @@ import Signup from './signup'
 const mapStateToProps = (state, ownProps) => {
   return {
     errors: state.errors.session,
-    formType: 'signup'
+    formType: 'Create your free account'
   }
 }
 

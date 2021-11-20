@@ -14,15 +14,19 @@ class Signup extends React.Component {
       password: ""
     };
 
+    const errors = this.props.errors
+
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.eraseErrors = this.eraseErrors.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
-
   }
+
+
 
   errors() {
     return this.props.errors.map(error => {
@@ -40,39 +44,52 @@ class Signup extends React.Component {
     }
   }
 
-  createLink() {
-    return <Link to='/login'>Log In</Link>
-    
+  eraseErrors() {
+    // remove errors
+    this.props.errors = []
+    this.errors()
   }
 
   render() {
 
     return (
-      <div className="session-form">
+      <div className="signup-form">
 
         <h2>{this.props.formType}</h2>
         <form onSubmit={this.handleSubmit}>
-          <label>First Name:
-            <input type='text' value={this.state.first_name} onChange={this.handleInput('first_name')} />
-          </label>
-          <label>Last Name:
-            <input type='text' value={this.state.last_name} onChange={this.handleInput('last_name')} />
-          </label>
-          <label>Email:
-            <input type='text' value={this.state.email} onChange={this.handleInput('email')} />
-          </label>
-          {/* <label>City:
-            <input type='text' value={this.state.city} onChange={this.handleInput('city')} />
-          </label>
-          <label>State:
-            <input type='text' value={this.state.state} onChange={this.handleInput('state')} />
-          </label> */}
-          <label>Password:
-            <input type='password' value={this.state.password} onChange={this.handleInput('password')} />
-          </label>
-          <input type='submit' value={this.props.formType} />
+          <div className="signup-boxes">
+            <div className="signup-box">
+            <label>
+              <input type='text' value={this.state.first_name} onChange={this.handleInput('first_name')} placeholder='First Name'/>
+            </label>
+            </div>
+            <div className="signup-box">
+            <label>
+              <input type='text' value={this.state.last_name} onChange={this.handleInput('last_name')} placeholder='Last Name'/>
+            </label>
+            </div>
+            <div className="signup-box">
+            <label>
+              <input type='text' value={this.state.email} onChange={this.handleInput('email')} placeholder='Email' />
+            </label>
+            </div>
+            {/* <label>City:
+              <input type='text' value={this.state.city} onChange={this.handleInput('city')} />
+            </label>
+            <label>State:
+              <input type='text' value={this.state.state} onChange={this.handleInput('state')} />
+            </label> */}
+            <div className="signup-box">
+            <label>
+              <input type='password' value={this.state.password} onChange={this.handleInput('password')} placeholder='Password' />
+            </label>
+            </div>
+            <br></br>
+            <input className='sign-up-btn' type='submit' value='Sign Up' />
+            
+          </div>
         </form>
-        <p>Already have an account? {this.createLink()}</p>
+        <p >Already have an account? <Link className='link' to='/login'>Log In</Link></p>
         <ul>
           {this.errors()}
         </ul>
