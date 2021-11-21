@@ -1,0 +1,65 @@
+/* navbar */
+div.header {
+  display: flex;
+  position: absolute;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #fff;
+  margin: 0 auto;  
+  height: 60px;
+  margin: -10px;
+  padding: 0 10px 0 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: 1px 1px 1px 1px  rgba(0, 0, 0, 0.2);
+}
+
+.header-link > h1{
+  display: flex;
+  padding: 0px;
+  width: 100%;
+  height: 60px;
+  background-color: none;
+  color: #666666;
+  font-size: 20px;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.header-link{
+  text-decoration: none;
+}
+
+.nav-bar {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+.login-btn, .signup-btn {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  background-color: #219ad8;
+  height: 40px;
+  border-radius: 8px;
+  padding: 3px 10px 0px;
+  margin: 12px 5px 5px;
+  font-size: 15px;
+  float: right;
+}
+
+.login-btn {
+  color: #219ad8;
+  border: 2px solid #219ad8;
+  background-color: #fff;
+  padding: 1px 15px 0px;
+}
+
+body {
+  margin: 0px;
+}

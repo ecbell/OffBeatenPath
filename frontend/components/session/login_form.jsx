@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
   errors() {
     return this.props.errors.map(error => {
       return (
-        <li className="error" key={error}>
+        <li className="login-error" key={error}>
           {error}
         </li>
       );
@@ -43,7 +43,7 @@ class SessionForm extends React.Component {
   }
 
   createLink() {
-    return <Link to='/signup'>Sign up for free</Link>
+    return <Link to='/signup'>Sign up for free!</Link>
    
   }
 
@@ -55,23 +55,32 @@ class SessionForm extends React.Component {
   render() {
 
     return (
-      <div className="session-form">
-
-        <h2>{this.props.formType}</h2>
+      <div className="login-image">
         <form onSubmit={this.handleSubmit}>
-          <label>Email:
-            <input type='text' value={this.state.email} onChange={this.handleInput('email')} />
-          </label>
-          <label>Password:
-            <input type='password' value={this.state.password} onChange={this.handleInput('password')} />
-          </label>
-          <input type='submit' value={this.props.formType} />
+          <div className='login-form'>
+          <h2>{this.props.formType}</h2>
+          <div className="login-boxes">
+            <div className="login-box">
+              <label>
+                <input type='text' value={this.state.email} onChange={this.handleInput('email')} placeholder='Email' />
+              </label>
+            </div>
+            <div className="login-box">
+              <label>
+                <input type='password' value={this.state.password} onChange={this.handleInput('password')} placeholder='Password' />
+              </label>
+          </div>
+            <br></br>
+          <input className='login-page-btn' type='submit' value='Log In' />
+          </div>
+          <button className='demo-user-btn' onClick={this.demologin}>Explore as a demo user!</button>
+            <p>Don't have an account? <Link className='link' to='/signup'>Sign up for free!</Link></p>
+          <ul>
+            {this.errors()}
+          </ul>
+          </div>
         </form>
-        <button onClick={this.demologin}>Login as Demo User</button>
-        <p>Don't have an account? {this.createLink()}</p>
-        <ul>
-          {this.errors()}
-        </ul>
+
       </div>
     )
   }

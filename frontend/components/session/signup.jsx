@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
+
 class Signup extends React.Component {
   constructor(props) {
     super(props);
@@ -53,47 +54,47 @@ class Signup extends React.Component {
   render() {
 
     return (
-      <div className="signup-form">
-
-        <h2>{this.props.formType}</h2>
+      <div className="signup-image" >
         <form onSubmit={this.handleSubmit}>
-          <div className="signup-boxes">
-            <div className="signup-box">
-            <label>
-              <input type='text' value={this.state.first_name} onChange={this.handleInput('first_name')} placeholder='First Name'/>
-            </label>
+            <div className="signup-form">
+            <h2>{this.props.formType}</h2>
+            <div className="signup-boxes">
+              <div className="signup-box">
+              <label>
+                <input type='text' value={this.state.first_name} onChange={this.handleInput('first_name')} placeholder='First Name'/>
+              </label>
+              </div>
+              <div className="signup-box">
+              <label>
+                <input type='text' value={this.state.last_name} onChange={this.handleInput('last_name')} placeholder='Last Name'/>
+              </label>
+              </div>
+              <div className="signup-box">
+              <label>
+                <input type='text' value={this.state.email} onChange={this.handleInput('email')} placeholder='Email' />
+              </label>
+              </div>
+              {/* <label>City:
+                <input type='text' value={this.state.city} onChange={this.handleInput('city')} />
+              </label>
+              <label>State:
+                <input type='text' value={this.state.state} onChange={this.handleInput('state')} />
+              </label> */}
+              <div className="signup-box">
+              <label>
+                <input type='password' value={this.state.password} onChange={this.handleInput('password')} placeholder='Password' />
+              </label>
+              </div>
+              <br></br>
+              <input className='sign-up-btn' type='submit' value='Sign Up' />
+                <p >Already have an account? <Link className='link' to='/login'>Log In</Link></p>
             </div>
-            <div className="signup-box">
-            <label>
-              <input type='text' value={this.state.last_name} onChange={this.handleInput('last_name')} placeholder='Last Name'/>
-            </label>
-            </div>
-            <div className="signup-box">
-            <label>
-              <input type='text' value={this.state.email} onChange={this.handleInput('email')} placeholder='Email' />
-            </label>
-            </div>
-            {/* <label>City:
-              <input type='text' value={this.state.city} onChange={this.handleInput('city')} />
-            </label>
-            <label>State:
-              <input type='text' value={this.state.state} onChange={this.handleInput('state')} />
-            </label> */}
-            <div className="signup-box">
-            <label>
-              <input type='password' value={this.state.password} onChange={this.handleInput('password')} placeholder='Password' />
-            </label>
-            </div>
-            <br></br>
-            <input className='sign-up-btn' type='submit' value='Sign Up' />
-            
+            <ul>
+              {this.errors()}
+            </ul>
           </div>
-        </form>
-        <p >Already have an account? <Link className='link' to='/login'>Log In</Link></p>
-        <ul>
-          {this.errors()}
-        </ul>
-      </div>
+          </form>
+        </div>
     )
   }
 }
