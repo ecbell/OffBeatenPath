@@ -23,7 +23,6 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user)
-
   }
 
   errors() {
@@ -36,6 +35,11 @@ class SessionForm extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this.props.clearErrors()
+  }
+
+
   handleInput(field) {
     return e => {
       this.setState({ [field]: e.currentTarget.value })
@@ -46,6 +50,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     this.props.processForm(this.demoUser)
   }
+
 
   render() {
 

@@ -15,10 +15,10 @@ class Signup extends React.Component {
       password: ""
     };
 
-    const errors = this.props.errors
+    // const errors = this.props.errors
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.eraseErrors = this.eraseErrors.bind(this);
+    // this.eraseErrors = this.eraseErrors.bind(this);
   }
 
   handleSubmit(e) {
@@ -45,10 +45,8 @@ class Signup extends React.Component {
     }
   }
 
-  eraseErrors() {
-    // remove errors
-    this.props.errors = []
-    this.errors()
+  componentDidMount() {
+    this.props.clearErrors()
   }
 
   render() {
