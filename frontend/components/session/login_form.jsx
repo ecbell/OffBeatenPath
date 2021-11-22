@@ -42,11 +42,6 @@ class SessionForm extends React.Component {
     }
   }
 
-  createLink() {
-    return <Link to='/signup'>Sign up for free!</Link>
-   
-  }
-
   demologin(e) {
     e.preventDefault();
     this.props.processForm(this.demoUser)
@@ -80,7 +75,6 @@ class SessionForm extends React.Component {
           </ul>
           </div>
         </form>
-
       </div>
     )
   }
