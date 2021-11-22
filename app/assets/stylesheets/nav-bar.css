@@ -12,7 +12,7 @@ div.header {
   width: 100%;
   justify-content: space-between;
   align-items: flex-start;
-  box-shadow: 1px 1px 5px 1px  rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 3px 1px  rgba(0, 0, 0, 0.1);
 }
 
 .header-link > h1{
@@ -77,17 +77,19 @@ body {
   border: 1px solid;
   border-radius: 10px;
   cursor: pointer;
+  display: block;
 }
 
 .nav-dropdown{
   cursor: pointer;
+  align-items: center;
 }
 
 .dropdown-box{
   margin: 0px 15px;
-  color: #f2f2f2;
-  box-shadow: 1px 1px 5px 1px  rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  color: #fff;
+  box-shadow: 1px 1px 5px 1px  rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
 }
 
 .dropdown-item{
@@ -95,19 +97,25 @@ body {
   display: block;
   width: 100%;
   clear: both;
-  font-weight: 700;
+  font-weight: 400;
   text-align: center;
   white-space: nowrap;
-  background-color: #f2f2f2;
+  background-color: #fff;
   border: 0;
   padding: 12px 16px;
   cursor: pointer;
 }
 
 .dropdown-item:hover{
-  background-color: lightgray;
-  color: #f2f2f2;
+  background-color: #f2f2f2;
+  color: #666666;
   border-radius: 5px;
+}
+
+.dropdown-container{
+  display: block;
+  position: absolute;
+  padding: 15px;
 
 }
 

@@ -6,16 +6,16 @@ export default ({ currentUser, logout }) => {
   const [open, setOpen] = React.useState(false);
 
   function handleClick(e) {
-    console.log(e.target.closest('#dropdown-container'))
+    // console.log(e.target.closest('#dropdown-container'))
     if (!e.target.closest('#dropdown-container') && open) {
       setOpen(false);
     }
   }
 
   React.useEffect(() => {
-    document.addEventListener('mouseenter', handleClick);
+    document.addEventListener('mouseover', handleClick);
     return () => {
-      document.removeEventListener('mouseleave', handleClick);
+      document.removeEventListener('click', handleClick);
     }
   })
 
