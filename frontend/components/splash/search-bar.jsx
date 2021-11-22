@@ -1,19 +1,19 @@
 import React from 'react'
 
-const searchBar = () => {
+const SearchBar = () => {
   return (
-  <div>
-    <form>
+    <div classname='search-container'>
+    <form >
       <input
         type='text'
         className='search-bar'
         placeholder='Search by city, park, or trail name'
       />
-        <input className='search-btn' type='submit' value='search' />
+        {/* <input className='search-btn' type='submit' value='search' /> */}
     </form>
   </div>
   )
 }
 
 
-export default searchBar
+export default SearchBar

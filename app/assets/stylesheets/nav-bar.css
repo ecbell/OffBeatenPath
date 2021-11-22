@@ -1,5 +1,5 @@
 /* navbar */
-div.header {
+.header {
   display: flex;
   position: absolute;
   flex-wrap: wrap;
