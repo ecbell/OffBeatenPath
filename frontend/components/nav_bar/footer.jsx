@@ -8,6 +8,8 @@ const Footer = () => {
   return (
     <footer>
       <div className='footerContainer'>
+        {/* <img id='footer-logo' src='https://splash-page.s3.us-east-2.amazonaws.com/OffBeatenPathLogo.png' alt='logo'></img> */}
+        
         <div className='favicons'>
           <SocialIcon url="https://www.linkedin.com/in/emily-bell-062991/" bgColor="#414141" />
         </div>

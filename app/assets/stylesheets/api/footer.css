@@ -8,11 +8,24 @@
   flex-wrap: wrap;
   flex-direction: row;
   margin: 0 auto;
-  justify-content: flex-end;
+  justify-content: flex-end; 
   align-items: center;
   box-shadow: 10px 5px 5px 5px  rgba(0, 0, 0, 0.2);
 }
 
 .favicons{
   margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* flex: 1; */
 }
+
+/* #footer-logo{
+  width: 60px;
+  display: flex; 
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  
+} */
