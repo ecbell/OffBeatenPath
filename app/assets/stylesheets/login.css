@@ -111,5 +111,6 @@ p {
   color: #727272;
   font-weight: 700;
   line-height: 2;
+  cursor: pointer;
 }
 
