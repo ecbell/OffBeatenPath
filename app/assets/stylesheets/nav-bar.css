@@ -36,7 +36,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   text-decoration: none;
-  left: 28vw;
+  left: 24vw;
   text-align: center;
   align-items: center;
   justify-content: center; 
@@ -54,7 +54,7 @@
   display: flex;
   flex-wrap: wrap;
   position: absolute;
-  left:85vw;
+  left:80vw;
   align-items: center;
   justify-content: space-between;
   min-width: 700;
@@ -65,7 +65,7 @@
   text-decoration: none;
   display: flex;
   /* position: absolute; */
-  flex-direction: row;
+  /* flex-direction: row; */
   justify-content: center;
   align-items: center;
   color: #fff;
@@ -117,7 +117,7 @@ body {
 
 .nav-dropdown{
   align-items: center;
-  margin-right: 500px;
+  /* margin-right: 500px; */
 }
 
 .dropdown-box{
