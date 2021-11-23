@@ -94,7 +94,8 @@ body {
 }
 
 .hiking-icon{
-  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
   margin-right: 30px;
   border: 1px solid;
   border-radius: 10px;
@@ -103,9 +104,8 @@ body {
 }
 
 .nav-dropdown{
-  /* cursor: pointer;
   align-items: center;
-  margin-right: 500px; */
+  margin-right: 500px;
 }
 
 .dropdown-box{
@@ -133,13 +133,13 @@ body {
 .dropdown-item:hover{
   background-color: #f2f2f2;
   color: #666666;
-  /* border-radius: 5px; */
 }
 
-.dropdown-container{
-  display: block;
+#dropdown-container{
   position: absolute;
+  left: 90vw;
   padding: 15px;
+  top:0.5vh;
 }
 
 #logo{
