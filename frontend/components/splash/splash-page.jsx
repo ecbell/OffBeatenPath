@@ -9,10 +9,13 @@ class splashPage extends React.Component {
 
   render() {
     return(
-      <body className='splash'>
-            <h1 className='welcomeMessage'>Hello</h1>
-            <SearchBar/>
-      </body>
+      <div className='splash'>
+        <img id='beach-image' src='https://splash-page.s3.us-east-2.amazonaws.com/IMG_5994.jpeg' />
+        <div className='home-container'>
+          <h1 className='welcomeMessage'>Are you ready for an adventure?</h1>
+          <SearchBar/>
+        </div>
+      </div>
     )
   }
 }

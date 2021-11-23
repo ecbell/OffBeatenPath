@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ html {
+   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ }
+
 @import url(reset.css);
 @import url(signup.css);
 @import url(nav-bar.css);
