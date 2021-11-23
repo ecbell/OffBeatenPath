@@ -26,7 +26,7 @@
   margin-left: 30px;
   margin-top: 30px;
   text-align: center;
-  letter-spacing: -1px;
+  letter-spacing: -2px;
 }
 
 .header-link{
@@ -86,12 +86,13 @@ body {
 }
 
 .nav-dropdown{
-  cursor: pointer;
+  /* cursor: pointer;
   align-items: center;
+  margin-right: 500px; */
 }
 
 .dropdown-box{
-  margin: 0px 15px;
+  margin-right: 10px;
   color: #fff;
   box-shadow: 1px 1px 5px 1px  rgba(0, 0, 0, 0.1);
   border-radius: 5px;
@@ -115,7 +116,7 @@ body {
 .dropdown-item:hover{
   background-color: #f2f2f2;
   color: #666666;
-  border-radius: 5px;
+  /* border-radius: 5px; */
 }
 
 .dropdown-container{
