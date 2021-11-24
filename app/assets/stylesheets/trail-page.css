@@ -1,0 +1,29 @@
+body{
+  background-color: #f2f2f2;
+}
+
+#cover-container{
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  width: 90vw;
+  height: auto;
+  flex-direction: row;
+}
+
+.trail-photo {
+  width: 90vw;
+  height: 50vh;
+  object-fit: cover;
+  max-width: 90vw;
+}
+
+.trail-photo-container {
+  text-align: center;
+  width: 90vw;
+  height: auto;
+}
+
+

@@ -21,8 +21,8 @@ class TrailShow extends React.Component{
       <div>
         <div id='cover-container'>
           <div id='trail-photo-box'>
-            <div className='trail-photo'>
-              <img src='https://trail-photos.s3.us-east-2.amazonaws.com/Angels_trail_landing.jpg'/>
+            <div className='trail-photo-container'>
+              <img className='trail-photo' src='https://trail-photos.s3.us-east-2.amazonaws.com/Angels_trail_landing.jpg'/>
               <div className='title-bucket'>
                 <h1>{this.props.trail.trail_name}</h1>
                 <div className='trail-specs'>
@@ -37,8 +37,7 @@ class TrailShow extends React.Component{
               </div>
             </div>
             <div className='action-bar' />
-          </div>
-          
+          </div>   
         </div>
         
         
