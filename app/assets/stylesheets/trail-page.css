@@ -30,8 +30,8 @@ body{
   display: flex;
   flex-direction: column;
   position: absolute;
-  bottom: 42px;
-  margin: 30px 24px;
+  bottom: 52px;
+  margin: 24px 24px;
   z-index: 1;
 }
 
@@ -100,13 +100,9 @@ body{
 }
 
 .action-bar {
-  /* height: 55px; */
   margin-bottom: 0;
   background: transparent;
-  background-color: #428a13;
-  width: 100%;
   cursor: pointer;
-  /* display: inline-block; */
 }
 
 .route-container{
