@@ -42,8 +42,8 @@ class TrailShow extends React.Component{
                 <a className='link-to-park'>Zion National Park</a>
               </div>
             </div>
-            <div className='main container' style={{ top: '-10px', width: '90vw', backgroundColor: '#428a13', position: 'relative' }} >
-            <div className='action-bar' />
+            <div className='main-container' >
+            <div className='action-bar'/>
               <div className='route-container' >
               <img className='route-icon' src='https://cdn-assets.alltrails.com/assets/packs/ed305b8cebf7bc15eec3.png'/> 
               </div> 

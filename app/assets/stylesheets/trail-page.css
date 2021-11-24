@@ -5,12 +5,13 @@ body{
 #cover-container{
   display: flex;
   align-items: center;
-  position: absolute;
-  top: 15%;
-  left: 5%;
+  /* position: absolute; */
+  /* top: 15%; */
+  /* left: 5%; */
   width: 90vw;
   height: auto;
   flex-direction: row;
+  margin: 50px;
 }
 
 .trail-photo {
@@ -21,16 +22,16 @@ body{
 }
 
 .trail-photo-container {
-  text-align: center;
+  /* text-align: center; */
   width: 90vw;
-  height: auto;
+  /* height: auto; */
 }
 
 .title-bucket{
   display: flex;
   flex-direction: column;
-  position: absolute;
-  bottom: 52px;
+  position: relative;
+  bottom: 130px;
   margin: 24px 24px;
   z-index: 1;
 }
@@ -101,6 +102,13 @@ body{
   cursor: pointer;
 }
 
+.main-container{
+  top: -135px;
+  width: 90vw;
+  background-color: #428a13;
+  position: relative;
+}
+
 .route-container{
   background: #fff;
   width: 100%;
@@ -123,8 +131,7 @@ body{
   background-size: cover;
 } 
 
-.trail-info {
-  position:absolute;
+#trail-photo-box {
   background-color: white;
 }
 
@@ -185,6 +192,8 @@ body{
   float: right;
   align-items: center;
   justify-content: center;
+  /* border-left: 1px solid #e6e6e6; */
+
 }
 
 .link-to-map{
@@ -194,6 +203,8 @@ body{
   border-radius: 8px;
   padding: 10px;
   font-size: 16px;
+  font-weight: 700;
+  /* position: absolute; */
 }
 
 .link-map-box{
@@ -201,6 +212,4 @@ body{
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  
-
 }

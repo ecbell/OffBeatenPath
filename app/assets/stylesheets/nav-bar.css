@@ -1,12 +1,12 @@
 /* navbar */
 .header {
   display: flex;
-  position: absolute;
+  /* position: absolute; */
   flex-wrap: wrap;
   flex-direction: row;
   background-color: #fff;
   margin: 0 auto;  
-  height: 70px;
+  height: 90px;
   margin: -10px;
   padding: 0 10px 0 0;
   width: 100%;
@@ -125,6 +125,7 @@ body {
   color: #fff;
   box-shadow: 1px 1px 5px 1px  rgba(0, 0, 0, 0.1);
   border-radius: 5px;
+  z-index:2;
   position: absolute;
 }
 

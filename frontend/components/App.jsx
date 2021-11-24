@@ -25,6 +25,7 @@ const App = () => (
       <AuthRoute className="signup-page" exact path="/signup" component={SignupFormContainer} />
       <Route path='/' component={props => <SplashContainer {...props}/>}/>
     </Switch>
+    
     <Footer/>
   </div>
 );
