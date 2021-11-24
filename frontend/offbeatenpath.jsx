@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.deleteSession = deleteSession
   window.login = login
   
+  
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
