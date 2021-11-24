@@ -9,16 +9,16 @@ export const receiveTrails = trails => ({
 });
 
 export const receiveTrail = (trail) => ({
-  type: RECEIVE_BENCH,
+  type: RECEIVE_TRAIL,
   trail,
 });
 
-export const fetchtrails = () => dispatch => (
-  APIUtil.fetchtrails()
-  .then(trails => (dispatch(receivetrails(trails))))
+export const fetchTrails = () => dispatch => (
+  APIUtil.fetchTrails()
+  .then(trails => (dispatch(receiveTrails(trails))))
 );
 
-export const fetchTrail = trailId => dispatch => (
+export const fetchTrail = (trailId) => dispatch => (
   APIUtil.fetchTrail(trailId)
   .then(trail => (dispatch(receiveTrail(trail))))
 );
