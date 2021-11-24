@@ -23,7 +23,7 @@ const App = () => (
       <Route exact path="/trails/:id" component={props => <TrailShowContainer {...props} />} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute className="signup-page" exact path="/signup" component={SignupFormContainer} />
-      <Route exact path='/' component={props => <SplashContainer {...props}/>}/>
+      <Route path='/' component={props => <SplashContainer {...props}/>}/>
     </Switch>
     <Footer/>
   </div>

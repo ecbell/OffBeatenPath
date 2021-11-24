@@ -46,10 +46,6 @@ body{
   font-family: Proxima Nova,Arial,sans-serif;
   font-size: 30px;
   font-weight: 700;
-  /* font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal; */
   margin: 0 0 6px;
 }
 
@@ -113,7 +109,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 24%);
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
   width: 48px;
   height: 48px;
   margin: 0 auto 4px;
@@ -127,21 +123,14 @@ body{
   background-size: cover;
 } 
 
-
 .trail-info {
   position:absolute;
-  display:grid;
   background-color: white;
 }
 
 .left-column{
   width: 66.66666667%;
   float: left;
-
-}
-
-#trail-description-box{
-  display: block;
 }
 
 #trail-description{
@@ -158,5 +147,60 @@ body{
   color: #414141;
 }
 
+.trail-details{
+  display: flex;
+  width:100%;
+  padding-right: 3px;
+  margin: 5px;
+  justify-content: space-around;
+  border-bottom: 1px solid #e6e6e6;
+  
+}
 
+.trail-details-styling{
+  display: flex;
+  flex-direction: column;
+  margin:10px;
+}
 
+.trail-stat, .trail-detail-stat{
+  padding: 5px;
+}
+
+.trail-stat{
+  font-size: 12px;
+}
+
+.trail-detail-stat{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.right-column{
+  width: 33.3333333%;
+  display: flex;
+  float: right;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-to-map{
+  color: #428a13;
+  background: #fff;
+  border: 2px solid #428a13;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.link-map-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  
+
+}

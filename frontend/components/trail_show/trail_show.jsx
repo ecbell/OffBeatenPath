@@ -54,7 +54,29 @@ class TrailShow extends React.Component{
                   <section id='trail-description'>
                     <p className='trail-description-text'>{this.props.trail.description}</p>
                   </section>
+                  <section className='trail-details'>
+                      <span className='trail-details-styling'>
+                        <span className='trail-stat'>Length</span>
+                        <span className='trail-detail-stat'>{this.props.trail.length} miles</span>
+                      </span>
+                      <span className='trail-details-styling'>
+                        <span className='trail-stat'>Elevation Gain</span>
+                        <span className='trail-detail-stat'>{this.props.trail.elevation_gain} ft</span>
+                      </span>
+                      <span className='trail-details-styling'>
+                        <span className='trail-stat'>Route Type</span>
+                        <span className='trail-detail-stat'>{this.props.trail.route_type}</span>
+                      </span>
+                  </section>
+                  <section className='reviews-box'>
+                    <div>Placeholder for the review form - MVP 5</div>
+                  </section>
                 </article>
+              </div>
+              <div className='right-column'>
+                <div className='link-map-box'>
+                  <button className='link-to-map'>View Full Map</button>
+                </div>
               </div>
             </div>
           </div>
