@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRoute } from '@fortawesome/free-solid-svg-icons'
 
 class TrailShow extends React.Component{
   constructor(props) {
@@ -40,7 +42,11 @@ class TrailShow extends React.Component{
                 <a className='link-to-park'>Zion National Park</a>
               </div>
             </div>
+            
             <div className='action-bar' />
+              <div className='route-container' >
+              <img className='route-icon' src='https://cdn-assets.alltrails.com/assets/packs/ed305b8cebf7bc15eec3.png'/> 
+              </div> 
           </div>   
         </div>
         

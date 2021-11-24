@@ -30,8 +30,8 @@ body{
   display: flex;
   flex-direction: column;
   position: absolute;
-  bottom: 32px;
-  margin: 0 24px;
+  bottom: 42px;
+  margin: 30px 24px;
   z-index: 1;
 }
 
@@ -83,10 +83,6 @@ body{
 .yellow-star{
   margin-left: 8px;
   height: 18px;
-  /* border: 0;
-  outline: 0;
-  font-size: 100%; */
-  /* vertical-align: baseline; */
 }
 
 .link-to-park{
@@ -102,6 +98,38 @@ body{
   width: fit-content;
   cursor: pointer;
 }
+
+.action-bar {
+  /* height: 55px; */
+  margin-bottom: 0;
+  background: transparent;
+  background-color: #428a13;
+  width: 100%;
+  cursor: pointer;
+  /* display: inline-block; */
+}
+
+.route-container{
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 2px 8px 0 rgb(0 0 0 / 24%);
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 4px;
+  position: relative;
+  top: -20px;
+}
+
+.route-icon{
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+} 
 
 
 
