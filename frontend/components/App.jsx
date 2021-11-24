@@ -2,10 +2,11 @@ import React from "react";
 import { Route, Switch, Link } from 'react-router-dom'
 import NavBarContainer from './nav_bar/nav_bar_container'
 import SignupFormContainer from './session/sign_up_container'
-import LoginFormContainer from './session/login_container'
+import LoginFormContainer from './session/login_container';
 import { AuthRoute } from '../util/root_util';
-import Footer from './nav_bar/footer'
-import SplashContainer from './splash/splash_page_container'
+import Footer from './nav_bar/footer';
+import SplashContainer from './splash/splash_page_container';
+import TrailShowContainer from './trail_show/trail_show_container';
 
 const App = () => (
   <div>
@@ -21,6 +22,7 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute className="signup-page" exact path="/signup" component={SignupFormContainer} />
       <Route exact path='/' component={props => <SplashContainer {...props}/>}/>
+      <Route exact path="/events/:trailId" component={TrailShowContainer} />
     </Switch>
     <Footer/>
   </div>
