@@ -135,6 +135,12 @@ body{
   background-color: white;
 }
 
+.trail-info{
+  position: relative;
+  display: block;
+  top: -140px;
+}
+
 .left-column{
   width: 66.66666667%;
   float: left;
