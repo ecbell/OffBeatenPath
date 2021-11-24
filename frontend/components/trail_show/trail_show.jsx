@@ -24,11 +24,15 @@ class TrailShow extends React.Component{
             <div className='trail-photo-container'>
               <img className='trail-photo' src='https://trail-photos.s3.us-east-2.amazonaws.com/Angels_trail_landing.jpg'/>
               <div className='title-bucket'>
-                <h1>{this.props.trail.trail_name}</h1>
+                <h1 className='trail-title'>{this.props.trail.trail_name}</h1>
                 <div className='trail-specs'>
-                  <span>{this.props.trail.difficulty}</span>
+                  <span className='difficulty'>{this.props.trail.difficulty}</span>
                   <span id='agg-rating'>
                     <span>
+                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
                       <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
                     </span>
                   </span>
