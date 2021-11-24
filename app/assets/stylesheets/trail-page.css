@@ -129,13 +129,19 @@ body{
 
 
 .trail-info {
-  position: absolute;
-  bottom: -25%;
+  position:absolute;
+  display:grid;
+  background-color: white;
 }
 
 .left-column{
   width: 66.66666667%;
   float: left;
+
+}
+
+#trail-description-box{
+  display: block;
 }
 
 #trail-description{

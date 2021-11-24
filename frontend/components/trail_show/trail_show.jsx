@@ -48,16 +48,17 @@ class TrailShow extends React.Component{
               <img className='route-icon' src='https://cdn-assets.alltrails.com/assets/packs/ed305b8cebf7bc15eec3.png'/> 
               </div> 
             </div>
-          </div>
-          <div className='trail-info'>
-            <div className='left-column'>
-              <article>
-                <section id='trail-description'>
-                  <p className='trail-description-text'>{this.props.trail.description}</p>
-                </section>
-              </article>
+            <div className='trail-info'>
+              <div className='left-column'>
+                <article id='trail-description-box'>
+                  <section id='trail-description'>
+                    <p className='trail-description-text'>{this.props.trail.description}</p>
+                  </section>
+                </article>
+              </div>
             </div>
           </div>
+
 
         </div>
         
