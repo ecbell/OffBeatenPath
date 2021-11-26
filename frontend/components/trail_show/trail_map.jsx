@@ -1,5 +1,5 @@
 import React from 'react';
-import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import mapboxgl from 'mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 
 mapboxgl.accessToken = '';
 
@@ -9,7 +9,7 @@ export default class TrailMap extends React.PureComponent {
     this.state = {
       lng: -112.95122,
       lat: 37.25909,
-      zoom: 12
+      zoom: 14
     };
     this.mapContainer = React.createRef();
   }
@@ -31,32 +31,53 @@ export default class TrailMap extends React.PureComponent {
     });
 
 
-    // make an ajax request to api to get JSON coordinates of trail
-    const url = 'https://api.mapbox.com/directions/v5/mapbox/walking/-112.95122,37.25909;-112.94787,37.26931?geometries=geojson&access_token=
-    const getTrailCoordinates = () => 
-      $.ajax({
-      method: "GET",
-      url: url
-      })
+    // let coords = response.responseJSON.routes[0].geometry.coordinates
+    // drawRoute(coords)
 
-      // code from tutorial on mapbox
-      const data = json.routes[0];
-      const route = data.geometry.coordinates;
+    const drawRoute = (response) => {
+      // const json = response.json;
+      // const data = json.routes[0];
+      // const route = data.geometry.coordinates;
+      
       const geojson = {
         type: 'Feature',
         properties: {},
         geometry: {
           type: 'LineString',
-          coordinates: route
+          coordinates: response
         }
       };
 
-      // getRoute => 
-    map.on('load', () => {
-      // make an initial directions request that
-      // starts and ends at the same location
-      getRoute(start);
-    })
+      if (map.getSource('route')) {
+        map.getSource('route').setData(geojson);
+      }
+      else {
+        map.addLayer({
+          id: 'route',
+          type: 'line',
+          source: {
+            type: 'geojson',
+            data: geojson
+          },
+          layout: {
+            'line-join': 'round',
+            'line-cap': 'round'
+          },
+          paint: {
+            'line-color': 'red',
+            'line-width': 5,
+            'line-opacity': 0.75
+          }
+        });
+      }
+    }
+
+      map.on('load', () => {
+        $.ajax({
+          method: "GET",
+          url: 'https://api.mapbox.com/directions/v5/mapbox/walking/-112.95122,37.25909;-112.94787,37.26931?geometries=geojson&access_token=',
+        }).then(res => drawRoute(res.routes[0].geometry.coordinates))
+      })
 
     // set new state when user moves map
     map.on('move', () => {
@@ -66,13 +87,10 @@ export default class TrailMap extends React.PureComponent {
         zoom: map.getZoom().toFixed(2)
       });
     });
+
+
   }
 
-  // set marker 
-    // let marker = () => {
-    //   new mapboxgl.Marker()
-    //   .setLngLat([-112.95122, 37.25909])
-    //   .addTo(map)}
   
 
 
