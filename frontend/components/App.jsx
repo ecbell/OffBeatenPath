@@ -22,7 +22,7 @@ const App = () => (
 
     <Switch>
       <Route exact path="/trails/:id" component={props => <TrailShowContainer {...props} />} />
-      <Route exact path="/trails/" component={props => <TrailMapContainer {...props} />} />
+      {/* <Route exact path="/trails/" component={props => <TrailMapContainer {...props} />} /> */}
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute className="signup-page" exact path="/signup" component={SignupFormContainer} />
       <Route path='/' component={props => <SplashContainer {...props}/>}/>

@@ -1,6 +1,6 @@
 import React from 'react';
 import mapboxgl from 'mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
-import NavigationControl from "react-map-gl";
+// import NavigationControl from "react-map-gl";
 
 mapboxgl.accessToken = '';
 
@@ -8,8 +8,8 @@ export default class TrailMap extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      lng: -112.95122,
-      lat: 37.25909,
+      lng: this.props.trail.lng,
+      lat: this.props.trail.lat,
       zoom: 14
     };
     this.mapContainer = React.createRef();
@@ -60,13 +60,33 @@ export default class TrailMap extends React.PureComponent {
         }
       }
 
+    const waypoints = this.props.trail.waypoints.split(',')
+    const start = [waypoints[0], waypoints[1]]
+    const end = [waypoints[2], waypoints[3]]
+
       map.on('load', () => {
         $.ajax({
           method: "GET",
-          url: 'https://api.mapbox.com/directions/v5/mapbox/walking/-112.95122,37.25909;-112.947857,37.26936?geometries=geojson&access_token=',
+          url: `https://api.mapbox.com/directions/v5/mapbox/walking/${start};${end}?geometries=geojson&access_token=`,
         }).then(res => drawRoute(res.routes[0].geometry.coordinates))
 
+        const markerStart = new mapboxgl.Marker()
+          .setLngLat(start)
+          .setPopup(new mapboxgl.Popup().setHTML("<h1>Start/End</h1>"))
+          .addTo(map);
+
+         
+          // create a HTML element for each feature
+          // const el = document.createElement('div');
+          // el.className = 'marker';
+          // // make a marker for each feature and add to the map
+          // new mapboxgl.Marker(el).setLngLat([-112.951224, 37.259087]).addTo(map);
         
+                
+        const markerEnd = new mapboxgl.Marker()
+          .setLngLat(end)
+          .setPopup(new mapboxgl.Popup().setHTML("<h1>At this point you have a 360 view of the valley. This is the end of the trail</h1>"))
+          .addTo(map);
       })
 
       map.addControl(new mapboxgl.NavigationControl(), 'bottom-left')
@@ -76,7 +96,7 @@ export default class TrailMap extends React.PureComponent {
     // first, get length: response.responseJSON.routes[0].geometry.coordinates.length - 1
     // response.responseJSON.routes[0].geometry.coordinates[42]
     // add to schema the begin & end pts, format to put them in the ajax url
-    // Add lng and lat as center of map.
+    // Add lng and lat as center of
 
     
       // set new state when user moves map
@@ -88,8 +108,6 @@ export default class TrailMap extends React.PureComponent {
         });
       });
   }
-
-  
 
 
   render() {

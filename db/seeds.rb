@@ -10,11 +10,12 @@
 # heroku run bundle exec rails db:seed
 
 User.destroy_all
+Trail.destroy_all
 demo_user = User.create([{first_name: "demo-user", last_name: "user", email: "demo@demo.com", city: "", state: "", password: "password"}])
 
-trail1 = Trail.create([{trail_name: "Angels Landing Trail",
+trail1 = Trail.create!([{trail_name: "Angels Landing Trail",
                         park_id: 1,
-                        difficulty: "hard",
+                        difficulty: "difficult",
                         length: 4.4,
                         elevation_gain: 1604,
                         route_type: "Out & Back",
@@ -26,7 +27,7 @@ trail1 = Trail.create([{trail_name: "Angels Landing Trail",
                                       popular in Zion.",
                         lng: -112.951224,
                         lat: 37.259087,
-                        waypoints: '-112.951224,37.259087,-112.947857,37.26936' }])
+                        waypoints:'-112.951224,37.259087,-112.947857,37.26936'}])
 
 trail2 = Trail.create([{trail_name: "Zion Narrows Riverside Walk",
                         park_id: 1,
@@ -47,8 +48,9 @@ trail2 = Trail.create([{trail_name: "Zion Narrows Riverside Walk",
                                       is a relatively easy and paved
                                       out and back located at the end of the
                                       Zion Canyon Scenic Drive.",    
-                        lng: -112.94829,
-                        lat: 37.293665}])
+                        lng: -112.948278,
+                        lat: 37.296651,
+                        waypoints: '-112.94762,37.28516,-112.948278,37.296651'}])
 
 #   id: 3,
 #   first_name: "Henry David",

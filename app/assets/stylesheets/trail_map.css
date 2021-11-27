@@ -57,3 +57,12 @@ body {
 .mapboxgl-ctrl-compass-arrow {
     margin: 0.1em 2px !important;
 }
+
+.marker {
+  background-image: url('../images/mapbox-icon.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}

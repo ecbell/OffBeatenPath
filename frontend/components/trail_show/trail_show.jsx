@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRoute } from '@fortawesome/free-solid-svg-icons'
+import TrailMap from './trail_map'
 
 class TrailShow extends React.Component{
   constructor(props) {
@@ -80,15 +81,12 @@ class TrailShow extends React.Component{
               </div>
             </div>
           </div>
-
+          
 
         </div>
         
         
-        {/* <h1>{this.props.trail.description}</h1>
-        <h1>{this.props.trail.difficulty}</h1> */}
-
-        {/* <h2>{this.props.trail.trail_name}</h2> */}
+        <TrailMap trail={this.props.trail} />
       </div>
     )
   }
