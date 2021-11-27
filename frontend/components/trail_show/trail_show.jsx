@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRoute } from '@fortawesome/free-solid-svg-icons'
+import { faExpandAlt } from '@fortawesome/free-solid-svg-icons'
 import TrailMap from './trail_map'
 
 class TrailShow extends React.Component{
@@ -98,7 +98,7 @@ class TrailShow extends React.Component{
               </div>
               <div className='right-column'>
                 <div className='link-map-box'>
-                  <button className='link-to-map' onClick={this.showComponent}>View Full Map</button>
+                    <button className='link-to-map' onClick={this.showComponent}>View Full Map <FontAwesomeIcon icon={faExpandAlt}/></button>
                 </div>
               </div>
             </div>

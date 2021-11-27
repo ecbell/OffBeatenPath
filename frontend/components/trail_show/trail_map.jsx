@@ -1,6 +1,9 @@
 import React from 'react';
-import mapboxgl from 'mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import mapboxgl from 'mapbox-gl'; 
 // import NavigationControl from "react-map-gl";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExpandAlt } from '@fortawesome/free-solid-svg-icons'
+import TrailShow from './trail_show'
 
 mapboxgl.accessToken = '';
 
@@ -10,9 +13,16 @@ export default class TrailMap extends React.PureComponent {
     this.state = {
       lng: this.props.trail.lng,
       lat: this.props.trail.lat,
-      zoom: 14
+      zoom: 14,
+      isActive: true
     };
     this.mapContainer = React.createRef();
+    this.hideComponent = this.hideComponent.bind(this);
+  }
+
+  hideComponent() {
+    this.setState({ isActive: false })
+    console.log(this.state.isActive)
   }
 
 
@@ -89,7 +99,7 @@ export default class TrailMap extends React.PureComponent {
           .addTo(map);
       })
 
-      map.addControl(new mapboxgl.NavigationControl(), 'bottom-left')
+      map.addControl(new mapboxgl.NavigationControl(), 'top-right')
       
     //start coords in table  
     // get end coords 
@@ -115,14 +125,68 @@ export default class TrailMap extends React.PureComponent {
     return (
       <div>
           <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" type="text/css" />
-        
-        {/* <div className="sidebar">
-          Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
-        </div> */}
-        <div className='map-container'>
-        <div className='left-trail-side-bar'> Hello</div>
-        <div ref={this.mapContainer} className="map" />
+      
+        {this.state.isActive ? 
+        (<div className='map-container'>
+        <div className='left-trail-side-bar'>
+            <div className='link-to-trail-box'>
+              <button className='link-to-trail' onClick={this.hideComponent}>View Trail Details  <FontAwesomeIcon id='expand-icon' icon={faExpandAlt} /></button>
+            </div>
+            <div className='trail-photo-container-sidebar'>
+              <img className='trail-photo-sidebar' src='https://trail-photos.s3.us-east-2.amazonaws.com/Angels_trail_landing.jpg' />
+              <div className='title-bucket'>
+                <h1 className='trail-title'>{this.props.trail.trail_name}</h1>
+                <div className='trail-specs'>
+                  <span className='difficulty'>{this.props.trail.difficulty}</span>
+                  <span id='agg-rating'>
+                    <span>
+                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+                    </span>
+                  </span>
+                </div>
+                <a className='link-to-park'>Zion National Park</a>
+              </div>
+            </div>
+            <div className='main-container-sidebar' >
+              <div className='action-bar' />
+              <div className='route-container' >
+                <img className='route-icon' src='https://cdn-assets.alltrails.com/assets/packs/ed305b8cebf7bc15eec3.png' />
+              </div>
+            </div>
+            <div className='trail-info'>
+                <article id='trail-description-box'>
+                  <section id='trail-description'>
+                    <p className='trail-description-text-sidebar'>{this.props.trail.description}</p>
+                  </section>
+                  <section className='trail-details'>
+                    <span className='trail-details-styling'>
+                      <span className='trail-stat'>Length</span>
+                      <span className='trail-detail-stat'>{this.props.trail.length} miles</span>
+                    </span>
+                    <span className='trail-details-styling'>
+                      <span className='trail-stat'>Elevation Gain</span>
+                      <span className='trail-detail-stat'>{this.props.trail.elevation_gain} ft</span>
+                    </span>
+                    <span className='trail-details-styling'>
+                      <span className='trail-stat'>Route Type</span>
+                      <span className='trail-detail-stat'>{this.props.trail.route_type}</span>
+                    </span>
+                  </section>
+                  <section className='reviews-box'>
+                    <div>Placeholder for the review form - MVP 5</div>
+                  </section>
+                </article>
+              
+          </div>
         </div>
+        <div ref={this.mapContainer} className="map" />
+        </div>) : ("") 
+        }
+
       </div>
     );
   }

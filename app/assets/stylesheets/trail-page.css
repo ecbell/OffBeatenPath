@@ -3,10 +3,12 @@ body{
 }
 
 .secondary-search {
-  height: auto;
-  bottom: 90%;
+  height: 40px;
+  margin: 5px;
   position: relative;
   width: 100%;
+  text-align: center;
+
 }
 
 #cover-container{
@@ -18,7 +20,8 @@ body{
   width: 90vw;
   height: auto;
   flex-direction: column;
-  margin: 50px;
+  margin-left: 70px;
+  margin-top: 10px;
 }
 
 .trail-photo {
@@ -31,7 +34,7 @@ body{
 .trail-photo-container {
   /* text-align: center; */
   width: 90vw;
-  /* height: auto; */
+  height: auto;
 }
 
 .title-bucket{
