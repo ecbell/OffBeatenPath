@@ -7,7 +7,13 @@ class TrailShow extends React.Component{
   constructor(props) {
     super(props)
     
-    this.state = this.props.trail
+    this.state = {
+      trail: this.props.trail,
+      isActive: false 
+    }
+
+    this.showComponent = this.showComponent.bind(this)
+
   }
 
   componentDidMount() {
@@ -15,6 +21,16 @@ class TrailShow extends React.Component{
     console.log('mounting') 
   }
 
+  showComponent() {
+      this.setState({ isActive: true }) 
+      console.log(this.state.isActive)
+    } 
+
+    hideComponent() {
+      this.setState({ isActive: false })
+    }
+
+  
   render() {
     if (!this.props.trail) {
       console.log('loading')
@@ -22,8 +38,14 @@ class TrailShow extends React.Component{
     }
     return(
       <div>
+        
+        
         <div id='cover-container'>
-          <div id='trail-photo-box'>
+            <div className='secondary-search'>
+              <h1>SAVE FOR SEARCH BAR</h1>
+            </div>
+          {!this.state.isActive ?
+          (<div id='trail-photo-box'>
             <div className='trail-photo-container'>
               <img className='trail-photo' src='https://trail-photos.s3.us-east-2.amazonaws.com/Angels_trail_landing.jpg'/>
               <div className='title-bucket'>
@@ -76,17 +98,21 @@ class TrailShow extends React.Component{
               </div>
               <div className='right-column'>
                 <div className='link-map-box'>
-                  <button className='link-to-map'>View Full Map</button>
+                  <button className='link-to-map' onClick={this.showComponent}>View Full Map</button>
                 </div>
               </div>
             </div>
+          </div>) : ("")
+          }
           </div>
-          
-
+        
+        
+        <div className='trail-map-container'>
+          {this.state.isActive ? 
+            (<TrailMap className='second-screen-map' trail={this.props.trail} />) :
+            ("")
+          }
         </div>
-        
-        
-        <TrailMap trail={this.props.trail} />
       </div>
     )
   }

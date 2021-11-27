@@ -120,6 +120,7 @@ export default class TrailMap extends React.PureComponent {
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
         </div> */}
         <div className='map-container'>
+        <div className='left-trail-side-bar'> Hello</div>
         <div ref={this.mapContainer} className="map" />
         </div>
       </div>

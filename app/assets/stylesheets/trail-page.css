@@ -2,6 +2,13 @@ body{
   background-color: #f2f2f2;
 }
 
+.secondary-search {
+  height: auto;
+  bottom: 90%;
+  position: relative;
+  width: 100%;
+}
+
 #cover-container{
   display: flex;
   align-items: center;
@@ -10,7 +17,7 @@ body{
   /* left: 5%; */
   width: 90vw;
   height: auto;
-  flex-direction: row;
+  flex-direction: column;
   margin: 50px;
 }
 
