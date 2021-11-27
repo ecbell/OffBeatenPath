@@ -14,7 +14,7 @@ export default class TrailMap extends React.PureComponent {
       lng: this.props.trail.lng,
       lat: this.props.trail.lat,
       zoom: 14,
-      isActive: true
+      isActive: this.props.isActive
     };
     this.mapContainer = React.createRef();
     this.hideComponent = this.hideComponent.bind(this);
@@ -85,7 +85,6 @@ export default class TrailMap extends React.PureComponent {
           .setPopup(new mapboxgl.Popup().setHTML("<h1>Start/End</h1>"))
           .addTo(map);
 
-         
           // create a HTML element for each feature
           // const el = document.createElement('div');
           // el.className = 'marker';
@@ -165,7 +164,7 @@ export default class TrailMap extends React.PureComponent {
                   <section className='trail-details'>
                     <span className='trail-details-styling'>
                       <span className='trail-stat'>Length</span>
-                      <span className='trail-detail-stat'>{this.props.trail.length} miles</span>
+                      <span className='trail-detail-stat'>{this.props.trail.length} mi</span>
                     </span>
                     <span className='trail-details-styling'>
                       <span className='trail-stat'>Elevation Gain</span>
@@ -184,7 +183,7 @@ export default class TrailMap extends React.PureComponent {
           </div>
         </div>
         <div ref={this.mapContainer} className="map" />
-        </div>) : ("") 
+        </div>) : (<TrailShow isActive={this.state.isActive} />) 
         }
 
       </div>

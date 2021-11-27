@@ -1,7 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExpandAlt } from '@fortawesome/free-solid-svg-icons'
+import { faSearch} from '@fortawesome/free-solid-svg-icons'
 import TrailMap from './trail_map'
+
 
 class TrailShow extends React.Component{
   constructor(props) {
@@ -18,31 +20,33 @@ class TrailShow extends React.Component{
 
   componentDidMount() {
     this.props.fetchTrail(this.props.match.params.id)
-    console.log('mounting') 
   }
 
   showComponent() {
       this.setState({ isActive: true }) 
-      console.log(this.state.isActive)
-    } 
+  } 
 
-    hideComponent() {
-      this.setState({ isActive: false })
-    }
+  hideComponent() {
+    this.setState({ isActive: false })
+  }
 
   
   render() {
     if (!this.props.trail) {
-      console.log('loading')
       return '...loading'
     }
     return(
       <div>
-        
-        
         <div id='cover-container'>
             <div className='secondary-search'>
-              <h1>SAVE FOR SEARCH BAR</h1>
+            <form className='mini-search-form'>
+              <input
+                type='text'
+                className='mini-search-bar'
+                placeholder='Search by city, park, or trail name'
+              />
+              <FontAwesomeIcon id='mini-search-icon' icon={faSearch} />
+            </form>
             </div>
           {!this.state.isActive ?
           (<div id='trail-photo-box'>
@@ -98,6 +102,7 @@ class TrailShow extends React.Component{
               </div>
               <div className='right-column'>
                 <div className='link-map-box'>
+                    {/* <img src=''/> */}
                     <button className='link-to-map' onClick={this.showComponent}>View Full Map <FontAwesomeIcon icon={faExpandAlt}/></button>
                 </div>
               </div>
@@ -109,7 +114,7 @@ class TrailShow extends React.Component{
         
         <div className='trail-map-container'>
           {this.state.isActive ? 
-            (<TrailMap className='second-screen-map' trail={this.props.trail} />) :
+            (<TrailMap className='second-screen-map' trail={this.props.trail} isActive={this.state.isActive}/>) :
             ("")
           }
         </div>
