@@ -14,10 +14,14 @@
 #  lat            :float            not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  waypoints      :string
 #
 class Trail < ApplicationRecord
   validates :trail_name, :park_id, :difficulty, :length, 
   :elevation_gain, :route_type, :description, :lng, :lat, presence: true
+  validates :difficulty, inclusion: { in: ["easy", "moderate", "difficult"] }
+  validates :route_type, inclusion: { in: ["Out & Back", "Loop", "Point-to-Point"] }
+  
 
 
 end

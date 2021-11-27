@@ -18,7 +18,8 @@ class Api::TrailsController < ApplicationController
       :route_type, 
       :description, 
       :lng, 
-      :lat
+      :lat,
+      :waypoints
     )
   end
 end

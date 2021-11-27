@@ -1,5 +1,6 @@
 import React from 'react';
 import mapboxgl from 'mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import NavigationControl from "react-map-gl";
 
 mapboxgl.accessToken = '';
 
@@ -14,13 +15,7 @@ export default class TrailMap extends React.PureComponent {
     this.mapContainer = React.createRef();
   }
 
-  // Way to get the coordinates for the angel trail landing.
-  // https://api.mapbox.com/directions/v5/mapbox/walking/-112.95122,37.25909;-112.94787,37.26931?geometries=geojson&access_token=
-// api request for retrieving directions. GET /directions/v5 / { profile } / { coordinates }
 
-
-
-  // Boiler Plate code from mapbox to render map
   componentDidMount() {
     const { lng, lat, zoom } = this.state;
     const map = new mapboxgl.Map({
@@ -31,14 +26,7 @@ export default class TrailMap extends React.PureComponent {
     });
 
 
-    // let coords = response.responseJSON.routes[0].geometry.coordinates
-    // drawRoute(coords)
-
     const drawRoute = (response) => {
-      // const json = response.json;
-      // const data = json.routes[0];
-      // const route = data.geometry.coordinates;
-      
       const geojson = {
         type: 'Feature',
         properties: {},
@@ -66,29 +54,39 @@ export default class TrailMap extends React.PureComponent {
           paint: {
             'line-color': 'red',
             'line-width': 5,
-            'line-opacity': 0.75
-          }
-        });
+            'line-opacity': 0.85
+            }
+          });
+        }
       }
-    }
 
       map.on('load', () => {
         $.ajax({
           method: "GET",
-          url: 'https://api.mapbox.com/directions/v5/mapbox/walking/-112.95122,37.25909;-112.94787,37.26931?geometries=geojson&access_token=',
+          url: 'https://api.mapbox.com/directions/v5/mapbox/walking/-112.95122,37.25909;-112.947857,37.26936?geometries=geojson&access_token=',
         }).then(res => drawRoute(res.routes[0].geometry.coordinates))
+
+        
       })
 
-    // set new state when user moves map
-    map.on('move', () => {
-      this.setState({
-        lng: map.getCenter().lng.toFixed(4),
-        lat: map.getCenter().lat.toFixed(4),
-        zoom: map.getZoom().toFixed(2)
+      map.addControl(new mapboxgl.NavigationControl(), 'bottom-left')
+      
+    //start coords in table  
+    // get end coords 
+    // first, get length: response.responseJSON.routes[0].geometry.coordinates.length - 1
+    // response.responseJSON.routes[0].geometry.coordinates[42]
+    // add to schema the begin & end pts, format to put them in the ajax url
+    // Add lng and lat as center of map.
+
+    
+      // set new state when user moves map
+      map.on('move', () => {
+        this.setState({
+          lng: map.getCenter().lng.toFixed(5),
+          lat: map.getCenter().lat.toFixed(5),
+          zoom: map.getZoom().toFixed(2)
+        });
       });
-    });
-
-
   }
 
   
@@ -98,10 +96,14 @@ export default class TrailMap extends React.PureComponent {
     const { lng, lat, zoom } = this.state;
     return (
       <div>
-        <div className="sidebar">
+          <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" type="text/css" />
+        
+        {/* <div className="sidebar">
           Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
+        </div> */}
+        <div className='map-container'>
+        <div ref={this.mapContainer} className="map" />
         </div>
-        <div ref={this.mapContainer} className="map-container" />
       </div>
     );
   }

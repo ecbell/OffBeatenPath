@@ -24,8 +24,9 @@ trail1 = Trail.create([{trail_name: "Angels Landing Trail",
                                       The technical route and incredible views
                                       of Zion Canyon make this hike the most
                                       popular in Zion.",
-                        lng: -112.95142,
-                        lat: 37.25976 }])
+                        lng: -112.951224,
+                        lat: 37.259087,
+                        waypoints: '-112.951224,37.259087,-112.947857,37.26936' }])
 
 trail2 = Trail.create([{trail_name: "Zion Narrows Riverside Walk",
                         park_id: 1,
