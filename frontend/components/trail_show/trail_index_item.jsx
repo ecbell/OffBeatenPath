@@ -6,7 +6,7 @@ const TrailIndexItem = ({ trail }) => {
   return (
     <Link className='module-trail-link' to={`${trail.id}`}>
       <div className='module-trail-photo-container'>
-        <img className='module-trail-photo' src='https://trail-photos.s3.us-east-2.amazonaws.com/Angels_trail_landing.jpg' />
+        <img className='module-trail-photo' src={`${trail.photoUrl}`} />
         <div className='module-title-bucket'>
           <h1 className='module-trail-title'>{trail.trail_name}</h1>
           <div className='module-link-to-park'>Zion National Park</div>

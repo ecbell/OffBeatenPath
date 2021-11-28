@@ -14,7 +14,7 @@ User.destroy_all
 Trail.destroy_all
 demo_user = User.create([{first_name: "demo-user", last_name: "user", email: "demo@demo.com", city: "", state: "", password: "password"}])
 
-trail1 = Trail.create!([{trail_name: "Angels Landing Trail",
+trail1 = Trail.create!(trail_name: "Angels Landing Trail",
                         park_id: 1,
                         difficulty: "difficult",
                         length: 4.4,
@@ -28,13 +28,13 @@ trail1 = Trail.create!([{trail_name: "Angels Landing Trail",
                                       popular in Zion.",
                         lng: -112.951224,
                         lat: 37.259087,
-                        waypoints:'-112.951224,37.259087,-112.947857,37.26936'}])
+                        waypoints:'-112.951224,37.259087,-112.947857,37.26936')
 
   photo1 = open('https://off-beaten-path-seeds.s3.us-east-2.amazonaws.com/Angels_trail_landing.jpg')
-  trail1.avatar.attach(io: photo1, filename: 'angels_trail_landing.jpg')
+  trail1.photo.attach(io: photo1, filename: 'angels_trail_landing.jpg')
 
 
-trail2 = Trail.create([{trail_name: "Zion Narrows Riverside Walk",
+trail2 = Trail.create(trail_name: "Zion Narrows Riverside Walk",
                         park_id: 1,
                         difficulty: "easy",
                         length: 1.9,
@@ -55,13 +55,13 @@ trail2 = Trail.create([{trail_name: "Zion Narrows Riverside Walk",
                                       Zion Canyon Scenic Drive.",    
                         lng: -112.948278,
                         lat: 37.296651,
-                        waypoints: '-112.94762,37.28516,-112.948278,37.296651'}])
+                        waypoints: '-112.94762,37.28516,-112.948278,37.296651')
   
   photo2 = open('https://off-beaten-path-seeds.s3.us-east-2.amazonaws.com/zion_narrows_riverside.jpeg')
-  trail1.avatar.attach(io: photo2, filename: 'zion_narrows.jpg')
+  trail2.photo.attach(io: photo2, filename: 'zion_narrows.jpg')
 
 
-  trail3 = Trail.create([{trail_name: "Emerald Pools Trail",
+  trail3 = Trail.create(trail_name: "Emerald Pools Trail",
                         park_id: 1,
                         difficulty: "moderate",
                         length: 3.0,
@@ -70,10 +70,10 @@ trail2 = Trail.create([{trail_name: "Zion Narrows Riverside Walk",
                         description: "Emerald Pools Trail is a 3 mile heavily trafficked loop trail located near Springdale, Utah that features a waterfall and is rated as moderate. The trail is primarily used for hiking and is best used from May until November.",    
                         lng: -112.95622,
                         lat: 37.25179,
-                        waypoints: '-112.95622,37.25179,-112.95622,37.25179'}])
+                        waypoints: '-112.95622,37.25179,-112.95622,37.25179')
 
   photo3 = open('https://off-beaten-path-seeds.s3.us-east-2.amazonaws.com/emerald_pools_trail.jpg')
-  trail1.avatar.attach(io: photo3, filename: 'emerald_pools.jpg')
+  trail3.photo.attach(io: photo3, filename: 'emerald_pools.jpg')
 
 
   #   id: 3,
