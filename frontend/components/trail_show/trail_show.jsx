@@ -11,7 +11,8 @@ class TrailShow extends React.Component{
     
     this.state = {
       trail: this.props.trail,
-      isActive: false 
+      isActive: false
+      
     }
 
     this.showComponent = this.showComponent.bind(this)
@@ -20,6 +21,8 @@ class TrailShow extends React.Component{
 
   componentDidMount() {
     this.props.fetchTrail(this.props.match.params.id)
+    this.props.fetchTrails().then(() => console.log(this.props.allTrails[1].trail_name))
+
   }
 
   showComponent() {
@@ -36,8 +39,10 @@ class TrailShow extends React.Component{
       return '...loading'
     }
     return(
+      
       <div>
         <div id='cover-container'>
+          
             <div className='secondary-search'>
             <form className='mini-search-form'>
               <input
@@ -104,6 +109,44 @@ class TrailShow extends React.Component{
                 <div className='link-map-box'>
                     {/* <img src=''/> */}
                     <button className='link-to-map' onClick={this.showComponent}>View Full Map <FontAwesomeIcon icon={faExpandAlt}/></button>
+                </div>
+                <div className='related-trails-box'>
+                  <h1 className='related-trails-title'>Nearby Trails</h1>
+                  <div className='related-trails'>
+                    {
+                      this.props.allTrails.map(trail => {
+                        if (this.props.trail.park_id === trail.park_id && this.props.trail.trail_name !== trail.trail_name) {
+                          return(
+                            <div>
+                              <div className='module-trail-photo-container'>
+                                <img className='module-trail-photo' src='https://trail-photos.s3.us-east-2.amazonaws.com/Angels_trail_landing.jpg' />
+                                <div className='module-title-bucket'>
+                                  <h1 className='module-trail-title'>{trail.trail_name}</h1>
+                                  <a className='module-link-to-park'>Zion National Park</a>
+                                  <div className='module-trail-specs'>
+                                    <span className='module-difficulty'>{trail.difficulty}</span>
+                                    <span id='agg-rating'>
+                                      <span>
+                                        <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+                                        <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+                                        <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+                                        <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+                                        <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+                                      </span>
+                                    </span>
+                                    <div>
+                                      <span className='module-length'>{trail.length} mi </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            )
+                          }
+                      })
+                    }
+
+                  </div>
                 </div>
               </div>
             </div>
