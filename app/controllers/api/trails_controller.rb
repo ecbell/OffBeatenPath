@@ -20,7 +20,9 @@ class Api::TrailsController < ApplicationController
       :description, 
       :lng, 
       :lat,
-      :waypoints
+      :waypoints,
+      :photo
+      
     )
   end
 end

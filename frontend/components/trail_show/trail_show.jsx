@@ -38,7 +38,7 @@ class TrailShow extends React.Component{
     if (!this.props.trail) {
       return '...loading'
     }
-    const {phototUrl, difficulty, length, elevation_gain, route_type, description, trail_name, park_id} = this.props.trail
+    const {photo, difficulty, length, elevation_gain, route_type, description, trail_name, park_id} = this.props.trail
     
     const nearbyTrails = []
     this.props.allTrails.map(trail => {
@@ -57,7 +57,7 @@ class TrailShow extends React.Component{
           {!this.state.isActive ? 
           (<div id='trail-photo-box'>
             <div className='trail-photo-container'>
-              <img className='trail-photo' src={phototUrl}/>
+              <img className='trail-photo' src={photo}/>
               <div className='title-bucket'>
                 <h1 className='trail-title'>{trail_name}</h1>
                 <div className='trail-specs'>
