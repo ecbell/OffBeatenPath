@@ -23,9 +23,9 @@ class TrailShow extends React.Component{
   }
 
   componentDidMount() {
-    this.props.fetchTrail(this.props.match.params.id)
+    this.props.fetchTrail(this.props.match.params.id).then(() => console.log(this.props.trail.photoUrl))
     this.props.fetchTrails()
-    // .then(() => console.log(this.props.allTrails[1].id))
+    
 
   }
 
@@ -38,7 +38,7 @@ class TrailShow extends React.Component{
     if (!this.props.trail) {
       return '...loading'
     }
-    const {difficulty, length, elevation_gain, route_type, description, trail_name, park_id} = this.props.trail
+    const {phototUrl, difficulty, length, elevation_gain, route_type, description, trail_name, park_id} = this.props.trail
     
     const nearbyTrails = []
     this.props.allTrails.map(trail => {
@@ -57,7 +57,7 @@ class TrailShow extends React.Component{
           {!this.state.isActive ? 
           (<div id='trail-photo-box'>
             <div className='trail-photo-container'>
-              <img className='trail-photo' src='https://trail-photos.s3.us-east-2.amazonaws.com/Angels_trail_landing.jpg'/>
+              <img className='trail-photo' src={phototUrl}/>
               <div className='title-bucket'>
                 <h1 className='trail-title'>{trail_name}</h1>
                 <div className='trail-specs'>
