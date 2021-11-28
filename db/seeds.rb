@@ -52,6 +52,16 @@ trail2 = Trail.create([{trail_name: "Zion Narrows Riverside Walk",
                         lat: 37.296651,
                         waypoints: '-112.94762,37.28516,-112.948278,37.296651'}])
 
+  trail3 = Trail.create([{trail_name: "Emerald Pools Trail",
+                        park_id: 1,
+                        difficulty: "moderate",
+                        length: 3.0,
+                        elevation_gain: 620,
+                        route_type: "Loop",
+                        description: "Emerald Pools Trail is a 3 mile heavily trafficked loop trail located near Springdale, Utah that features a waterfall and is rated as moderate. The trail is primarily used for hiking and is best used from May until November.",    
+                        lng: -112.95622,
+                        lat: 37.25179,
+                        waypoints: '-112.95622,37.25179,-112.95622,37.25179'}])
 #   id: 3,
 #   first_name: "Henry David",
 #   last_name: "Thoreau",
