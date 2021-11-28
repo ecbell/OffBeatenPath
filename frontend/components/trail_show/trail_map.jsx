@@ -130,7 +130,7 @@ export default class TrailMap extends React.PureComponent {
         <div className='map-container'>
         <div className='left-trail-side-bar'>
             <div className='trail-photo-container-sidebar'>
-              <img className='trail-photo-sidebar' src='https://trail-photos.s3.us-east-2.amazonaws.com/Angels_trail_landing.jpg' />
+              <img className='trail-photo-sidebar' src={`${this.props.trail.photoUrl}`} />
               <div className='title-bucket'>
                 <h1 className='trail-title'>{this.props.trail.trail_name}</h1>
                 <div className='trail-specs'>

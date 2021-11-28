@@ -57,7 +57,7 @@ class TrailShow extends React.Component{
           {!this.state.isActive ? 
           (<div id='trail-photo-box'>
             <div className='trail-photo-container'>
-              <img className='trail-photo' src={photo}/>
+              <img className='trail-photo' src={`${this.props.trail.photoUrl}`}/>
               <div className='title-bucket'>
                 <h1 className='trail-title'>{trail_name}</h1>
                 <div className='trail-specs'>
