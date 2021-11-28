@@ -30,6 +30,7 @@ body{
   align-items: center;
   justify-content: flex-end;
   display: flex;
+  width: 100%;
 
 }
 
@@ -75,7 +76,7 @@ body{
   display: flex;
   flex-direction: column;
   position: relative;
-  bottom: 130px;
+  bottom: 145px;
   margin: 24px 24px;
   z-index: 1;
 }
@@ -147,7 +148,7 @@ body{
 }
 
 .main-container{
-  top: -135px;
+  top: -165px;
   width: 90vw;
   background-color: #428a13;
   position: relative;
@@ -296,6 +297,8 @@ body{
   border-radius: 8px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 8px 8px;
+  
+
 }
 
 .module-trail-title{
@@ -304,9 +307,7 @@ body{
     font-size: 18px;
     font-weight: 700;
     width: 100%;
-    line-height: 1.5;
-        
-
+    line-height: 1.5; 
 }
 
 .module-link-to-park{
@@ -346,4 +347,9 @@ body{
 
 .module-trail-photo-container{
   padding-bottom: 15px;
+  cursor: pointer;
+}
+
+.module-trail-link{
+  text-decoration: none;
 }

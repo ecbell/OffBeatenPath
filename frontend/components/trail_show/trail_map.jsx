@@ -70,6 +70,7 @@ export default class TrailMap extends React.PureComponent {
         }
       }
 
+      // emerald trail: https://api.mapbox.com/directions/v5/mapbox/walking/-112.95622,37.25179;-112.95622,37.25179;-112.96569623443925,37.256845017140556;-112.96167302936777,37.25688614702615;-112.95155416784984,37.25976679368479;-112.95622,37.25179?geometries=geojson&access_token=
     const waypoints = this.props.trail.waypoints.split(',')
     const start = [waypoints[0], waypoints[1]]
     const end = [waypoints[2], waypoints[3]]

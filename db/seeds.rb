@@ -8,6 +8,7 @@
 
 
 # heroku run bundle exec rails db:seed
+require 'open-uri'
 
 User.destroy_all
 Trail.destroy_all
@@ -28,6 +29,10 @@ trail1 = Trail.create!([{trail_name: "Angels Landing Trail",
                         lng: -112.951224,
                         lat: 37.259087,
                         waypoints:'-112.951224,37.259087,-112.947857,37.26936'}])
+
+  # photo1 = open('<https://trail-photos.s3.us-east-2.amazonaws.com/Angels_trail_landing.jpg>')
+  # trail1.avatar.attach(io: photo1, filename: 'Angels_trail_photo.jpg')
+
 
 trail2 = Trail.create([{trail_name: "Zion Narrows Riverside Walk",
                         park_id: 1,

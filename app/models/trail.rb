@@ -23,5 +23,6 @@ class Trail < ApplicationRecord
   validates :route_type, inclusion: { in: ["Out & Back", "Loop", "Point-to-Point"] }
   
 
-
+  has_one_attached :photo 
+  
 end
