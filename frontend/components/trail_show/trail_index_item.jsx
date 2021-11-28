@@ -3,7 +3,6 @@ import TrailIndex from './trail_index_item'
 import { Link } from 'react-router-dom'
 
 const TrailIndexItem = ({ trail }) => {
-  console.log(trail.trail_name)
   return (
     <Link className='module-trail-link' to={`${trail.id}`}>
       <div className='module-trail-photo-container'>

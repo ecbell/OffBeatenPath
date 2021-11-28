@@ -15,14 +15,14 @@ export default class TrailMap extends React.PureComponent {
       lat: this.props.trail.lat,
       zoom: 14,
       isActive: this.props.isActive
+
     };
     this.mapContainer = React.createRef();
     this.hideComponent = this.hideComponent.bind(this);
   }
 
   hideComponent() {
-    this.setState({ isActive: false })
-    console.log(this.state.isActive)
+    this.setState({ isActive: !this.state.isActive })    
   }
 
 
@@ -122,22 +122,21 @@ export default class TrailMap extends React.PureComponent {
 
   render() {
     const { lng, lat, zoom } = this.state;
+    
     return (
       <div>
           <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" type="text/css" />
       
-        {this.state.isActive ? 
-        (<div className='map-container'>
+        <div className='map-container'>
         <div className='left-trail-side-bar'>
-            <div className='link-to-trail-box'>
-              <button className='link-to-trail' onClick={this.hideComponent}>View Trail Details  <FontAwesomeIcon id='expand-icon' icon={faExpandAlt} /></button>
-            </div>
             <div className='trail-photo-container-sidebar'>
               <img className='trail-photo-sidebar' src='https://trail-photos.s3.us-east-2.amazonaws.com/Angels_trail_landing.jpg' />
               <div className='title-bucket'>
                 <h1 className='trail-title'>{this.props.trail.trail_name}</h1>
                 <div className='trail-specs'>
-                  <span className='difficulty'>{this.props.trail.difficulty}</span>
+                  {/* <span className='difficulty'>{this.props.trail.difficulty}</span> */}
+                  <span className='difficulty' style={this.props.trail.difficulty === 'easy' ? { backgroundColor: '#428a13' } : this.props.trail.difficulty === 'moderate' ? { backgroundColor: '#4bafe1' } : { backgroundColor: '#676767' }}>{this.props.trail.difficulty}</span>
+
                   <span id='agg-rating'>
                     <span>
                       <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
@@ -180,12 +179,11 @@ export default class TrailMap extends React.PureComponent {
                     <div>Placeholder for the review form - MVP 5</div>
                   </section>
                 </article>
-              
           </div>
         </div>
         <div ref={this.mapContainer} className="map" />
-        </div>) : (<TrailShow isActive={this.state.isActive} />) 
-        }
+        </div>
+        
 
       </div>
     );

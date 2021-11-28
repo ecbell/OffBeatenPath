@@ -1,10 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExpandAlt } from '@fortawesome/free-solid-svg-icons'
-import TrailMap from './trail_map'
-import TrailIndex from './trail_index'
+// import { faExpandAlt } from '@fortawesome/free-solid-svg-icons';
+import TrailMap from './trail_map';
+import TrailIndex from './trail_index';
 import { Link } from 'react-router-dom';
-import SearchNav from '../search/nav_search'
+import SearchNav from '../search/nav_search';
+import { faExpandAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 class TrailShow extends React.Component{
@@ -23,17 +24,14 @@ class TrailShow extends React.Component{
 
   componentDidMount() {
     this.props.fetchTrail(this.props.match.params.id)
-    this.props.fetchTrails().then(() => console.log(this.props.allTrails[1].id))
+    this.props.fetchTrails()
+    // .then(() => console.log(this.props.allTrails[1].id))
 
   }
 
   showComponent() {
-      this.setState({ isActive: true }) 
+      this.setState({ isActive: !this.state.isActive }) 
   } 
-
-  hideComponent() {
-    this.setState({ isActive: false })
-  }
 
   
   render() {
@@ -51,12 +49,11 @@ class TrailShow extends React.Component{
     return(
       
       <div>
+        
         <div id='cover-container'>
-          
-            <div className='secondary-search'>
-                <SearchNav/>
-            </div>
-
+          <div className='secondary-search'>
+            <SearchNav />
+          </div>
           {!this.state.isActive ? 
           (<div id='trail-photo-box'>
             <div className='trail-photo-container'>
@@ -64,7 +61,7 @@ class TrailShow extends React.Component{
               <div className='title-bucket'>
                 <h1 className='trail-title'>{trail_name}</h1>
                 <div className='trail-specs'>
-                    <span className='difficulty' style={difficulty === 'easy' ? { backgroundColor: '#428a13' } : difficulty === 'easy' ? { backgroundColor: '#4bafe1' } : { backgroundColor: '#676767' }}>{difficulty}</span>
+                    <span className='difficulty' style={difficulty === 'easy' ? { backgroundColor: '#428a13' } : difficulty === 'moderate' ? { backgroundColor: '#4bafe1' } : { backgroundColor: '#676767' }}>{difficulty}</span>
                   <span id='agg-rating'>
                     <span>
                       <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
@@ -119,7 +116,7 @@ class TrailShow extends React.Component{
                 <div className='related-trails-box'>
                   <h1 className='related-trails-title'>Nearby Trails</h1>
                   <div className='related-trails'>
-                      <TrailIndex allTrails={nearbyTrails}/>
+                      <TrailIndex allTrails={nearbyTrails} />
                   </div>
                 </div>
               </div>
@@ -130,9 +127,18 @@ class TrailShow extends React.Component{
           </div>
         
         
-        <div className='trail-map-container'>
+        <div className='map-container'>
           {this.state.isActive ? 
-            (<TrailMap className='second-screen-map' trail={this.props.trail} isActive={this.state.isActive}/>) :
+            (
+              <div >
+                {/* <div className='left-trail-side-bar'> */}
+                <div className='link-to-trail-box'>
+                  <button className='link-to-trail' onClick={this.showComponent}> View Trail Details  <FontAwesomeIcon id='expand-icon' icon={faExpandAlt} /></button>
+                </div>
+                {/* </div> */}
+                <TrailMap className='second-screen-map' trail={this.props.trail} isActive={this.state.isActive} />
+              </div>
+            ) :
             (null)
           }
         </div>

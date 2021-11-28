@@ -23,6 +23,18 @@
 #expand-icon{
   padding-right: 10px;
 }
+.link-to-trail-box{
+  float: left;
+  width: 34%;
+  height: 50px;
+  position: absolute;
+  top: -0.2vh;
+  z-index: 1;
+  background: #FFFFFF;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
 
 .link-to-trail{
   background: transparent;
@@ -39,7 +51,7 @@
   display: flex;
   position: relative;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   /* top: 10vh; */
 }
 
@@ -140,3 +152,5 @@ border-radius: 4px; */
     border-radius: 2px !important;
 }
 
+.module-trail-specs{
+}
