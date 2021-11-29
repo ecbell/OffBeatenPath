@@ -79,7 +79,7 @@ trail2 = Trail.create(trail_name: "Zion Narrows Riverside Walk",
   trail3.photo.attach(io: photo3, filename: 'emerald_pools.jpg')
 
 
-  #   id: 3,
+#   id: 3,
 #   first_name: "Henry David",
 #   last_name: "Thoreau",
 #   email: "walkinthewoods@trial.com",

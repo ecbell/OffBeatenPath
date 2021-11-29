@@ -23,7 +23,7 @@ class TrailShow extends React.Component{
   }
 
   componentDidMount() {
-    this.props.fetchTrail(this.props.match.params.id).then(() => console.log(this.props.trail.photoUrl))
+    this.props.fetchTrail(this.props.match.params.id)
     this.props.fetchTrails()
     
 
