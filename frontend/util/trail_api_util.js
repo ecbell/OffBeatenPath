@@ -13,4 +13,3 @@ export const fetchTrail = (trailId) => {
     url: `api/trails/${trailId}`
   });
 };
-
