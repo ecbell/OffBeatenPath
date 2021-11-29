@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# json.array! @posts do |post|
+#   json.partial! 'api/posts/post', post: post
+# end
 
 # heroku run bundle exec rails db:seed
 require 'open-uri'
@@ -28,7 +31,7 @@ trail1 = Trail.create!(trail_name: "Angels Landing Trail",
                                       popular in Zion.",
                         lng: -112.951224,
                         lat: 37.259087,
-                        waypoints:'-112.951224,37.259087,-112.947857,37.26936')
+                        waypoints:'-112.947857,37.26936')
 
   photo1 = open('https://off-beaten-path-seeds.s3.us-east-2.amazonaws.com/Angels_trail_landing.jpg')
   trail1.photo.attach(io: photo1, filename: 'angels_trail_landing.jpg')
@@ -53,9 +56,9 @@ trail2 = Trail.create(trail_name: "Zion Narrows Riverside Walk",
                                       is a relatively easy and paved
                                       out and back located at the end of the
                                       Zion Canyon Scenic Drive.",    
-                        lng: -112.948278,
-                        lat: 37.296651,
-                        waypoints: '-112.94762,37.28516,-112.948278,37.296651')
+                        lng: -112.94762,
+                        lat: 37.28516,
+                        waypoints: '-112.948278,37.296651')
   
   photo2 = open('https://off-beaten-path-seeds.s3.us-east-2.amazonaws.com/zion_narrows_riverside.jpeg')
   trail2.photo.attach(io: photo2, filename: 'zion_narrows.jpg')
@@ -70,7 +73,7 @@ trail2 = Trail.create(trail_name: "Zion Narrows Riverside Walk",
                         description: "Emerald Pools Trail is a 3 mile heavily trafficked loop trail located near Springdale, Utah that features a waterfall and is rated as moderate. The trail is primarily used for hiking and is best used from May until November.",    
                         lng: -112.95622,
                         lat: 37.25179,
-                        waypoints: '-112.95622,37.25179,-112.95622,37.25179')
+                        waypoints: '-112.95622,37.25179;-112.95622,37.25179;-112.96569623443925,37.256845017140556;-112.96167302936777,37.25688614702615;-112.95155416784984,37.25976679368479;-112.95622,37.25179')
 
   photo3 = open('https://off-beaten-path-seeds.s3.us-east-2.amazonaws.com/emerald_pools_trail.jpg')
   trail3.photo.attach(io: photo3, filename: 'emerald_pools.jpg')

@@ -70,19 +70,28 @@ export default class TrailMap extends React.PureComponent {
         }
       }
 
-      // emerald trail: https://api.mapbox.com/directions/v5/mapbox/walking/-112.95622,37.25179;-112.95622,37.25179;-112.96569623443925,37.256845017140556;-112.96167302936777,37.25688614702615;-112.95155416784984,37.25976679368479;-112.95622,37.25179?geometries=geojson&access_token=
-    const waypoints = this.props.trail.waypoints.split(',')
-    const start = [waypoints[0], waypoints[1]]
-    const end = [waypoints[2], waypoints[3]]
-
+    const startCoords = [this.props.trail.lng, this.props.trail.lat]
+    
+    const endCoords = () => {
+      if (this.props.trail.route_type !== 'Loop') {
+        if (this.props.trail.waypoints.includes(';')) {
+          const waypointsArr = this.props.trail.waypoints.split(';')
+          return waypointsArr[waypointsArr.length - 1].split(',')
+        } else {
+          return this.props.trail.waypoints.split(',')
+        }
+          
+      }
+    }
+    
       map.on('load', () => {
         $.ajax({
           method: "GET",
-          url: `https://api.mapbox.com/directions/v5/mapbox/walking/${start};${end}?geometries=geojson&access_token=`,
+          url: `https://api.mapbox.com/directions/v5/mapbox/walking/${this.props.trail.lng},${this.props.trail.lat};${this.props.trail.waypoints}?geometries=geojson&access_token=`,
         }).then(res => drawRoute(res.routes[0].geometry.coordinates))
 
         const markerStart = new mapboxgl.Marker()
-          .setLngLat(start)
+          .setLngLat(startCoords)
           .setPopup(new mapboxgl.Popup().setHTML("<h1>Start/End</h1>"))
           .addTo(map);
 
@@ -94,8 +103,8 @@ export default class TrailMap extends React.PureComponent {
         
                 
         const markerEnd = new mapboxgl.Marker()
-          .setLngLat(end)
-          .setPopup(new mapboxgl.Popup().setHTML("<h1>At this point you have a 360 view of the valley. This is the end of the trail</h1>"))
+          .setLngLat(endCoords())
+          .setPopup(new mapboxgl.Popup().setHTML("<h1>Furthest point out before return</h1>"))
           .addTo(map);
       })
 
@@ -134,7 +143,6 @@ export default class TrailMap extends React.PureComponent {
               <div className='title-bucket'>
                 <h1 className='trail-title'>{this.props.trail.trail_name}</h1>
                 <div className='trail-specs'>
-                  {/* <span className='difficulty'>{this.props.trail.difficulty}</span> */}
                   <span className='difficulty' style={this.props.trail.difficulty === 'easy' ? { backgroundColor: '#428a13' } : this.props.trail.difficulty === 'moderate' ? { backgroundColor: '#4bafe1' } : { backgroundColor: '#676767' }}>{this.props.trail.difficulty}</span>
 
                   <span id='agg-rating'>
