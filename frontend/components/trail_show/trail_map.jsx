@@ -68,6 +68,25 @@ export default class TrailMap extends React.PureComponent {
             }
           });
         }
+
+
+        // Geographic coordinates of the LineString
+        const coordinates = geojson.geometry.coordinates;
+
+        // Create a 'LngLatBounds' with both corners at the first coordinate.
+        const bounds = new mapboxgl.LngLatBounds(
+          coordinates[0],
+          coordinates[0]
+        );
+
+        // Extend the 'LngLatBounds' to include every coordinate in the bounds result.
+        for (const coord of coordinates) {
+          bounds.extend(coord);
+        }
+
+        map.fitBounds(bounds, {
+          padding: 80
+        });
       }
 
     const startCoords = [this.props.trail.lng, this.props.trail.lat]
@@ -79,17 +98,22 @@ export default class TrailMap extends React.PureComponent {
           return waypointsArr[waypointsArr.length - 1].split(',')
         } else {
           return this.props.trail.waypoints.split(',')
-        }
-          
+        }   
       }
     }
     
       map.on('load', () => {
-        $.ajax({
-          method: "GET",
-          url: `https://api.mapbox.com/directions/v5/mapbox/walking/${this.props.trail.lng},${this.props.trail.lat};${this.props.trail.waypoints}?geometries=geojson&access_token=`,
-        }).then(res => drawRoute(res.routes[0].geometry.coordinates))
-
+        const apiRequest = () => {
+        return(
+          $.ajax({
+            method: "GET",
+            url: `https://api.mapbox.com/directions/v5/mapbox/walking/${this.props.trail.lng},${this.props.trail.lat};${this.props.trail.waypoints}?geometries=geojson&access_token=`,
+            })
+          )
+        } 
+      
+        apiRequest().then(res => drawRoute(res.routes[0].geometry.coordinates))
+        
         const markerStart = new mapboxgl.Marker()
           .setLngLat(startCoords)
           .setPopup(new mapboxgl.Popup().setHTML("<h1>Start/End</h1>"))
@@ -106,6 +130,7 @@ export default class TrailMap extends React.PureComponent {
           .setLngLat(endCoords())
           .setPopup(new mapboxgl.Popup().setHTML("<h1>Furthest point out before return</h1>"))
           .addTo(map);
+
       })
 
       map.addControl(new mapboxgl.NavigationControl(), 'top-right')
