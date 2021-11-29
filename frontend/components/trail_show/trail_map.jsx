@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExpandAlt } from '@fortawesome/free-solid-svg-icons'
 import TrailShow from './trail_show'
 
-mapboxgl.accessToken = '';
+mapboxgl.accessToken = window.mapboxAPIKey;
 
 export default class TrailMap extends React.PureComponent {
   constructor(props) {
@@ -85,7 +85,7 @@ export default class TrailMap extends React.PureComponent {
         }
 
         map.fitBounds(bounds, {
-          padding: 80
+          padding: 40
         });
       }
 
@@ -107,7 +107,7 @@ export default class TrailMap extends React.PureComponent {
         return(
           $.ajax({
             method: "GET",
-            url: `https://api.mapbox.com/directions/v5/mapbox/walking/${this.props.trail.lng},${this.props.trail.lat};${this.props.trail.waypoints}?geometries=geojson&access_token=`,
+            url: `https://api.mapbox.com/directions/v5/mapbox/walking/${this.props.trail.lng},${this.props.trail.lat};${this.props.trail.waypoints}?geometries=geojson&access_token=${mapboxgl.accessToken}`,
             })
           )
         } 
