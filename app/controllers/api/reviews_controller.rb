@@ -1,7 +1,8 @@
 class Api::ReviewsController < ApplicationController
 
   def index
-    @events = Event.all
+    @reviews = Review.all
+    render :index 
   end
 
   def create

@@ -15,7 +15,14 @@ require 'open-uri'
 
 User.destroy_all
 Trail.destroy_all
+Review.destroy_all
+
+
 demo_user = User.create([{first_name: "demo-user", last_name: "user", email: "demo@demo.com", city: "", state: "", password: "password"}])
+user2 = User.create!([{first_name: "Henry David", last_name: "Thoreau", email: "walkinthewoods@fake.com", city: "Concord", state: "Massachusetts", password: "password"}])
+user3 = User.create!([{first_name: "Johann Wolfgang", last_name: "von Goethe", email: "werther@naturalistfake.org", city: "Weimar", state: "Vermont", password: "password"}])
+user4 = User.create!([{  first_name: "Emmylou", last_name: "Harris", email: "bluegrass@hikefake.com", city: "Nashville", state: "Tennessee", password: "password"}])
+
 
 trail1 = Trail.create!(trail_name: "Angels Landing Trail",
                         park_id: 1,
@@ -79,37 +86,13 @@ trail2 = Trail.create(trail_name: "Zion Narrows Riverside Walk",
   trail3.photo.attach(io: photo3, filename: 'emerald_pools.jpg')
 
 
-#   id: 3,
-#   first_name: "Henry David",
-#   last_name: "Thoreau",
-#   email: "walkinthewoods@trial.com",
-#   city: "Concord",
-#   state: "Massachusetts",
-#   password_digest: "$2a$12$2MJOGbqNz0NHgjkY8y6xluibXhg/CtfNi1Si8RB29DJ3ZiXVV8dXC",
-#   session_token: "EuoTxb2BXYaaoiO4DpuFhw",
-#   created_at: Fri, 19 Nov 2021 22:16:24 UTC +00:00,
-#   updated_at: Fri, 19 Nov 2021 22:16:35 UTC +00:00>,
-#  #<User:0x00007fbe8e562e90
-#   id: 4,
-#   first_name: "Johann Wolfgang",
-#   last_name: "von Goethe",
-#   email: "werther@naturalist.org",
-#   city: "Weimar",
-#   state: "Vermont",
 
-#  #<User:0x00007fbe8e562b98
-#   id: 5,
-#   first_name: "Emmylou",
-#   last_name: "Harris",
-#   email: "bluegrass@hike.com",
-#   city: "",
-#   state: "",
 
-#  #<User:0x00007fbe8e5625a8
-#   id: 6,
-#   first_name: "demo-user",
-#   last_name: "user",
-#   email: "demo@demo.com",
-#   city: "",
-#   state: "",
-
+review1 = Review.create!([{author_id: 2, trail_id: 1, star_rating: 5, activity_type: 'hiking', activity_date: '2021-11-20', 
+body: 'Amazing hike. I enjoyed the switchback trails and the view is truly angelic! Truly an enlightening experience'}])
+review2 = Review.create!([{author_id: 3, trail_id: 3, star_rating: 5, activity_type: 'walking', activity_date: '2021-12-01', 
+body: 'The emerald pools!! How romantic! Although not recommended, I ended up bathing in them due to the heat along the trail.'}])
+review3 = Review.create!([{author_id: 2, trail_id: 3, star_rating: 5, activity_type: 'bird watching', activity_date: '2020-08-21', 
+body: 'There are many birds along the emerald pools. It is a good path to bring your binoculars on and a lawn chair to observe.'}])
+review4 = Review.create!([{author_id: 1, trail_id: 3, star_rating: 5, activity_type: 'walking', activity_date: '2020-11-21', 
+body: 'This was a nice and easy walk along the emerald pools. I liked that it was a loop so the scenery was never repeated.'}])

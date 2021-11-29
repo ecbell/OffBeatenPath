@@ -14,7 +14,7 @@
 #
 class Review < ApplicationRecord
   validates :author_id, :trail_id, :star_rating, :activity_type, 
-  :activity_date :body, presence: true
+  :activity_date, :body, presence: true
   validates :activity_type, inclusion: { in: ["backpacking", "bike touring", 
   "bird watching", "camping", "cross-country skiing", "fishing", "hiking", 
   "horseback riding", "mountain biking", "rock climbing", "scenic driving", 
@@ -24,7 +24,7 @@ class Review < ApplicationRecord
   belongs_to :author,
     class_name: :User 
 
-  belongs_to :trail
+  belongs_to :trail,
     class_name: :Trail
 
 
