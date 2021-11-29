@@ -20,6 +20,10 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_one_attached :photo 
+
+  has_many :reviews,
+    foreign_key: :author_id
+    class_name: :Review
   
   after_initialize :ensure_session_token
 
