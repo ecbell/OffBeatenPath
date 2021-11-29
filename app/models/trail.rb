@@ -25,8 +25,8 @@ class Trail < ApplicationRecord
 
   has_one_attached :photo 
 
-  has_many :reviews
-    foreign_key: :trail_id
+  has_many :reviews,
+    foreign_key: :trail_id,
     class_name: :Review 
     
   def average_rating

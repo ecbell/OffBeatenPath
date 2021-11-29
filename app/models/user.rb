@@ -22,7 +22,7 @@ class User < ApplicationRecord
   has_one_attached :photo 
 
   has_many :reviews,
-    foreign_key: :author_id
+    foreign_key: :author_id,
     class_name: :Review
   
   after_initialize :ensure_session_token

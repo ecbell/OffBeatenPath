@@ -26,12 +26,15 @@ class Api::ReviewsController < ApplicationController
 
   end
 
+   def show 
+    @review = Review.find(params[:id])
+  end
+
   def destroy
     @review = Review.find_by(id: params[:id])
     @review.destroy
 
     render :show
-
   end
 
 
@@ -46,8 +49,4 @@ class Api::ReviewsController < ApplicationController
       :activity_type, 
       :activity_date)
   end
-end
-
-
-
 end
