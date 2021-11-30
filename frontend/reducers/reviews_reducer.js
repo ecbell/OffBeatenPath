@@ -17,10 +17,10 @@ const ReviewsReducer = (oldState = {}, action) => {
         return action.payload.reviews
       } else return {};
       // return nextState;
-    case RECEIVE_REVIEWS:
-      return action.reviews
+    // case RECEIVE_REVIEWS:
+    //   return action.reviews
     case RECEIVE_REVIEW:
-      nextState[action.review.id] = action.review
+      nextState[action.payload.review.id] = action.payload.review
       return nextState;
     case REMOVE_REVIEW:
       delete nextState[action.reviewId]

@@ -19,17 +19,17 @@ export const requestReviews = () => {
   }
 }
 
-const receiveReview = (review) => {
+const receiveReview = (payload) => {
   return {
     type: RECEIVE_REVIEW,
-    review
+    payload
   }
 }
 
 export const requestReview = (reviewId) => {
   return dispatch => {
     return APIUtil.fetchReview(reviewId)
-      .then((review) => dispatch(receiveReview(review)))
+      .then((payload) => dispatch(receiveReview(payload)))
   }
 }
 

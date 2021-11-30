@@ -10,6 +10,7 @@ import CreateFormContainer from '../reviews/create_form_container'
 // import ReviewIndexContainer from '../reviews/review_index_container';
 import ReviewIndex from '../reviews/review_index'
 import { CountertopsOutlined } from '@mui/icons-material';
+import ReviewIndexItem from '../reviews/review_index_item'
 
 class TrailShow extends React.Component{
   constructor(props) {
@@ -51,14 +52,12 @@ class TrailShow extends React.Component{
     const nearbyTrails = []
     // console.log(this.props.allTrails)
     this.props.allTrails.forEach(trail => {
-      console.log(trail.trail_name)
-      console.log(trail_name)
       if (trail.trail_name !== trail_name) {
         nearbyTrails.push(trail)
       }
     })
 
-    console.log(nearbyTrails)
+    console.log(this.props.reviews[0].id)
 
     return(
       
@@ -119,10 +118,16 @@ class TrailShow extends React.Component{
                   <section className='reviews-box'>
                     <div>
                         <button onClick={this.getReviewForm}>Create Review</button>
-                        {this.state.createReview ? <CreateFormContainer trail_id={this.props.match.params.id} /> : null}
+                        {this.state.createReview ? <CreateFormContainer trail_id={this.props.match.params.id} closeReview={this.getReviewForm}  /> : null}
                         <div>
-                          
-                          {(this.props.reviews) ? <ReviewIndex reviews={this.props.reviews} deleteReview={this.props.deleteReview} updateReview={this.props.updateReview}/> : null}
+                          <ul>
+                            {
+                              this.props.reviews.map((review, i) => {
+                                return <ReviewIndexItem key={i} review={review} updateReview={this.props.updateReview} deleteReview={this.props.deleteReview} />
+                              })
+                            }
+                          </ul>
+                          {/* {(this.props.reviews) ? <ReviewIndex reviews={this.props.reviews} deleteReview={this.props.deleteReview} updateReview={this.props.updateReview}/> : null} */}
                         </div>
                     </div>
                   </section>

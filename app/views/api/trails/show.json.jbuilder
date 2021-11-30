@@ -19,7 +19,7 @@ end
 
 json.nearbyTrails do 
   json.array! @nearby_trails do |trail|
-      json.extract! trail, :id, :trail_name, :description, :lat, :lng, :difficulty, :elevation_gain, :route_type
+      json.extract! trail, :id, :trail_name, :description, :length, :lat, :lng, :difficulty, :elevation_gain, :route_type
       json.photoUrl url_for(trail.photo)
     end
 end
