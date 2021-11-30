@@ -9,7 +9,7 @@ const ReviewIndexItem = (props) => {
       {props.review.activity_date}
       {props.review.activity_type}
       {props.review.body}
-      <button>Edit</button>
+      <button onClick={(() => props.updateReview(props.review))}>Edit</button>
       <button onClick={(() => props.deleteReview(props.review.id))}>Delete</button>
     </li>
   )

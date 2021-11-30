@@ -7,7 +7,12 @@ const trailsReducer = (state = {}, action) => {
     case RECEIVE_TRAILS:
       return action.trails;
     case RECEIVE_TRAIL:
-      nextState[action.trail.id] = action.trail
+      nextState[action.payload.trail.id] = action.payload.trail
+      for (let i = 0; i < action.payload.nearbyTrails.length; i++) {
+        const trail = action.payload.nearbyTrails[i];
+        nextState[trail.id] = action.payload.nearbyTrails[i]
+      }
+      
       return nextState;
     default:
       return state;

@@ -8,9 +8,9 @@ export const receiveTrails = trails => ({
   trails,
 });
 
-export const receiveTrail = (trail) => ({
+export const receiveTrail = (payload) => ({
   type: RECEIVE_TRAIL,
-  trail,
+  payload,
 });
 
 export const fetchTrails = () => dispatch => (
@@ -20,5 +20,5 @@ export const fetchTrails = () => dispatch => (
 
 export const fetchTrail = (trailId) => dispatch => (
   APIUtil.fetchTrail(trailId)
-  .then(trail => (dispatch(receiveTrail(trail))))
+  .then(payload => (dispatch(receiveTrail(payload))))
 );

@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   // window.fetchTrails = fetchTrails;
-  // window.fetchTrail = fetchTrail;
+  window.fetchTrail = fetchTrail;
 });
 
 // dispatch(fetchTrail()).then(console.log)

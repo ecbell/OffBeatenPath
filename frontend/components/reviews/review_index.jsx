@@ -24,8 +24,8 @@ class ReviewIndex extends React.Component {
       <div>
         <ul>
           {
-            reviews.map(review => {
-              return <ReviewIndexItem key={review.id} review={review} updateReview={updateReview} deleteReview={deleteReview} />
+            reviews.map((review, i) => {
+              return <ReviewIndexItem key={i} review={review} updateReview={updateReview} deleteReview={deleteReview} />
             })
           }
         </ul>

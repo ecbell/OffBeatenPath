@@ -6,7 +6,9 @@ class Api::TrailsController < ApplicationController
 
   def show 
     @trail = Trail.find(params[:id])
-    @nearby_trails = Trail.where.not(id: @trail.id)
+    @nearby_trails = Trail.where.not(id: @trail.id).where(park_id: @trail.park_id)
+
+    render :show 
   end
 
   def trail_params

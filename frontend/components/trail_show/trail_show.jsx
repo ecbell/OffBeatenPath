@@ -8,7 +8,8 @@ import SearchNav from '../search/nav_search';
 import { faExpandAlt } from '@fortawesome/free-solid-svg-icons';
 import CreateFormContainer from '../reviews/create_form_container'
 // import ReviewIndexContainer from '../reviews/review_index_container';
-// import ReviewIndex from '../reviews/review_index'
+import ReviewIndex from '../reviews/review_index'
+import { CountertopsOutlined } from '@mui/icons-material';
 
 class TrailShow extends React.Component{
   constructor(props) {
@@ -26,8 +27,8 @@ class TrailShow extends React.Component{
   }
 
   componentDidMount() {
+    // this.props.fetchTrails()
     this.props.fetchTrail(this.props.match.params.id)
-    this.props.fetchTrails()
     // this.props.requestReviews()
   }
 
@@ -44,14 +45,19 @@ class TrailShow extends React.Component{
     if (!this.props.trail ) {
       return '...loading'
     }
+    // add reviews back in here
     const { photo, difficulty, length, elevation_gain, route_type, description, trail_name, park_id} = this.props.trail
     
     const nearbyTrails = []
+    // console.log(nearbyTrails)    
+    console.log(this.props.allTrails)
     this.props.allTrails.map(trail => {
       if (trail.trail_name !== trail_name && trail.park_id === park_id) {
         nearbyTrails.push(trail)
       }
     })
+
+    console.log(this.props.reviews)
     return(
       
       <div>
@@ -113,9 +119,8 @@ class TrailShow extends React.Component{
                         <button onClick={this.getReviewForm}>Create Review</button>
                         {this.state.createReview ? <CreateFormContainer trail_id={this.props.match.params.id} /> : null}
                         <div>
-                          {/* <ReviewIndexContainer/> */}
-                          {/* {reviews[0].body} */}
-                          {/* {<ReviewIndex reviews={reviews}/>} */}
+                          
+                          {(this.props.reviews) ? <ReviewIndex reviews={this.props.reviews} deleteReview={this.props.deleteReview} updateReview={this.props.updateReview}/> : null}
                         </div>
                     </div>
                   </section>
@@ -130,7 +135,7 @@ class TrailShow extends React.Component{
                 <div className='related-trails-box'>
                   <h1 className='related-trails-title'>Nearby Trails</h1>
                   <div className='related-trails'>
-                      <TrailIndex allTrails={nearbyTrails} />
+                      <TrailIndex allTrails={this.props.allTrails} />
                   </div>
                 </div>
               </div>

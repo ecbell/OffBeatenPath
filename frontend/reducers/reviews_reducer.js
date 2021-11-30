@@ -3,6 +3,8 @@ import {
   RECEIVE_REVIEW,
   REMOVE_REVIEW 
 } from '../actions/review_actions'
+import { RECEIVE_TRAIL } from '../actions/trail_actions';
+
 
 
 const ReviewsReducer = (oldState = {}, action) => {
@@ -10,6 +12,11 @@ const ReviewsReducer = (oldState = {}, action) => {
   let nextState = Object.assign({}, oldState)
 
   switch (action.type) {
+    case RECEIVE_TRAIL:
+      if (action.payload.reviews) {
+        return action.payload.reviews
+      } else return {};
+      // return nextState;
     case RECEIVE_REVIEWS:
       return action.reviews
     case RECEIVE_REVIEW:
