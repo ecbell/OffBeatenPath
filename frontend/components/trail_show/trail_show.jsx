@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import SearchNav from '../search/nav_search';
 import { faExpandAlt } from '@fortawesome/free-solid-svg-icons';
 import CreateFormContainer from '../reviews/create_form_container'
+import ReviewIndexContainer from '../reviews/review_index_container';
 
 class TrailShow extends React.Component{
   constructor(props) {
@@ -109,6 +110,9 @@ class TrailShow extends React.Component{
                     <div>
                         <button onClick={this.getReviewForm}>Create Review</button>
                         {this.state.createReview ? <CreateFormContainer trail_id={this.props.match.params.id} /> : null}
+                        <div>
+                          <ReviewIndexContainer/>
+                        </div>
                     </div>
                   </section>
 
