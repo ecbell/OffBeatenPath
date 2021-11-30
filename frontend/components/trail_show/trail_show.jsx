@@ -6,7 +6,7 @@ import TrailIndex from './trail_index';
 import { Link } from 'react-router-dom';
 import SearchNav from '../search/nav_search';
 import { faExpandAlt } from '@fortawesome/free-solid-svg-icons';
-
+import CreateFormContainer from '../reviews/create_form_container'
 
 class TrailShow extends React.Component{
   constructor(props) {
@@ -14,19 +14,22 @@ class TrailShow extends React.Component{
     
     this.state = {
       trail: this.props.trail,
-      isActive: false
-      
+      isActive: false,
+      createReview: false
     }
 
     this.showComponent = this.showComponent.bind(this)
+    this.getReviewForm = this.getReviewForm.bind(this);
 
   }
 
   componentDidMount() {
     this.props.fetchTrail(this.props.match.params.id)
     this.props.fetchTrails()
-    
+  }
 
+  getReviewForm(){
+    this.setState({ createReview: !this.state.createReview })
   }
 
   showComponent() {
@@ -103,7 +106,10 @@ class TrailShow extends React.Component{
                   </section>
 
                   <section className='reviews-box'>
-                    <div>Placeholder for the review form - MVP 5</div>
+                    <div>
+                        <button onClick={this.getReviewForm}>Create Review</button>
+                        {this.state.createReview ? <CreateFormContainer trail_id={this.props.match.params.id} /> : null}
+                    </div>
                   </section>
 
                 </article>
@@ -135,7 +141,6 @@ class TrailShow extends React.Component{
                 <div className='link-to-trail-box'>
                   <button className='link-to-trail' onClick={this.showComponent}> View Trail Details  <FontAwesomeIcon id='expand-icon' icon={faExpandAlt} /></button>
                 </div>
-                {/* </div> */}
                 <TrailMap className='second-screen-map' trail={this.props.trail} isActive={this.state.isActive} />
               </div>
             ) :

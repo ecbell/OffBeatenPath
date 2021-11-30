@@ -8,6 +8,7 @@ import Footer from './nav_bar/footer';
 import SplashContainer from './splash/splash_page_container';
 import TrailShowContainer from './trail_show/trail_show_container';
 import TrailMapContainer from './trail_show/trail_map_container'
+import CreateFormContainer from './reviews/create_form_container'
 
 const App = () => (
   <div>
@@ -21,6 +22,7 @@ const App = () => (
     </header>
 
     <Switch>
+      {/* <Route exact path="/reviews" component={props => <CreateFormContainer {...props} />} /> */}
       <Route exact path="/trails/:id" component={props => <TrailShowContainer {...props} />} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute className="signup-page" exact path="/signup" component={SignupFormContainer} />

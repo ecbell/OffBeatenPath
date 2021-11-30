@@ -7,7 +7,6 @@ class Api::ReviewsController < ApplicationController
 
   def create
       @review = current_user.reviews.new(review_params)
-
     if @review.save
       render :show
     else
@@ -26,7 +25,7 @@ class Api::ReviewsController < ApplicationController
 
   end
 
-   def show 
+  def show 
     @review = Review.find(params[:id])
   end
 

@@ -19,7 +19,7 @@ class Review < ApplicationRecord
   "bird watching", "camping", "cross-country skiing", "fishing", "hiking", 
   "horseback riding", "mountain biking", "rock climbing", "scenic driving", 
   "skiing", "via ferrata", "walking"] }
-  validates :star_rating, inclusion: {in: (1..5)}
+  # validates :star_rating, inclusion: {in: (1..5)}
 
   belongs_to :author,
     class_name: :User 
