@@ -34,7 +34,7 @@ class Api::ReviewsController < ApplicationController
     @review = Review.find_by(id: params[:id])
     @review.destroy
 
-    render :show
+    render json: {}, status: 200
   end
 
 

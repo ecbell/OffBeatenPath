@@ -30,15 +30,25 @@ class ReviewIndexItem extends React.Component {
 
   handleDelete(e) {
     e.preventDefault()
-    this.props.deleteReview(this.state.id).then(() => this.props.toggleDelete())
+    this.props.deleteReview(this.state.id)
   }
 
   render(){
+    const user = () => {
+      for (let i = 0; i < this.props.users.length; i++) {
+        let user = this.props.users[i];
+        console.log(user.id)
+        if (user.id === this.state.id) {
+          user.first_name
+        }
+      }
+    }
+
     const { activity_date, activity_type, body, id, star_rating } = this.state
-    console.log(this.props)
+    console.log(this.props.users[0].first_name)
     return (
       <li>
-        {id}
+        {user}
         {activity_date}
         {star_rating}
         {activity_type}
