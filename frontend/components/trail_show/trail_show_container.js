@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchTrails } from '../../actions/trail_actions';
 import { fetchTrail } from '../../actions/trail_actions';
-import { requestReviews, deleteReview, updateReview } from '../../actions/review_actions';
+import { deleteReview, updateReview } from '../../actions/review_actions';
 import TrailShow from './trail_show';
 
 const mapStateToProps = (state, ownProps) => {

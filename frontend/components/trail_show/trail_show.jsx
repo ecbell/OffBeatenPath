@@ -10,7 +10,7 @@ import CreateFormContainer from '../reviews/create_form_container'
 // import ReviewIndexContainer from '../reviews/review_index_container';
 import ReviewIndex from '../reviews/review_index'
 import { CountertopsOutlined } from '@mui/icons-material';
-import ReviewIndexItem from '../reviews/review_index_item'
+import ReviewIndexItemContainer from '../reviews/review_item_container'
 
 class TrailShow extends React.Component{
   constructor(props) {
@@ -19,12 +19,13 @@ class TrailShow extends React.Component{
     this.state = {
       trail: this.props.trail,
       isActive: false,
-      createReview: false
+      createReview: false,
+      deleteToggle: false
     }
 
     this.showComponent = this.showComponent.bind(this)
     this.getReviewForm = this.getReviewForm.bind(this);
-
+    this.toggleDelete = this.toggleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -41,6 +42,9 @@ class TrailShow extends React.Component{
       this.setState({ isActive: !this.state.isActive }) 
   } 
 
+  toggleDelete() {
+    this.setState({ deleteToggle: !this.state.deleteToggle })
+  }
   
   render() {
     if (!this.props.trail ) {
@@ -57,7 +61,7 @@ class TrailShow extends React.Component{
       }
     })
 
-    console.log(this.props.reviews[0].id)
+    // console.log(this.props.reviews[0].id)
 
     return(
       
@@ -117,17 +121,22 @@ class TrailShow extends React.Component{
 
                   <section className='reviews-box'>
                     <div>
-                        <button onClick={this.getReviewForm}>Create Review</button>
+                        <div className='reviews-title-container'>
+                          <span className='reviews-title'>Reviews</span>
+                        </div>
+                      <div className='create-form-container'>
+                        <button className='review-button' onClick={this.getReviewForm}>Write Review</button>
                         {this.state.createReview ? <CreateFormContainer trail_id={this.props.match.params.id} closeReview={this.getReviewForm}  /> : null}
+                      </div>
                         <div>
                           <ul>
                             {
-                              this.props.reviews.map((review, i) => {
-                                return <ReviewIndexItem key={i} review={review} updateReview={this.props.updateReview} deleteReview={this.props.deleteReview} />
+                              this.props.reviews.map((review) => {
+                                return <ReviewIndexItemContainer key={review.id} review={review} users={this.props.users} deleteToggle = {this.toggleDelete} />
                               })
                             }
                           </ul>
-                          {/* {(this.props.reviews) ? <ReviewIndex reviews={this.props.reviews} deleteReview={this.props.deleteReview} updateReview={this.props.updateReview}/> : null} */}
+                          {/* {(this.props.reviews) ? <ReviewIndex reviews={this.props.reviews}/> : null} */}
                         </div>
                     </div>
                   </section>

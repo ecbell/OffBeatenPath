@@ -1,0 +1,36 @@
+.review-button{
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 188px;
+  height: 40px;
+  text-align: center;
+  display: inline-block;
+  border: none;
+  background-color: #428a13;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.create-form-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.reviews-title-container{
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 60px;
+  background: #f2f2f2;
+
+}
+
+.reviews-title{
+  font-weight: 700;
+  font-family: Proxima Nova,Arial,sans-serif;
+  color: #428a13;
+  font-size: 21px;
+  padding-left: 30px;
+}

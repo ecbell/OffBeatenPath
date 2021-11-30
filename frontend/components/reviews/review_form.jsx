@@ -28,7 +28,7 @@ class ReviewForm extends React.Component {
     
     return (
       <form onSubmit={this.handleSubmit}>
-        <h1>Create post </h1>
+        {/* <h1>Write Review </h1> */}
         <label>Rating
           <input type='text' value={this.state.star_rating} onChange={this.update('star_rating')} />
         </label>
