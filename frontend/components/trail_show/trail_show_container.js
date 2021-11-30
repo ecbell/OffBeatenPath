@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   // console.log(state.entities.reviews)
   // let reviews = Object.values(state.entities.reviews).filter(review => {
   //   review.trail_id === ownProps.match.params.id})
-  console.log(state.entities.trails)
+  console.log(Object.values(state.entities.trails))
 
   return {
     trail: state.entities.trails[ownProps.match.params.id],

@@ -49,15 +49,17 @@ class TrailShow extends React.Component{
     const { photo, difficulty, length, elevation_gain, route_type, description, trail_name, park_id} = this.props.trail
     
     const nearbyTrails = []
-    // console.log(nearbyTrails)    
-    console.log(this.props.allTrails)
-    this.props.allTrails.map(trail => {
-      if (trail.trail_name !== trail_name && trail.park_id === park_id) {
+    // console.log(this.props.allTrails)
+    this.props.allTrails.forEach(trail => {
+      console.log(trail.trail_name)
+      console.log(trail_name)
+      if (trail.trail_name !== trail_name) {
         nearbyTrails.push(trail)
       }
     })
 
-    console.log(this.props.reviews)
+    console.log(nearbyTrails)
+
     return(
       
       <div>
@@ -135,7 +137,7 @@ class TrailShow extends React.Component{
                 <div className='related-trails-box'>
                   <h1 className='related-trails-title'>Nearby Trails</h1>
                   <div className='related-trails'>
-                      <TrailIndex allTrails={this.props.allTrails} />
+                      <TrailIndex allTrails={nearbyTrails} />
                   </div>
                 </div>
               </div>
