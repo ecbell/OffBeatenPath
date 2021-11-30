@@ -10,7 +10,7 @@ class ReviewIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.requestReviews()
+    // this.props.requestReviews()
   }
 
 

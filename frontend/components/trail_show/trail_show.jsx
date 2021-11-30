@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 import SearchNav from '../search/nav_search';
 import { faExpandAlt } from '@fortawesome/free-solid-svg-icons';
 import CreateFormContainer from '../reviews/create_form_container'
-import ReviewIndexContainer from '../reviews/review_index_container';
+// import ReviewIndexContainer from '../reviews/review_index_container';
+// import ReviewIndex from '../reviews/review_index'
 
 class TrailShow extends React.Component{
   constructor(props) {
@@ -27,6 +28,7 @@ class TrailShow extends React.Component{
   componentDidMount() {
     this.props.fetchTrail(this.props.match.params.id)
     this.props.fetchTrails()
+    // this.props.requestReviews()
   }
 
   getReviewForm(){
@@ -39,10 +41,10 @@ class TrailShow extends React.Component{
 
   
   render() {
-    if (!this.props.trail) {
+    if (!this.props.trail ) {
       return '...loading'
     }
-    const {photo, difficulty, length, elevation_gain, route_type, description, trail_name, park_id} = this.props.trail
+    const { photo, difficulty, length, elevation_gain, route_type, description, trail_name, park_id} = this.props.trail
     
     const nearbyTrails = []
     this.props.allTrails.map(trail => {
@@ -111,7 +113,9 @@ class TrailShow extends React.Component{
                         <button onClick={this.getReviewForm}>Create Review</button>
                         {this.state.createReview ? <CreateFormContainer trail_id={this.props.match.params.id} /> : null}
                         <div>
-                          <ReviewIndexContainer/>
+                          {/* <ReviewIndexContainer/> */}
+                          {/* {reviews[0].body} */}
+                          {/* {<ReviewIndex reviews={reviews}/>} */}
                         </div>
                     </div>
                   </section>
