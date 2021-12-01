@@ -48,17 +48,30 @@ class ReviewIndexItem extends React.Component {
     console.log(this.props.user)
 
     return (
-      <li>
+      <li className='single-review'>
         <div className='review-user-name'>
           <span>{ this.props.user.first_name } </span>
           <span> { this.props.user.last_name } </span>
         </div>
-        {stars}
-        {activity_date}
-        {star_rating}
-        {activity_type}
-        {body}
-        <button onClick={this.handleDelete}>Delete</button>
+        <div>
+          <span>
+            <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+            <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+            <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+            <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+            <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+          </span>
+            <span className='activity-date'> { activity_date } </span>
+        </div>
+        <div className='activity-type-container'>
+          {activity_type}
+        </div>
+        <div className='review-body-container'>
+          {body}
+        </div>
+        <span className='review-delete-button'>
+          <button onClick={this.handleDelete}>Delete</button>
+        </span>
       </li>
 
     )
