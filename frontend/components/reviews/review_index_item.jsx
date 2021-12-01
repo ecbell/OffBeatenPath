@@ -28,8 +28,9 @@ class ReviewIndexItem extends React.Component {
 
   render(){
     
+    console.log(this.props)
 
-    const { activity_date, activity_type, body, id, star_rating } = this.state
+    const { activity_date, activity_type, body, id, star_rating, author_id } = this.state
 
     let stars = []
     for (let i = 0; i < star_rating; i++) {
@@ -41,7 +42,7 @@ class ReviewIndexItem extends React.Component {
       stars.push(<FaStar key={i} size={20} color={'#e9e9e9'} />)
     }
     
-    console.log(this.props.user)
+    // console.log(this.props.user)
     // debugger
     return (
       <li className='single-review'>
@@ -61,15 +62,15 @@ class ReviewIndexItem extends React.Component {
         <div className='review-body-container'>
           <div className='review-body'>{body}</div>
         </div>
-        <span >
+        { author_id === this.props.currUser ? (<span>
           <button className='review-delete-button' onClick={this.handleDelete}>Delete</button>
           <Modal />
           <button className='review-delete-button' onClick={() => this.props.openModal('edit', id)}>Edit</button>
-        </span>
+        </span>) : ""}
       </li>
 
     )
   }
 }
-// update reducer, 
+
 export default ReviewIndexItem

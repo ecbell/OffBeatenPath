@@ -1,6 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { FaStar } from '@fortawesome/free-solid-svg-icons';
 import ActivityDropdown from './dropdown'
 import { FaStar } from 'react-icons/fa'
 

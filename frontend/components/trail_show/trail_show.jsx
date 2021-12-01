@@ -33,7 +33,7 @@ class TrailShow extends React.Component{
 
   componentDidMount() {
     // this.props.fetchTrails()
-    this.props.fetchTrail(this.props.match.params.id).then(() => console.log(this.props.trail.average_rating))
+    this.props.fetchTrail(this.props.match.params.id)
     // this.props.requestReviews()
     
   }
@@ -138,7 +138,7 @@ class TrailShow extends React.Component{
                         </div>
                       <div className='create-form-container'>
                           <div className='average-rating'>
-                            <div className='average-rating-bucket'>{average_rating}</div>
+                            <div className='average-rating-bucket'>{Math.round(average_rating * 10)/10}</div>
                             <div className='stars-bucket'>{stars}</div>
                             <div className='average-rating-subtext'>(Average Rating)</div>
                           </div>
@@ -152,7 +152,7 @@ class TrailShow extends React.Component{
                             {
                               this.props.reviews.map((review) => {
                                 // <EditReviewForm review={review} />
-                                return <ReviewIndexItemContainer key={review.id} review={review} user={this.props.usersObject[review.author_id]} />
+                                return <ReviewIndexItemContainer key={review.id} review={review} currUser={this.props.currUserId} user={this.props.usersObject[review.author_id]} />
                               })
                             }
                           </ul>
