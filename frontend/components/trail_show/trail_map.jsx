@@ -219,13 +219,13 @@ export default class TrailMap extends React.PureComponent {
                     </span>
                   </section>
                   <section className='reviews-box'>
-                      <ul>
+                      <ul className='reviews-sidebar'>
                         {
                           this.props.reviews.map((review) => {
-                            {console.log(review.id)}
-                            {console.log(review)}
-                            {console.log(this.props.currUserId)}
-                            { console.log(this.props.usersObject[review.author_id])}
+                            // {console.log(review.id)}
+                            // {console.log(review)}
+                            // {console.log(this.props.currUserId)}
+                            // { console.log(this.props.usersObject[review.author_id])}
                             return <ReviewIndexItemContainer key={review.id} review={review} currUserId={this.props.currUserId} user={this.props.usersObject[review.author_id]} />
                           })
                         }
