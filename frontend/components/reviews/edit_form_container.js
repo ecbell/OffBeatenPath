@@ -4,15 +4,17 @@ import {updateReview} from '../../actions/review_actions'
 import EditReviewForm from './review_form';
 
 const mSTP = (state, ownProps) => {
+  console.log(state)
   return {
-    formType: 'update'
+    formType: 'edit'
   }
 }
 
 const mDTP = (dispatch) => {
   return {
     // requestEvent: (eventId => dispatch(requestEvent(eventId))),
-    updateReview: (review => dispatch(updateReview(review)))
+    submitReview: (review => dispatch(updateReview(review))),
+    closeModal: () => dispatch(closeModal())
   }
 }
 

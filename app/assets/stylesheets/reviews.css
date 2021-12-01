@@ -2,14 +2,15 @@
   border-radius: 8px;
   font-size: 16px;
   font-weight: bold;
-  width: 90%;
+  width: 30%;
   height: 45px;
   text-align: center;
-  display: inline-block;
+  /* display: inline-block; */
   border: none;
   background-color: #428a13;
   color: #fff;
   letter-spacing: 1px;
+  position: relative;
 }
 
 .create-form-container{
@@ -18,8 +19,24 @@
   width: 100%;
   margin-top: 41px;
   text-align: center;
-  display: inline-block;
-  margin-left: px;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.average-rating{
+}
+
+.average-rating-bucket{
+  font-size: 48px;
+  font-weight: 400;
+  color: #414141;
+}
+
+.stars-bucket{
+}
+
+.create-review-box{
+  width: 70%;
 }
 
 .reviews-title-container{
@@ -112,7 +129,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.2);
   z-index: 10;
 }
 
@@ -199,6 +216,7 @@
   width: 60%;
   font-weight: 700;
   align-items: center;
+  color: #414141;
 }
 
 .activity-type-dropdown{
@@ -269,3 +287,4 @@
   display: none;
   padding: 5px;
 }
+

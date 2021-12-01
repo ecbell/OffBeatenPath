@@ -36,7 +36,6 @@ class ReviewForm extends React.Component {
     }
     
 
-
     return (
       <form className='form-container' onSubmit={this.handleSubmit}>
         <h1 className='create-form-title'> Review this Trail! </h1>

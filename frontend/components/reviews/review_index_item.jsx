@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import EditReviewForm from './edit_review_form'
 import { FaStar } from 'react-icons/fa'
+import Modal from '../modal/modal';
+
 
 
 class ReviewIndexItem extends React.Component {
@@ -28,12 +30,6 @@ class ReviewIndexItem extends React.Component {
     
 
     const { activity_date, activity_type, body, id, star_rating } = this.state
-
-    // let stars = []  
-    // for (let i = 1; i < 6; i++) {
-    //   stars = stars.concat(['hello'])
-
-    // }
 
     let stars = []
     for (let i = 0; i < star_rating; i++) {
@@ -67,6 +63,7 @@ class ReviewIndexItem extends React.Component {
         </div>
         <span >
           <button className='review-delete-button' onClick={this.handleDelete}>Delete</button>
+          <Modal />
           <button className='review-delete-button' onClick={() => this.props.openModal('edit')}>Edit</button>
         </span>
       </li>

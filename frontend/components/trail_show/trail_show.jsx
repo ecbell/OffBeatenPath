@@ -11,6 +11,9 @@ import CreateFormContainer from '../reviews/create_form_container'
 import ReviewIndexItemContainer from '../reviews/review_item_container'
 import Modal from '../modal/modal';
 import EditReviewFormContainer from '../reviews/edit_form_container'
+import EditReviewForm from '../reviews/edit_review_form'
+import { FaStar } from 'react-icons/fa'
+
 
 class TrailShow extends React.Component{
   constructor(props) {
@@ -30,8 +33,9 @@ class TrailShow extends React.Component{
 
   componentDidMount() {
     // this.props.fetchTrails()
-    this.props.fetchTrail(this.props.match.params.id)
+    this.props.fetchTrail(this.props.match.params.id).then(() => console.log(this.props.trail.average_rating))
     // this.props.requestReviews()
+    
   }
 
   getReviewForm(){
@@ -51,7 +55,7 @@ class TrailShow extends React.Component{
       return '...loading'
     }
     // add reviews back in here
-    const { photo, difficulty, length, elevation_gain, route_type, description, trail_name, park_id} = this.props.trail
+    const { photo, difficulty, length, elevation_gain, route_type, description, trail_name, park_id, average_rating} = this.props.trail
     
     const nearbyTrails = []
     // console.log(this.props.allTrails)
@@ -61,8 +65,16 @@ class TrailShow extends React.Component{
       }
     })
 
-    // console.log(this.props.reviews[0].id)
+    let stars = []
+    for (let i = 0; i < average_rating; i++) {
+      stars.push(<FaStar key={i} size={20} color={'gold'} />)
+    }
 
+    while (stars.length < 5) {
+      let i = stars.length
+      stars.push(<FaStar key={i} size={20} color={'#e9e9e9'} />)
+    }
+    
     return(
       
       <div>
@@ -125,14 +137,20 @@ class TrailShow extends React.Component{
                           <span className='reviews-title'>Reviews</span>
                         </div>
                       <div className='create-form-container'>
-                          {/* this.getReviewForm */}
-                          <button className='review-button' onClick={() => this.props.openModal('create')}>Write Review</button>
+                          <div className='average-rating'>Average Rating
+                            <div className='average-rating-bucket'>{average_rating}</div>
+                            <div className='stars-bucket'>{stars}</div>
+                          </div>
+                            <div className='create-review-box'>
+                              <button className='review-button' onClick={() => this.props.openModal('create')}>Write Review</button>
+                          </div>
                         {/* {this.state.createReview ? <CreateFormContainer trail_id={this.props.match.params.id} closeReview={this.getReviewForm}  /> : null} */}
                       </div>
                         <div>
                           <ul>
                             {
                               this.props.reviews.map((review) => {
+                                <EditReviewForm review={review} />
                                 return <ReviewIndexItemContainer key={review.id} review={review} user={this.props.usersObject[review.author_id]} />
                               })
                             }
