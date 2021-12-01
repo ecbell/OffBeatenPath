@@ -53,7 +53,7 @@ class ReviewIndexItem extends React.Component {
           <span>{ this.props.user.first_name } </span>
           <span> { this.props.user.last_name } </span>
         </div>
-        <div>
+        <div className='date-star-container'>
           <span>
             <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
             <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
@@ -64,13 +64,13 @@ class ReviewIndexItem extends React.Component {
             <span className='activity-date'> { activity_date } </span>
         </div>
         <div className='activity-type-container'>
-          {activity_type}
+          <div className='activity-type'>{activity_type}</div>
         </div>
         <div className='review-body-container'>
-          {body}
+          <div className='review-body'>{body}</div>
         </div>
-        <span className='review-delete-button'>
-          <button onClick={this.handleDelete}>Delete</button>
+        <span >
+          <button className='review-delete-button' onClick={this.handleDelete}>Delete</button>
         </span>
       </li>
 
