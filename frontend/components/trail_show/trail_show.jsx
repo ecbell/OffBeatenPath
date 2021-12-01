@@ -137,9 +137,10 @@ class TrailShow extends React.Component{
                           <span className='reviews-title'>Reviews</span>
                         </div>
                       <div className='create-form-container'>
-                          <div className='average-rating'>Average Rating
+                          <div className='average-rating'>
                             <div className='average-rating-bucket'>{average_rating}</div>
                             <div className='stars-bucket'>{stars}</div>
+                            <div className='average-rating-subtext'>(Average Rating)</div>
                           </div>
                             <div className='create-review-box'>
                               <button className='review-button' onClick={() => this.props.openModal('create')}>Write Review</button>
