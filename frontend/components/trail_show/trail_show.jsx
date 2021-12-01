@@ -11,6 +11,7 @@ import CreateFormContainer from '../reviews/create_form_container'
 import ReviewIndex from '../reviews/review_index'
 import { CountertopsOutlined } from '@mui/icons-material';
 import ReviewIndexItemContainer from '../reviews/review_item_container'
+import Modal from '../modal/modal';
 
 class TrailShow extends React.Component{
   constructor(props) {
@@ -66,7 +67,7 @@ class TrailShow extends React.Component{
     return(
       
       <div>
-        
+        <Modal />
         <div id='cover-container'>
           <div className='secondary-search'>
             <SearchNav />
@@ -127,7 +128,7 @@ class TrailShow extends React.Component{
                       <div className='create-form-container'>
                           {/* this.getReviewForm */}
                           <button className='review-button' onClick={() => this.props.openModal('create')}>Write Review</button>
-                        {this.state.createReview ? <CreateFormContainer trail_id={this.props.match.params.id} closeReview={this.getReviewForm}  /> : null}
+                        {/* {this.state.createReview ? <CreateFormContainer trail_id={this.props.match.params.id} closeReview={this.getReviewForm}  /> : null} */}
                       </div>
                         <div>
                           <ul>

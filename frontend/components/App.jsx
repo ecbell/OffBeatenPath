@@ -14,7 +14,6 @@ import Modal from './modal/modal';
 
 const App = () => (
   <div>
-    <Modal />
     <header className='header'>
       <button id='explore-btn'>Explore</button>
       <Link to="/" className='header-link'>
