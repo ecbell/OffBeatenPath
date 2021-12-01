@@ -9,9 +9,12 @@ import SplashContainer from './splash/splash_page_container';
 import TrailShowContainer from './trail_show/trail_show_container';
 import TrailMapContainer from './trail_show/trail_map_container'
 import CreateFormContainer from './reviews/create_form_container'
+import Modal from './modal/modal';
+
 
 const App = () => (
   <div>
+    <Modal />
     <header className='header'>
       <button id='explore-btn'>Explore</button>
       <Link to="/" className='header-link'>

@@ -16,7 +16,8 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.submitReview(this.state).then(this.props.closeReview)
+    this.props.submitReview(this.state).then(this.props.closeModal)
+    // .then(this.props.closeReview)
     
   }
 

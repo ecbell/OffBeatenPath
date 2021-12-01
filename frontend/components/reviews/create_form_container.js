@@ -13,13 +13,15 @@ const mSTP = (state, ownProps) => {
       author_id: state.session.currentUserId,
       trail_id: ownProps.trail_id
     },
-    formType: 'Post Review'
+    formType: 'create'
   }
 }
 
 const mDTP = (dispatch) => {
   return {
-    submitReview: ((review) => dispatch(createReview(review)))
+    submitReview: ((review) => dispatch(createReview(review))),
+    closeModal: () => dispatch(closeModal())
+
   }
 }
 

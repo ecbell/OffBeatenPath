@@ -125,7 +125,8 @@ class TrailShow extends React.Component{
                           <span className='reviews-title'>Reviews</span>
                         </div>
                       <div className='create-form-container'>
-                        <button className='review-button' onClick={this.getReviewForm}>Write Review</button>
+                          {/* this.getReviewForm */}
+                          <button className='review-button' onClick={() => this.props.openModal('create')}>Write Review</button>
                         {this.state.createReview ? <CreateFormContainer trail_id={this.props.match.params.id} closeReview={this.getReviewForm}  /> : null}
                       </div>
                         <div>

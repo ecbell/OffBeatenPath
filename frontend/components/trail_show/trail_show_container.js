@@ -3,6 +3,8 @@ import { fetchTrails } from '../../actions/trail_actions';
 import { fetchTrail } from '../../actions/trail_actions';
 import { deleteReview, updateReview } from '../../actions/review_actions';
 import TrailShow from './trail_show';
+import { openModal } from '../../actions/modal_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
   // console.log(state.entities.reviews)
@@ -23,6 +25,7 @@ const mapDispatchToProps = dispatch => ({
   // fetchTrails: (() => dispatch(fetchTrails())),
   deleteReview: ((reviewId) => dispatch(deleteReview(reviewId))),
   updateReview: ((review) => dispatch(updateReview(review))),
+  openModal: modal => dispatch(openModal(modal))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TrailShow);
