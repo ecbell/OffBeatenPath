@@ -42,7 +42,7 @@ class ReviewIndexItem extends React.Component {
     }
     
     console.log(this.props.user)
-
+    // debugger
     return (
       <li className='single-review'>
         <div className='review-user-name'>
@@ -64,12 +64,12 @@ class ReviewIndexItem extends React.Component {
         <span >
           <button className='review-delete-button' onClick={this.handleDelete}>Delete</button>
           <Modal />
-          <button className='review-delete-button' onClick={() => this.props.openModal('edit')}>Edit</button>
+          <button className='review-delete-button' onClick={() => this.props.openModal('edit', id)}>Edit</button>
         </span>
       </li>
 
     )
   }
 }
-
+// update reducer, 
 export default ReviewIndexItem

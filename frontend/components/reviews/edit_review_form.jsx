@@ -1,5 +1,5 @@
 import React from 'react'
-import Modal from '../modal/modal'
+// import Modal from '../modal/modal'
 import ReviewForm from './review_form'
 
 class EditReviewForm extends React.Component {
@@ -9,11 +9,10 @@ class EditReviewForm extends React.Component {
 
   render() {
     const { review, formType, submitReview } = this.props;
-    if (!review) return null;
-
+    // if (!review) return null;
+    console.log(this.props)
     return (
       <div>
-        
         <ReviewForm review={review}
           formType={formType}
           updateReview={submitReview} />

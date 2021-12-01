@@ -1,12 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {updateReview} from '../../actions/review_actions'
-import EditReviewForm from './review_form';
+import EditReviewForm from './edit_review_form';
+import {closeModal} from '../../actions/modal_actions'
 
 const mSTP = (state, ownProps) => {
-  console.log(state)
+  console.log(state.entities.reviews[ownProps.reviewId])
+  // debugger
   return {
-    formType: 'edit'
+    formType: 'edit',
+    review: state.entities.reviews[ownProps.reviewId]
+
   }
 }
 

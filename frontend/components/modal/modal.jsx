@@ -2,18 +2,20 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import CreateFormContainer from '../reviews/create_form_container';
+import EditFormContainer from '../reviews/edit_form_container'
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
     return null;
   }
   let component;
-  switch (modal) {
+  switch (modal.type) {
     case 'create':
       component = <CreateFormContainer />;
       break;
     case 'edit':
-      component = <EditFormContainer />;
+      component = <EditFormContainer reviewId={modal.reviewId}/>;
+      break;
     default:
       return null;
   }

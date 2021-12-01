@@ -151,7 +151,7 @@ class TrailShow extends React.Component{
                           <ul>
                             {
                               this.props.reviews.map((review) => {
-                                <EditReviewForm review={review} />
+                                // <EditReviewForm review={review} />
                                 return <ReviewIndexItemContainer key={review.id} review={review} user={this.props.usersObject[review.author_id]} />
                               })
                             }

@@ -27,11 +27,13 @@ class ReviewForm extends React.Component {
     // console.log(nextState)
     this.props.submitReview(nextState).then(this.props.closeModal)
       // .then(this.props.closeReview)
+    
   }
 
 
   render() {
     if (!this.props.review) {
+      console.log('it hit this')
       return '...loading'
     }
     
