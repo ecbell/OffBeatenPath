@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { FaStar } from '@fortawesome/free-solid-svg-icons';
 import ActivityDropdown from './dropdown'
+import { FaStar } from 'react-icons/fa'
 
 
 
@@ -36,34 +37,42 @@ class ReviewForm extends React.Component {
     
 
 
-  
     return (
       <form className='form-container' onSubmit={this.handleSubmit}>
-        {/* <ActivityDropdown/> */}
         <h1 className='create-form-title'> Review this Trail! </h1>
         <label>
           {/* <input type='text' value={this.state.star_rating} onChange={this.update('star_rating')} /> */}
-          <input type='radio' name='rating' value='1' onClick={this.update('star_rating')}/>
+          <input className='radio' type='radio' name='rating' value='1' onClick={this.update('star_rating')}/>
+          <FaStar key='1' size={30}
+            color={(this.state.star_rating) >= 1 ? 'gold' : 'gray'} />
         </label>
         <label>
           {/* <input type='text' value={this.state.star_rating} onChange={this.update('star_rating')} /> */}
-          <input type='radio' name='rating' value='2' onClick={this.update('star_rating')} />
+          <input className='radio' type='radio' name='rating' value='2' onClick={this.update('star_rating')} />
+          <FaStar key='2' size={30}
+            color={(this.state.star_rating) >= 2 ? 'gold' : 'gray'} />
         </label>
         <label>
           {/* <input type='text' value={this.state.star_rating} onChange={this.update('star_rating')} /> */}
-          <input type='radio' name='rating' value='3' onClick={this.update('star_rating')} />
+          <input className='radio' type='radio' name='rating' value='3' onClick={this.update('star_rating')} />
+          <FaStar key='3' size={30}
+            color={(this.state.star_rating) >= 3 ? 'gold' : 'gray'} />
         </label>
         <label>
           {/* <input type='text' value={this.state.star_rating} onChange={this.update('star_rating')} /> */}
-          <input type='radio' name='rating' value='4' onClick={this.update('star_rating')} />
+          <input className='radio' type='radio' name='rating' value='4' onClick={this.update('star_rating')} />
+          <FaStar key='4' size={30}
+            color={(this.state.star_rating) >= 4 ? 'gold' : 'gray'} />
         </label>
         <label>
           {/* <input type='text' value={this.state.star_rating} onChange={this.update('star_rating')} /> */}
-          <input type='radio' name='rating' value='5' onClick={this.update('star_rating')} />
+          <input className='radio' type='radio' name='rating' value='5' onClick={this.update('star_rating')} />
+          <FaStar key='5' size={30}
+            color={(this.state.star_rating) >= 5 ? 'gold' : 'gray'} />
         </label>
 
         <label className='review-textarea'>
-          <input className='review-textbox' type='textarea' value={this.state.body} onChange={this.update('body')} style={{ top:'-100px'}} placeholder='Give back to the community. Share your thought about the trail so others know what to expect.'/>
+          <textarea className='review-textbox' type='textarea' value={this.state.body} onChange={this.update('body')} style={{ top:'-100px'}} placeholder='Give back to the community. Share your thought about the trail so others know what to expect.'/>
         </label>
 
       <div className='flex-form-container'>

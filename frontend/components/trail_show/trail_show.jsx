@@ -8,10 +8,9 @@ import SearchNav from '../search/nav_search';
 import { faExpandAlt } from '@fortawesome/free-solid-svg-icons';
 import CreateFormContainer from '../reviews/create_form_container'
 // import ReviewIndexContainer from '../reviews/review_index_container';
-import ReviewIndex from '../reviews/review_index'
-import { CountertopsOutlined } from '@mui/icons-material';
 import ReviewIndexItemContainer from '../reviews/review_item_container'
 import Modal from '../modal/modal';
+import EditReviewFormContainer from '../reviews/edit_form_container'
 
 class TrailShow extends React.Component{
   constructor(props) {

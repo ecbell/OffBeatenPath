@@ -264,3 +264,8 @@
   font-size: 18px;
   
 }
+
+.radio{
+  display: none;
+  padding: 5px;
+}

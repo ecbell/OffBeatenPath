@@ -10,7 +10,7 @@ console.log(ownProps)
   return {
     review: {
       star_rating: "",
-      activity_type: "",
+      activity_type: "backpacking",
       activity_date: "",
       body: "",
       author_id: state.session.id,

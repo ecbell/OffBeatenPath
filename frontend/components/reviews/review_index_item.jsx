@@ -1,22 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-
-// const ReviewIndexItem = ({review, deleteReview, updateReview}) => {
-//   return (
-//     <li>
-//       {/* {props.revew.star_rating} */}
-//       {review.activity_date}
-//       {review.activity_type}
-//       {review.body}
-//       {review.id}
-//       <button onClick={(() => updateReview(review))}>Edit</button>
-//       <button onClick={(() => deleteReview(review.id))}>Delete</button>
-//     </li>
-//   )
-// }
-
-// export default ReviewIndexItem
+import EditReviewForm from './edit_review_form'
+import { FaStar } from 'react-icons/fa'
 
 
 class ReviewIndexItem extends React.Component {
@@ -44,10 +29,20 @@ class ReviewIndexItem extends React.Component {
 
     const { activity_date, activity_type, body, id, star_rating } = this.state
 
-    let stars = []  
-    for (let i = 1; i < 6; i++) {
-      stars = stars.concat(['hello'])
+    // let stars = []  
+    // for (let i = 1; i < 6; i++) {
+    //   stars = stars.concat(['hello'])
 
+    // }
+
+    let stars = []
+    for (let i = 0; i < star_rating; i++) {
+      stars.push(<FaStar key={i} size={20} color={'gold'} />)
+    }
+
+    while (stars.length < 5) {
+      let i = stars.length
+      stars.push(<FaStar key={i} size={20} color={'#e9e9e9'} />)
     }
     
     console.log(this.props.user)
@@ -60,11 +55,7 @@ class ReviewIndexItem extends React.Component {
         </div>
         <div className='date-star-container'>
           <span>
-            <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
-            <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
-            <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
-            <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
-            <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+            {stars}
           </span>
             <span className='activity-date'> { activity_date } </span>
         </div>
