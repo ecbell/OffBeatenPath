@@ -65,6 +65,8 @@ class TrailShow extends React.Component{
       }
     })
 
+    console.log(nearbyTrails)
+
     let stars = []
     for (let i = 0; i < average_rating; i++) {
       stars.push(<FaStar key={i} size={20} color={'gold'} />)
@@ -93,11 +95,7 @@ class TrailShow extends React.Component{
                     <span className='difficulty' style={difficulty === 'easy' ? { backgroundColor: '#428a13' } : difficulty === 'moderate' ? { backgroundColor: '#4bafe1' } : { backgroundColor: '#676767' }}>{difficulty}</span>
                   <span id='agg-rating'>
                     <span>
-                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
-                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
-                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
-                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
-                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+                      {stars}
                     </span>
                   </span>
                 </div>
@@ -138,7 +136,7 @@ class TrailShow extends React.Component{
                         </div>
                       <div className='create-form-container'>
                           <div className='average-rating'>
-                            <div className='average-rating-bucket'>{Math.round(average_rating * 10)/10}</div>
+                            <div className='average-rating-bucket'>{average_rating}</div>
                             <div className='stars-bucket'>{stars}</div>
                             <div className='average-rating-subtext'>(Average Rating)</div>
                           </div>
@@ -190,7 +188,7 @@ class TrailShow extends React.Component{
                 <div className='link-to-trail-box'>
                   <button className='link-to-trail' onClick={this.showComponent}> View Trail Details  <FontAwesomeIcon id='expand-icon' icon={faExpandAlt} /></button>
                 </div>
-                <TrailMap className='second-screen-map' trail={this.props.trail} isActive={this.state.isActive} />
+                <TrailMap className='second-screen-map' trail={this.props.trail} reviews={this.props.reviews} currUserId={this.props.currUserId} usersObject={this.props.usersObject} isActive={this.state.isActive} />
               </div>
             ) :
             (null)

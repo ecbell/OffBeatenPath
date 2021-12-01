@@ -1,8 +1,21 @@
-import React from 'react'
-import TrailIndex from './trail_index_item'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import TrailIndex from './trail_index_item';
+import { Link } from 'react-router-dom';
+import { FaStar } from 'react-icons/fa';
+
 
 const TrailIndexItem = ({ trail }) => {
+    let stars = []
+    for (let i = 0; i < trail.average_rating; i++) {
+      stars.push(<FaStar key={i} size={20} color={'gold'} />)
+    }
+
+    while (stars.length < 5) {
+      let i = stars.length
+      stars.push(<FaStar key={i} size={20} color={'#e9e9e9'} />)
+    }
+
+
   return (
     <Link className='module-trail-link' to={`${trail.id}`}>
       <div className='module-trail-photo-container'>

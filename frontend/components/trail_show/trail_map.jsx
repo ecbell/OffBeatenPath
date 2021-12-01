@@ -3,7 +3,11 @@ import mapboxgl from 'mapbox-gl';
 // import NavigationControl from "react-map-gl";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExpandAlt } from '@fortawesome/free-solid-svg-icons'
-import TrailShow from './trail_show'
+import TrailShow from './trail_show';
+import { FaStar } from 'react-icons/fa';
+import ReviewIndexItemContainer from '../reviews/review_item_container'
+
+
 
 mapboxgl.accessToken = window.mapboxAPIKey;
 
@@ -157,6 +161,16 @@ export default class TrailMap extends React.PureComponent {
   render() {
     const { lng, lat, zoom } = this.state;
     
+    let stars = []
+    for (let i = 0; i < this.props.trail.average_rating; i++) {
+      stars.push(<FaStar key={i} size={20} color={'gold'} />)
+    }
+
+    while (stars.length < 5) {
+      let i = stars.length
+      stars.push(<FaStar key={i} size={20} color={'#e9e9e9'} />)
+    }
+
     return (
       <div>
           <link rel="stylesheet" href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.1/mapbox-gl.css" type="text/css" />
@@ -172,11 +186,7 @@ export default class TrailMap extends React.PureComponent {
 
                   <span id='agg-rating'>
                     <span>
-                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
-                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
-                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
-                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
-                      <img className='yellow-star' src='https://cdn-assets.alltrails.com/assets/packs/4058040f767242298c7d.svg'></img>
+                      {stars}
                     </span>
                   </span>
                 </div>
@@ -209,7 +219,17 @@ export default class TrailMap extends React.PureComponent {
                     </span>
                   </section>
                   <section className='reviews-box'>
-                    <div>Placeholder for the review form - MVP 5</div>
+                      <ul>
+                        {
+                          this.props.reviews.map((review) => {
+                            {console.log(review.id)}
+                            {console.log(review)}
+                            {console.log(this.props.currUserId)}
+                            { console.log(this.props.usersObject[review.author_id])}
+                            return <ReviewIndexItemContainer key={review.id} review={review} currUserId={this.props.currUserId} user={this.props.usersObject[review.author_id]} />
+                          })
+                        }
+                      </ul>
                   </section>
                 </article>
           </div>

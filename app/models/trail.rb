@@ -30,6 +30,6 @@ class Trail < ApplicationRecord
     class_name: :Review 
     
   def average_rating
-    reviews.average(:star_rating)
+    reviews.average(:star_rating).round(1)
   end
 end
