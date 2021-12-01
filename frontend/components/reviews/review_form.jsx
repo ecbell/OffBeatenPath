@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import ActivityDropdown from './dropdown'
 
 
 
@@ -38,6 +39,7 @@ class ReviewForm extends React.Component {
   
     return (
       <form className='form-container' onSubmit={this.handleSubmit}>
+        <ActivityDropdown/>
         <h1 className='create-form-title'> Review this Trail! </h1>
         <label>
           {/* <input type='text' value={this.state.star_rating} onChange={this.update('star_rating')} /> */}
@@ -65,10 +67,18 @@ class ReviewForm extends React.Component {
           <faStar className='star' size={100} />
         </label>
         <label>
-          <input className='review-textbox' type='text' value={this.state.body} onChange={this.update('body')} style={{ top:'-100px'}} placeholder='Give back to the community. Share your thought about the trail so others know what to expect.'/>
+          <input className='review-textbox' type='textarea' value={this.state.body} onChange={this.update('body')} style={{ top:'-100px'}} placeholder='Give back to the community. Share your thought about the trail so others know what to expect.'/>
         </label>
         <label>Activity Type
           <input type='textarea' value={this.state.activity_type} onChange={this.update('activity_type')} />
+        </label>
+        <label>
+          <select value={this.state.value} onChange={this.handleChange}>
+            <option value="grapefruit">Grapefruit</option>
+            <option value="lime">Lime</option>
+            <option value="coconut">Coconut</option>
+            <option value="mango">Mango</option>
+          </select>
         </label>
         <label>Activity Date
           <input type='date' value={this.state.activity_date} onChange={this.update('activity_date')} />
