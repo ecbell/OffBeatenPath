@@ -23,11 +23,16 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let nextState = Object.assign({}, this.state, {trail_id: this.props.match.params.id})
-    // console.log(nextState)
-    this.props.submitReview(nextState).then(this.props.closeModal)
-      // .then(this.props.closeReview)
-    
+      if (this.props.formType === 'create') {
+        let nextState = Object.assign({}, this.state, { trail_id: this.props.match.params.id })
+        // console.log(nextState)
+        this.props.submitReview(nextState).then(this.props.closeModal)
+          // .then(this.props.closeReview)
+      } else {
+        this.props.submitReview(this.state).then(this.props.closeModal)
+      }
+
+      
   }
 
 
