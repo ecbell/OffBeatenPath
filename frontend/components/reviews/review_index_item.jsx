@@ -25,6 +25,7 @@ class ReviewIndexItem extends React.Component {
 
     this.state = this.props.review
     this.handleDelete = this.handleDelete.bind(this)
+    this.handleUpdate = this.handleUpdate.bind(this)
   }
 
 
@@ -33,6 +34,10 @@ class ReviewIndexItem extends React.Component {
     this.props.deleteReview(this.state.id)
   }
 
+  handleUpdate(e) {
+    e.preventDefault()
+    this.props.updateReview(this.state)
+  }
 
   render(){
     
@@ -71,6 +76,7 @@ class ReviewIndexItem extends React.Component {
         </div>
         <span >
           <button className='review-delete-button' onClick={this.handleDelete}>Delete</button>
+          <button className='review-delete-button' onClick={() => this.props.openModal('edit')}>Edit</button>
         </span>
       </li>
 

@@ -12,6 +12,8 @@ function Modal({ modal, closeModal }) {
     case 'create':
       component = <CreateFormContainer />;
       break;
+    case 'edit':
+      component = <EditFormContainer />;
     default:
       return null;
   }
