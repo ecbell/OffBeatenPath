@@ -132,8 +132,16 @@
   border: 2px;
   box-shadow: 1px 1px 1px 2px  rgba(0, 0, 0, 0.1);
 }
+
+.create-form-title{
+  font-family: Proxima Nova,Arial,sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #414141;
+  line-height: 3.5;
+}
   
-.star {
+/* .star {
     color: #c7c7c7;
     cursor: pointer;
   }
@@ -147,5 +155,26 @@
   }
 
   .star:hover {
-      color: #c7c7c7;
+    color: #c7c7c7;
+  } */
+
+  .review-textbox{
+    border-radius: 8px;
+    border: 1px solid #e6e6e6;
+    width: 90%;
+    height: 40%;
+    font-size: 16px;
+    font-family: Proxima Nova,Arial,sans-serif;
+    padding: 15px 16px;
+    margin-top: 36px;
+    line-height: 1.5;
+    color: #414141;
+  }
+
+  input::placeholder  { 
+    text-align:left;
+    color: #414141;
+    font-size: 14px;
+    white-space:pre-line;  
+    position:relative;
   }
