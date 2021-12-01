@@ -13,7 +13,8 @@ const mapStateToProps = (state, ownProps) => {
     trail: state.entities.trails[ownProps.match.params.id],
     allTrails: Object.values(state.entities.trails),
     reviews: Object.values(state.entities.reviews),
-    users: Object.values(state.entities.users)
+    // users: Object.values(state.entities.users),
+    usersObject: state.entities.users
   };
 };
 

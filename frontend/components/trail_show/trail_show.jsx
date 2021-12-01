@@ -132,7 +132,7 @@ class TrailShow extends React.Component{
                           <ul>
                             {
                               this.props.reviews.map((review) => {
-                                return <ReviewIndexItemContainer key={review.id} review={review} users={this.props.users} deleteToggle = {this.toggleDelete} />
+                                return <ReviewIndexItemContainer key={review.id} review={review} user={this.props.usersObject[review.author_id]} />
                               })
                             }
                           </ul>

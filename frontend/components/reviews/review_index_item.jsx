@@ -33,22 +33,27 @@ class ReviewIndexItem extends React.Component {
     this.props.deleteReview(this.state.id)
   }
 
+
   render(){
-    const user = () => {
-      for (let i = 0; i < this.props.users.length; i++) {
-        let user = this.props.users[i];
-        console.log(user.id)
-        if (user.id === this.state.id) {
-          user.first_name
-        }
-      }
-    }
+    
 
     const { activity_date, activity_type, body, id, star_rating } = this.state
-    console.log(this.props.users[0].first_name)
+
+    let stars = []  
+    for (let i = 1; i < 6; i++) {
+      stars = stars.concat(['hello'])
+
+    }
+    
+    console.log(this.props.user)
+
     return (
       <li>
-        {user}
+        <div className='review-user-name'>
+          <span>{ this.props.user.first_name } </span>
+          <span> { this.props.user.last_name } </span>
+        </div>
+        {stars}
         {activity_date}
         {star_rating}
         {activity_type}

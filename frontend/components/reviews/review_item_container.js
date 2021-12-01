@@ -3,12 +3,6 @@ import { requestReviews, deleteReview, updateReview } from '../../actions/review
 import ReviewIndexItem from './review_index_item';
 
 
-const mSTP = (state) => {
-  return {
-    reviews: Object.values(state.entities.reviews)
-  }
-}
-
 const mDTP = (dispatch) => {
   return {
     // requestReviews: (() => dispatch(requestReviews())),
