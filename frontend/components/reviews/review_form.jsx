@@ -1,4 +1,8 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
+
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -29,11 +33,16 @@ class ReviewForm extends React.Component {
       return '...loading'
     }
     
+
+
+  
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className='form-container' onSubmit={this.handleSubmit}>
         {/* <h1>Write Review </h1> */}
         <label>Rating
-          <input type='text' value={this.state.star_rating} onChange={this.update('star_rating')} />
+          {/* <input type='text' value={this.state.star_rating} onChange={this.update('star_rating')} /> */}
+          {/* <input type='radio' name='rating' value='1' onClick={this.update('star_rating')}/> */}
+          <fas className='star' size={100}/>
         </label>
         <label>Activity Type
           <input type='text' value={this.state.activity_type} onChange={this.update('activity_type')} />
