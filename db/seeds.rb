@@ -120,7 +120,7 @@ trail2 = Trail.create(trail_name: "Zion Narrows Riverside Walk",
                       lat: 47.49998,
                       waypoints: '11.70411,47.4423')
 
-  photo5 = open('https://off-beaten-path-seeds.s3.us-east-2.amazonaws.com/IMG_6004.jpeg')
+  photo5 = open('https://off-beaten-path-seeds.s3.us-east-2.amazonaws.com/IMG_6002.jpeg')
   trail5.photo.attach(io: photo5, filename: 'gaisalmstieg.jpg')
 
 
@@ -146,7 +146,8 @@ review10 = Review.create!([{author_id: 7, trail_id: 5, star_rating: 4, activity_
 body: 'Hiking in the mountains reminds me of how beautiful,yet wild our earth is. Doing this hike, I did have time to ponder the fundamental morality of human beings.'}])
 review9 = Review.create!([{author_id: 6, trail_id: 2, star_rating: 5, activity_type: 'backpacking', activity_date: '2018-11-15', 
 body: 'Walking the trails in Zion National Park was amazing. I recommend all of these trails! Do not go in summer, though due to the heat!'}])
-
+review10 = Review.create!([{author_id: 4, trail_id: 5, star_rating: 4, activity_type: 'fishing', activity_date: '2021-12-01', 
+body: 'Love Austria. Inspired a few more country songs! It was a snowy day, but I could do smoe ice fishing in the lake, which was very enjoyable.'}])
 
 park1 = Park.create!(park_name: "Zion National Park",
                         city: "Springdale",

@@ -18,6 +18,8 @@
   line-height: 1.44;
   color: #414141;
   padding: 0px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 #expand-icon{
