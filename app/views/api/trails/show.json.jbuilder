@@ -17,6 +17,14 @@
   end
 end
 
+  json.park do 
+    @park.each do |park|
+      json.set! park.id do
+        json.extract! park, :id, :park_name
+    end
+  end
+end
+
 json.nearbyTrails do 
   json.array! @nearby_trails do |trail|
       json.extract! trail, :id, :trail_name, :description, :length, :park_id, :lat, :lng, :difficulty, :elevation_gain, :route_type, :average_rating

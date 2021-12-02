@@ -190,7 +190,7 @@ export default class TrailMap extends React.PureComponent {
                     </span>
                   </span>
                 </div>
-                <a className='link-to-park'>Zion National Park</a>
+                <a className='link-to-park'> {this.props.parkName}</a>
               </div>
             </div>
             <div className='main-container-sidebar' >

@@ -106,7 +106,7 @@ class TrailShow extends React.Component{
                     </span>
                   </span>
                 </div>
-                <div className='link-to-park'>Zion National Park</div>
+                <div className='link-to-park'>{this.props.park.park_name}</div>
               </div>
             </div>
             <div className='main-container' >
@@ -210,7 +210,7 @@ class TrailShow extends React.Component{
                 <div className='link-to-trail-box'>
                   <button className='link-to-trail' onClick={this.showComponent}> View Trail Details  <FontAwesomeIcon id='expand-icon' icon={faExpandAlt} /></button>
                 </div>
-                <TrailMap className='second-screen-map' trail={this.props.trail} reviews={this.props.reviews} currUserId={this.props.currUserId} usersObject={this.props.usersObject} isActive={this.state.isActive} />
+                <TrailMap className='second-screen-map' trail={this.props.trail} reviews={this.props.reviews} parkName={this.props.park.park_name} currUserId={this.props.currUserId} usersObject={this.props.usersObject} isActive={this.state.isActive} />
               </div>
             ) :
             (null)
