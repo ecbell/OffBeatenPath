@@ -65,7 +65,7 @@ class TrailShow extends React.Component{
       }
     })
 
-    console.log(nearbyTrails)
+    // console.log(nearbyTrails)
 
     let stars = []
     for (let i = 0; i < average_rating; i++) {

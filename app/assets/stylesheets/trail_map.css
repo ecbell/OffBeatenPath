@@ -52,13 +52,14 @@
   position: relative;
   flex-direction: row;
   justify-content: space-around;
-  /* top: 10vh; */
+  background: #FFFFFF;
 }
 
 .left-trail-side-bar{
   width: 34%;
   height: auto;
   float: right;
+  overflow: scroll;
 }
 
 .trail-photo-sidebar {
@@ -160,9 +161,8 @@ border-radius: 4px; */
 }
 
 .reviews-box{
-  overflow: scroll;
 }
 
 .reviews-sidebar{
-  overflow: scroll;
-}
+    height: 200px;
+  }
