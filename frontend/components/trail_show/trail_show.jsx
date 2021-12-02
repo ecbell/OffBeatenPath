@@ -1,17 +1,13 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faExpandAlt } from '@fortawesome/free-solid-svg-icons';
 import TrailMap from './trail_map';
 import TrailIndex from './trail_index';
 import SearchNav from '../search/nav_search';
 import { faExpandAlt } from '@fortawesome/free-solid-svg-icons';
 import CreateFormContainer from '../reviews/create_form_container'
-// import ReviewIndexContainer from '../reviews/review_index_container';
 import ReviewIndexItemContainer from '../reviews/review_item_container'
 import Modal from '../modal/modal';
-import EditReviewFormContainer from '../reviews/edit_form_container'
-import EditReviewForm from '../reviews/edit_review_form'
-import { FaStar } from 'react-icons/fa';
+import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 
@@ -70,14 +66,20 @@ class TrailShow extends React.Component{
 
     let stars = []
     for (let i = 0; i < average_rating; i++) {
-      stars.push(<FaStar key={i} size={20} color={'gold'} />)
+      if ((average_rating - i) < 1 && (average_rating - i) > 0.1) { 
+        stars.push(<FaStarHalfAlt key={i} size={20} color={'gold'} />)
+      } else {
+        stars.push(<FaStar key={i} size={20} color={'gold'} />)
+      }
     }
 
     while (stars.length < 5) {
       let i = stars.length
       stars.push(<FaStar key={i} size={20} color={'#e9e9e9'} />)
     }
-    
+
+    const numReviews = this.props.reviews.length
+
     return(
       
       <div>
@@ -96,7 +98,7 @@ class TrailShow extends React.Component{
                     <span className='difficulty' style={difficulty === 'easy' ? { backgroundColor: '#428a13' } : difficulty === 'moderate' ? { backgroundColor: '#4bafe1' } : { backgroundColor: '#676767' }}>{difficulty}</span>
                   <span id='agg-rating'>
                     <span>
-                      {stars}
+                      {stars} <span id='num-reviews'>( {numReviews} )</span>
                     </span>
                   </span>
                 </div>
@@ -139,7 +141,7 @@ class TrailShow extends React.Component{
                           <div className='average-rating'>
                             <div className='average-rating-bucket'>{average_rating}</div>
                             <div className='stars-bucket'>{stars}</div>
-                            <div className='average-rating-subtext'>(Average Rating)</div>
+                            <div className='average-rating-subtext'> {numReviews} Reviews </div>
                           </div>
                             <div className='create-review-box'>
                             {this.props.currUserId ? (<button className='review-button' onClick={() => this.props.openModal('create')}>Write Review</button>) : (

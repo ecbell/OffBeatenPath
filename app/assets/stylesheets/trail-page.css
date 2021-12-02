@@ -361,3 +361,10 @@ body{
 .module-trail-link{
   text-decoration: none;
 }
+
+#num-reviews{
+  font-weight: 400;
+  font-style: italic;
+  color: #fff;
+
+}

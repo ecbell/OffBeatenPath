@@ -40,6 +40,11 @@ class ReviewIndexItem extends React.Component {
     }
     
 
+    const date = new Date(activity_date + 'T00:00')
+    const formatDate = date.toString().split(" ").slice(1)
+    const formattedDate = formatDate[0] + ' ' + formatDate[1] + ' ' + formatDate[2]
+
+
     return (
       <li className='single-review'>
         <div className='review-user-name'>
@@ -50,7 +55,7 @@ class ReviewIndexItem extends React.Component {
           <span>
             {stars}
           </span>
-            <span className='activity-date'> { activity_date } </span>
+            <span className='activity-date'> { formattedDate } </span>
         </div>
         <div className='activity-type-container'>
           <div className='activity-type'>{activity_type}</div>
