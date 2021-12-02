@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faExpandAlt } from '@fortawesome/free-solid-svg-icons';
 import TrailMap from './trail_map';
 import TrailIndex from './trail_index';
-import { Link } from 'react-router-dom';
 import SearchNav from '../search/nav_search';
 import { faExpandAlt } from '@fortawesome/free-solid-svg-icons';
 import CreateFormContainer from '../reviews/create_form_container'
@@ -12,7 +11,9 @@ import ReviewIndexItemContainer from '../reviews/review_item_container'
 import Modal from '../modal/modal';
 import EditReviewFormContainer from '../reviews/edit_form_container'
 import EditReviewForm from '../reviews/edit_review_form'
-import { FaStar } from 'react-icons/fa'
+import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
 
 
 class TrailShow extends React.Component{
@@ -23,7 +24,8 @@ class TrailShow extends React.Component{
       trail: this.props.trail,
       isActive: false,
       createReview: false,
-      deleteToggle: false
+      deleteToggle: false,
+      currUser: this.props.currUserId
     }
 
     this.showComponent = this.showComponent.bind(this)
@@ -49,6 +51,7 @@ class TrailShow extends React.Component{
   toggleDelete() {
     this.setState({ deleteToggle: !this.state.deleteToggle })
   }
+
   
   render() {
     if (!this.props.trail ) {
@@ -64,8 +67,6 @@ class TrailShow extends React.Component{
         nearbyTrails.push(trail)
       }
     })
-
-    // console.log(nearbyTrails)
 
     let stars = []
     for (let i = 0; i < average_rating; i++) {
@@ -141,7 +142,10 @@ class TrailShow extends React.Component{
                             <div className='average-rating-subtext'>(Average Rating)</div>
                           </div>
                             <div className='create-review-box'>
-                              <button className='review-button' onClick={() => this.props.openModal('create')}>Write Review</button>
+                            {this.props.currUserId ? (<button className='review-button' onClick={() => this.props.openModal('create')}>Write Review</button>) : (
+                              <Link id='review-button-link' to='/login'>Login to write a Review</Link>)
+                              }
+                              {/* <button className='review-button' onClick={() => this.props.openModal('create')}>Write Review</button> */}
                           </div>
                         {/* {this.state.createReview ? <CreateFormContainer trail_id={this.props.match.params.id} closeReview={this.getReviewForm}  /> : null} */}
                       </div>

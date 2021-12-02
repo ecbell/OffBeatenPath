@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import EditReviewForm from './edit_review_form'
 import { FaStar } from 'react-icons/fa'
 import Modal from '../modal/modal';
@@ -42,8 +41,7 @@ class ReviewIndexItem extends React.Component {
       stars.push(<FaStar key={i} size={20} color={'#e9e9e9'} />)
     }
     
-    // console.log(this.props.user)
-    // debugger
+
     return (
       <li className='single-review'>
         <div className='review-user-name'>
