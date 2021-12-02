@@ -81,6 +81,15 @@ body{
   z-index: 1;
 }
 
+/* .module-title-bucket{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  bottom: 145px;
+  margin: 24px 24px;
+  z-index: 1;
+} */
+
 .trail-rating{
   display: flex;
   position: absolute;
@@ -90,9 +99,10 @@ body{
 .trail-title{
   color: #f2f2f2;
   font-family: Proxima Nova,Arial,sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 0px;
+  line-height: 1.2;
 }
 
 .trail-specs{
@@ -297,8 +307,6 @@ body{
   border-radius: 8px;
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 8px 8px;
-  
-
 }
 
 .module-trail-title{

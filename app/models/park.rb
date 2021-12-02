@@ -22,7 +22,7 @@ class Park < ApplicationRecord
 
   has_one_attached :photo
 
-  # has_many :trails,
-  #   class_name: :Trail
+  has_many :trails,
+    class_name: :Trail
 
 end

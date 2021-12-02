@@ -30,8 +30,8 @@ class Trail < ApplicationRecord
     foreign_key: :trail_id,
     class_name: :Review 
 
-  # belongs_to :park,
-  #   class_name: :Park
+  belongs_to :park,
+    class_name: :Park
     
   def average_rating
     reviews.average(:star_rating).round(1)

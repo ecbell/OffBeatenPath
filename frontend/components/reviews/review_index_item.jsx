@@ -27,8 +27,6 @@ class ReviewIndexItem extends React.Component {
 
   render(){
     
-    // console.log(this.props)
-
     const { activity_date, activity_type, body, id, star_rating, author_id } = this.state
 
     let stars = []

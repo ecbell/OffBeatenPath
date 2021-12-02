@@ -22,7 +22,10 @@ Review.destroy_all
 demo_user = User.create([{first_name: "demo-user", last_name: "user", email: "demo@demo.com", city: "", state: "", password: "password"}])
 user2 = User.create!([{first_name: "Henry David", last_name: "Thoreau", email: "walkinthewoods@fake.com", city: "Concord", state: "Massachusetts", password: "password"}])
 user3 = User.create!([{first_name: "Johann Wolfgang", last_name: "von Goethe", email: "werther@naturalistfake.org", city: "Weimar", state: "Vermont", password: "password"}])
-user4 = User.create!([{  first_name: "Emmylou", last_name: "Harris", email: "bluegrass@hikefake.com", city: "Nashville", state: "Tennessee", password: "password"}])
+user4 = User.create!([{first_name: "Emmylou", last_name: "Harris", email: "bluegrass@hikefake.com", city: "Nashville", state: "Tennessee", password: "password"}])
+user5 = User.create!([{first_name: "Franz", last_name: "Kafka", email: "coach@metamorphosiscoachingfake.com", city: "Vienna", state: "Vermont", password: "password"}])
+user6 = User.create!([{first_name: "Laura", last_name: "Bassi", email: "naturephysicist@fake.com", city: "Bologna", state: "New York", password: "password"}])
+user7 = User.create!([{first_name: "Iris", last_name: "Murdoch", email: "naturallaws@fake.com", city: "Oxford", state: "Massachusetts", password: "password"}])
 
 
 trail1 = Trail.create!(trail_name: "Angels Landing Trail",
@@ -90,7 +93,7 @@ trail2 = Trail.create(trail_name: "Zion Narrows Riverside Walk",
   trail3.photo.attach(io: photo3, filename: 'emerald_pools.jpg')
 
 
-    trail4 = Trail.create(trail_name: "Eng, Lamsenjochhutte, Hahnenkamplspitze, Faule Eng Loop",
+    trail4 = Trail.create(trail_name: "Eng, Lamsenjochhutte, Hahnenkamplspitze Loop",
                         park_id: 2,
                         difficulty: "hard",
                         length: 11.8,
@@ -100,12 +103,12 @@ trail2 = Trail.create(trail_name: "Zion Narrows Riverside Walk",
                         details: "Beginning at the parking area at the Alpengasthof in the Eng (1203 meters), the trail starts on a paved walkway through part of the Ahornboden (Maple Tree Field) and the small village where there is a cheese factory and a small country store. Turn left onto the gravel road leading gently up to the first climb. Follow the signs to the Panoramaweg which will go uphill and lead past a small waterfall. The trail will then turn left into the woods. Along this route there are great views of the surrounding mountains. The Panoramaweg will eventually lead to Binsalm (1502). ",
                         lng: 11.56734,
                         lat: 47.40236,
-                        waypoints: '11.5490352,47.3991792;11.56734,47.40236')
+                        waypoints: '11.5490352,47.3991792;11.6035134,47.3800788;11.615701,47.402450;11.6164393,47.4439957;11.56734,47.40236')
 
   photo4 = open('https://off-beaten-path-seeds.s3.us-east-2.amazonaws.com/IMG_5948.jpeg')
   trail4.photo.attach(io: photo4, filename: 'eng.jpg')
 
-  trail5 = Trail.create(trail_name: "Gaisalmsteig and Mariensteig via Oberaubach",
+  trail5 = Trail.create(trail_name: "Gaisalmsteig and Mariensteig",
                       park_id: 2,
                       difficulty: "easy",
                       length: 5.0,
@@ -127,14 +130,22 @@ review2 = Review.create!([{author_id: 3, trail_id: 3, star_rating: 5, activity_t
 body: 'The emerald pools!! How romantic! Although not recommended, I ended up bathing in them due to the heat along the trail.'}])
 review3 = Review.create!([{author_id: 2, trail_id: 3, star_rating: 5, activity_type: 'bird watching', activity_date: '2020-08-21', 
 body: 'There are many birds along the emerald pools. It is a good path to bring your binoculars on and a lawn chair to observe.'}])
-review4 = Review.create!([{author_id: 1, trail_id: 3, star_rating: 5, activity_type: 'walking', activity_date: '2020-11-21', 
+review4 = Review.create!([{author_id: 1, trail_id: 3, star_rating: 4, activity_type: 'walking', activity_date: '2020-11-21', 
 body: 'This was a nice and easy walk along the emerald pools. I liked that it was a loop so the scenery was never repeated.'}])
 review5 = Review.create!([{author_id: 2, trail_id: 4, star_rating: 5, activity_type: 'backpacking', activity_date: '2021-08-21', 
 body: 'This trail was very strenuous and hiking along the passes required sure-footedness, but once you reach the summit of Lamsenjoch, what a sight!! I definitely recommend this hike.'}])
-review6 = Review.create!([{author_id: 3, trail_id: 5, star_rating: 5, activity_type: 'backpacking', activity_date: '2020-06-15', 
+review6 = Review.create!([{author_id: 3, trail_id: 5, star_rating: 5, activity_type: 'bird watching', activity_date: '2020-06-15', 
 body: 'The hike along the clear, blue water was absolutely lovely. It was an easy hike and there was room to sit by the water. I ended up napping in the fresh mountain air and writing in my journal. Thereafter, I rushed to the endpoint to catch the boat home.'}])
-review7 = Review.create!([{author_id: 3, trail_id: 4, star_rating: 5, activity_type: 'backpacking', activity_date: '2020-10-15', 
+review7 = Review.create!([{author_id: 3, trail_id: 4, star_rating: 5, activity_type: 'hiking', activity_date: '2020-10-15', 
 body: 'I LOVED LOVED LOVED the mountain air, but the hike was less leisurly. I saw there was an option for via ferrata on one path, never in my life would I do that!'}])
+review8 = Review.create!([{author_id: 5, trail_id: 4, star_rating: 1, activity_type: 'via ferrata', activity_date: '2021-06-02', 
+body: 'Too steep, sunlight too bright. The elements were too intense to let your mind wander else where. I did the via ferrata path; it was not as exciting as they had said.'}])
+review9 = Review.create!([{author_id: 6, trail_id: 5, star_rating: 3, activity_type: 'hiking', activity_date: '2020-10-15', 
+body: 'The Austrian Tyrols, although beautiful, are simply not a good as the Italian Alps! The river was beautiful, but the lakes in the Dolomites do not compare. I suggest hikes to look at options around there.'}])
+review10 = Review.create!([{author_id: 7, trail_id: 5, star_rating: 4, activity_type: 'walking', activity_date: '2021-07-11', 
+body: 'Hiking in the mountains reminds me of how beautiful,yet wild our earth is. Doing this hike, I did have time to ponder the fundamental morality of human beings.'}])
+review9 = Review.create!([{author_id: 6, trail_id: 2, star_rating: 5, activity_type: 'backpacking', activity_date: '2018-11-15', 
+body: 'Walking the trails in Zion National Park was amazing. I recommend all of these trails! Do not go in summer, though due to the heat!'}])
 
 
 park1 = Park.create!(park_name: "Zion National Park",

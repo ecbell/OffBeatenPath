@@ -29,8 +29,6 @@ class ReviewForm extends React.Component {
       } else {
         this.props.submitReview(this.state).then(this.props.closeModal).then(() => window.location.reload())
       }
-
-      
   }
 
 

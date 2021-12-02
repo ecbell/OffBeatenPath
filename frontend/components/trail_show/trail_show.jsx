@@ -63,7 +63,7 @@ class TrailShow extends React.Component{
     const nearbyTrails = []
     // console.log(this.props.allTrails)
     this.props.allTrails.forEach(trail => {
-      if (trail.trail_name !== trail_name) {
+      if (trail.park_id === park_id && trail.trail_name !== trail_name) {
         nearbyTrails.push(trail)
       }
     })
