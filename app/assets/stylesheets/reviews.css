@@ -14,6 +14,13 @@
     letter-spacing: 1px;
     position: relative;
     text-decoration: none;
+    cursor: pointer;
+}
+
+.review-button:hover, #review-button-link:hover, .link-review-login:hover{
+  transition: all 300ms;
+  background-color: #63c522;
+  cursor: pointer;
 }
 
 .create-form-container{
