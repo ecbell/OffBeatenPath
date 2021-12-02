@@ -25,7 +25,7 @@
   color: #666666;
   font-size: 30px;
   margin-left: 30px;
-  margin-top: 25px;
+  margin-top: 33px;
   text-align: center;
   letter-spacing: -2px;
 }
@@ -36,7 +36,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   text-decoration: none;
-  left: 24vw;
+  left: 25vw;
   text-align: center;
   align-items: center;
   justify-content: center; 
@@ -58,6 +58,8 @@
   align-items: center;
   justify-content: space-between;
   min-width: 700;
+  padding-top: 6px;
+
 
 }
 
@@ -173,3 +175,10 @@ body {
 
 
 
+.divContainer{
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  justify-content: flex-end;
+  align-items: center;
+}
