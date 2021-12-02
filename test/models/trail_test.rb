@@ -15,6 +15,7 @@
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #  waypoints      :string
+#  details        :text
 #
 require 'test_helper'
 
