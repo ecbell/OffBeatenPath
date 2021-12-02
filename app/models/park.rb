@@ -18,11 +18,11 @@
 #  updated_at       :datetime         not null
 #
 class Park < ApplicationRecord
-  validates :park_name, :park_description, :country, :lng, :lat
+  validates :park_name, :park_description, :country, :lng, :lat, presence: true
 
   has_one_attached :photo
 
-  has_many :trails,
-    class_name: :Trail
+  # has_many :trails,
+  #   class_name: :Trail
 
 end
