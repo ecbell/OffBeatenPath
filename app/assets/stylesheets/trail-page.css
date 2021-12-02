@@ -97,6 +97,16 @@ body{
 }
 
 .trail-title{
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 0px;
+  line-height: 2.2;
+  color: #f2f2f2;
+  font-family: Proxima Nova,Arial,sans-serif;
+
+}
+
+.trail-title-sidebar{
   color: #f2f2f2;
   font-family: Proxima Nova,Arial,sans-serif;
   font-size: 18px;
@@ -219,8 +229,10 @@ body{
 .trail-description-text{
   text-align: left;
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 1.7;
   color: #414141;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 .trail-details{

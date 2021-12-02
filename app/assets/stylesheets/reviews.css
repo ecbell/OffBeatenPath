@@ -29,8 +29,10 @@
   width: 100%;
   margin-top: 41px;
   text-align: center;
-  margin-left: 10px;
+  /* margin-left: 10px; */
+  padding-bottom: 62px;
   align-items: center;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .empty-bucket{
@@ -82,12 +84,12 @@
   padding-left: 30px;
 }
 
-.reviews-title:hover{
+/* .reviews-title:hover{
   transition: all 300ms;
   color: #63c522;
   cursor: pointer;
 
-}
+} */
 
 .single-review{
   padding-bottom: 16px;
@@ -141,7 +143,7 @@
   color: #414141;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.7;
   padding: 10px;
 }
