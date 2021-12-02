@@ -79,6 +79,10 @@ class TrailShow extends React.Component{
     }
 
     const numReviews = this.props.reviews.length
+    const orderedReviews = []
+    const order = [].concat(this.props.reviews)
+    .sort((a, b) => a.activity_date < b.activity_date ? 1: -1)
+    .map((item) => orderedReviews.push(item) )
 
     return(
       
@@ -154,7 +158,7 @@ class TrailShow extends React.Component{
                         <div>
                           <ul>
                             {
-                              this.props.reviews.map((review) => {
+                              orderedReviews.map((review) => {
                                 // <EditReviewForm review={review} />
                                 return <ReviewIndexItemContainer key={review.id} review={review} currUser={this.props.currUserId} user={this.props.usersObject[review.author_id]} />
                               })
