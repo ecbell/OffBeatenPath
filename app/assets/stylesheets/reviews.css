@@ -120,6 +120,7 @@
 
 .activity-type-container{
   padding: 10px;
+  padding-left: 0px;
 }
 
 .activity-type{
@@ -135,6 +136,7 @@
   letter-spacing: normal;
   text-align: center;
   color: #428a13;
+  margin-top: 5px;
 }
 
 .review-body{
