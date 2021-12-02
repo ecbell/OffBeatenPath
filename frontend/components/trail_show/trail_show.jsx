@@ -54,7 +54,7 @@ class TrailShow extends React.Component{
       return '...loading'
     }
     // add reviews back in here
-    const { photo, difficulty, length, elevation_gain, route_type, description, trail_name, park_id, average_rating} = this.props.trail
+    const { photo, difficulty, length, elevation_gain, route_type, description, trail_name, park_id, average_rating, details} = this.props.trail
     
     const nearbyTrails = []
     // console.log(this.props.allTrails)
@@ -134,6 +134,18 @@ class TrailShow extends React.Component{
                         <span className='trail-stat'>Route Type</span>
                         <span className='trail-detail-stat'>{route_type}</span>
                       </span>
+                  </section>
+                  
+                  <section className='details-box'>
+                    <div>
+                        <div className='reviews-title-container'>
+                          <span className='reviews-title'>Description</span>
+                        </div>
+                        <span id='underlined'></span>
+                        <section id='trail-description-details'>
+                          <p className='trail-description-text'>{details}</p>
+                        </section>
+                    </div>
                   </section>
 
                   <section className='reviews-box'>
