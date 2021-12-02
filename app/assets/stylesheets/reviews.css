@@ -1,17 +1,19 @@
-.review-button, #review-button-link{
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
-  width: 100%;
-  height: 45px;
-  text-align: center;
-  /* display: inline-block; */
-  border: none;
-  background-color: #428a13;
-  color: #fff;
-  letter-spacing: 1px;
-  position: relative;
-  text-decoration: none;
+.review-button, #review-button-link, .link-review-login{
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    width: 100%;
+    height: 46px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-color: #428a13;
+    color: #fff;
+    letter-spacing: 1px;
+    position: relative;
+    text-decoration: none;
 }
 
 .create-form-container{

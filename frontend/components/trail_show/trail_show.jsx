@@ -143,7 +143,7 @@ class TrailShow extends React.Component{
                           </div>
                             <div className='create-review-box'>
                             {this.props.currUserId ? (<button className='review-button' onClick={() => this.props.openModal('create')}>Write Review</button>) : (
-                              <Link id='review-button-link' to='/login'>Login to write a Review</Link>)
+                              <Link className='link-review-login' to='/login'><div id='review-button-link'>Login to write a Review</div></Link>)
                               }
                               {/* <button className='review-button' onClick={() => this.props.openModal('create')}>Write Review</button> */}
                           </div>
