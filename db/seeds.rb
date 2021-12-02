@@ -28,6 +28,50 @@ user6 = User.create!([{first_name: "Laura", last_name: "Bassi", email: "natureph
 user7 = User.create!([{first_name: "Iris", last_name: "Murdoch", email: "naturallaws@fake.com", city: "Oxford", state: "Massachusetts", password: "password"}])
 
 
+
+park1 = Park.create!(park_name: "Zion National Park",
+                        city: "Springdale",
+                        state: "Utah",
+                        country: "United States",
+                        park_type: "national",
+                        acreage: 146597,
+                        park_description: "Zion National Park is a unique landscape with high cliffs, narrow gorges and a beautiful view. The park has 
+                        many famous walks. Angels Landing is an intense switchback trail with truly spectacular views from the top of the canyon. 
+                        Another famous hike is the unique Narrows Trail, a very long hike through a river that lies between a steep gorge. Other 
+                        notable trails include the East Rim Trail to the park's highest point, the Slot Canyon Subway Trail, and the family-friendly 
+                        but equally beautiful Kayenta Trail. There's also the paved Emerald Pools Trail and the more challenging West Rim Trail for 
+                        backpackers.",
+                        contact: "Zion National Park
+                                  Springdale, UT 84767-1099
+                                  For Visitor Information, call: 1-435-772-3256",
+                        park_hours: "Monday - Friday: All Day
+                                    Please note, however, that not all areas including the entrance and the visitor center are occupied or open. 
+                                    Please also note that roads, trails and other parks in the park are closed seasonally. Shuttle buses do not run 
+                                    from late November to mid-February.",
+                        lng: -112.83612,
+                        lat: 37.16124,          
+                        )
+
+photo6 = open('https://off-beaten-path-seeds.s3.us-east-2.amazonaws.com/Zion-National-Park.jpg')
+park1.photo.attach(io: photo6, filename: 'zion.jpg')
+
+park2 = Park.create!(park_name: "Karwendel Nature Park",
+                        city: "",
+                        state: "Tyrol",
+                        country: "Austria",
+                        park_type: "national",
+                        acreage: 179646,
+                        park_description: "Karwendel Nature Park, located on the border of Bavaria and Tyrol, is Austria's largest Nature Park at 727 sq km. Known for its crystal clear rivers, high alpine meadows, and distinct rocky peaks, this park is one of Austria's most popular protected areas. The diverse landscape provides habitats for a wide range of plant and animal life, including the golden eagle. In the incredible Hall Valley,  hikers can explore the salt mines and take in the panoramic views of the region. A couple of other popular options are Gleirschklamm, Seefeld, and Scharnitz. Whether you plan on visiting in the summer or winter, Karwendel Nature Park is sure to have something to offer nature lovers all year long.",
+                        contact: "For Visitor Information, call: 05245/289 14",
+                        park_hours: "Monday - Friday: All Day",
+                        lng: 11.86278,
+                        lat: 48.13722,          
+                      )
+
+
+photo7 = open('https://off-beaten-path-seeds.s3.us-east-2.amazonaws.com/IMG_5982.jpeg')
+park2.photo.attach(io: photo7, filename: 'karwendel.jpg')
+
 trail1 = Trail.create!(trail_name: "Angels Landing Trail",
                         park_id: 1,
                         difficulty: "hard",
@@ -148,46 +192,3 @@ review9 = Review.create!([{author_id: 6, trail_id: 2, star_rating: 5, activity_t
 body: 'Walking the trails in Zion National Park was amazing. I recommend all of these trails! Do not go in summer, though due to the heat!'}])
 review10 = Review.create!([{author_id: 4, trail_id: 5, star_rating: 4, activity_type: 'fishing', activity_date: '2021-12-01', 
 body: 'Love Austria. Inspired a few more country songs! It was a snowy day, but I could do smoe ice fishing in the lake, which was very enjoyable.'}])
-
-park1 = Park.create!(park_name: "Zion National Park",
-                        city: "Springdale",
-                        state: "Utah",
-                        country: "United States",
-                        park_type: "national",
-                        acreage: 146597,
-                        park_description: "Zion National Park is a unique landscape with high cliffs, narrow gorges and a beautiful view. The park has 
-                        many famous walks. Angels Landing is an intense switchback trail with truly spectacular views from the top of the canyon. 
-                        Another famous hike is the unique Narrows Trail, a very long hike through a river that lies between a steep gorge. Other 
-                        notable trails include the East Rim Trail to the park's highest point, the Slot Canyon Subway Trail, and the family-friendly 
-                        but equally beautiful Kayenta Trail. There's also the paved Emerald Pools Trail and the more challenging West Rim Trail for 
-                        backpackers.",
-                        contact: "Zion National Park
-                                  Springdale, UT 84767-1099
-                                  For Visitor Information, call: 1-435-772-3256",
-                        park_hours: "Monday - Friday: All Day
-                                    Please note, however, that not all areas including the entrance and the visitor center are occupied or open. 
-                                    Please also note that roads, trails and other parks in the park are closed seasonally. Shuttle buses do not run 
-                                    from late November to mid-February.",
-                        lng: -112.83612,
-                        lat: 37.16124,          
-                        )
-
-photo6 = open('https://off-beaten-path-seeds.s3.us-east-2.amazonaws.com/Zion-National-Park.jpg')
-park1.photo.attach(io: photo6, filename: 'zion.jpg')
-
-park2 = Park.create!(park_name: "Karwendel Nature Park",
-                        city: "",
-                        state: "Tyrol",
-                        country: "Austria",
-                        park_type: "national",
-                        acreage: 179646,
-                        park_description: "Karwendel Nature Park, located on the border of Bavaria and Tyrol, is Austria's largest Nature Park at 727 sq km. Known for its crystal clear rivers, high alpine meadows, and distinct rocky peaks, this park is one of Austria's most popular protected areas. The diverse landscape provides habitats for a wide range of plant and animal life, including the golden eagle. In the incredible Hall Valley,  hikers can explore the salt mines and take in the panoramic views of the region. A couple of other popular options are Gleirschklamm, Seefeld, and Scharnitz. Whether you plan on visiting in the summer or winter, Karwendel Nature Park is sure to have something to offer nature lovers all year long.",
-                        contact: "For Visitor Information, call: 05245/289 14",
-                        park_hours: "Monday - Friday: All Day",
-                        lng: 11.86278,
-                        lat: 48.13722,          
-                      )
-
-
-photo7 = open('https://off-beaten-path-seeds.s3.us-east-2.amazonaws.com/IMG_5982.jpeg')
-park2.photo.attach(io: photo7, filename: 'karwendel.jpg')
