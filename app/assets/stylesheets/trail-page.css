@@ -215,7 +215,7 @@ body{
   position: relative;
   border-bottom: 1px solid #e6e6e6;
   margin: 0 24px;
-  padding: 17px 0px;
+  padding: 10px 0px;
 }
 
 #trail-description-details{
@@ -233,7 +233,25 @@ body{
   color: #414141;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; */
 }
+.show-more{
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #428a13;
+  position: absolute;
+  right: 0;
+  bottom: 22px;
+  background-color: #fff;
+  box-shadow: -9px -1px 7px 5px #fff;
+  padding: 7px;
+}
+
 
 .trail-details{
   display: flex;
