@@ -10,13 +10,13 @@ const mapStateToProps = (state, ownProps) => {
   // console.log(state.session.id)
   // let reviews = Object.values(state.entities.reviews).filter(review => {
   //   review.trail_id === ownProps.match.params.id})
-  // console.log(Object.values(state.entities.parks)[0])
+  // console.log(Object.values(state.entities.authors))
   return {
     trail: state.entities.trails[ownProps.match.params.id],
     allTrails: Object.values(state.entities.trails),
     reviews: Object.values(state.entities.reviews),
     // users: Object.values(state.entities.users),
-    usersObject: state.entities.users,
+    usersObject: state.entities.authors,
     currUserId: state.session.id,
     park: Object.values(state.entities.parks)[0]
   };
