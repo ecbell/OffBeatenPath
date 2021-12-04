@@ -326,6 +326,23 @@
   border: none;
 }
 
+.review-close-button{
+  border-color: #428a13;
+  color: #428a13;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 168px;
+  height: 40px;
+  padding-bottom: 3px;
+  margin-top: 30px;
+  background-color: transparent;
+  margin-right: 25px;
+}
+
 .submit-button-review-container{
   display: flex;
   justify-content: flex-end;

@@ -5,8 +5,6 @@ import EditReviewForm from './edit_review_form';
 import {closeModal} from '../../actions/modal_actions'
 
 const mSTP = (state, ownProps) => {
-  console.log(state.entities.reviews[ownProps.reviewId])
-  // debugger
   return {
     formType: 'edit',
     review: state.entities.reviews[ownProps.reviewId]

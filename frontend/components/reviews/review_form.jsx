@@ -103,6 +103,7 @@ class ReviewForm extends React.Component {
         </label>
         </div>
         <div className='submit-button-review-container'>
+          <button className='review-close-button' onClick={() => this.props.closeModal()}>cancel</button>
         <input className='review-submit-button' type='submit' value={this.props.formType} />
         </div>
       </form>
