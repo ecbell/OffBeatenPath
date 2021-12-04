@@ -1,7 +1,13 @@
 import React from 'react';
 import EditReviewForm from './edit_review_form'
-import { FaStar } from 'react-icons/fa'
+import { FaStar, FaUserCircle } from 'react-icons/fa'
 import Modal from '../modal/modal';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+
+
+
+
 
 
 
@@ -47,14 +53,19 @@ class ReviewIndexItem extends React.Component {
 
     return (
       <li className='single-review'>
+        <div className='flexbox-pic-name'>
+        <span className='profile-pic'><FaUserCircle size={50} color={'#f2f2f2'} /></span>
+        <div className='flexbox-name-date'>
         { this.props.user ? 
         (<div className='review-user-name'>
-          
-            <span>{ this.props.user.first_name } </span>
-            <span> {this.props.user.last_name} </span>
+            <div id='reviewer-name'>
+              <span >{ this.props.user.first_name } </span>
+              <span > {this.props.user.last_name} </span>
+            </div>
         </div>)
           : 
           (<div className='review-user-name'>
+
             <span>{this.props.currUserName.first_name} </span>
             <span> {this.props.currUserName.last_name} </span>
           </div>) }
@@ -65,6 +76,8 @@ class ReviewIndexItem extends React.Component {
           </span>
             <span className='activity-date'> { formattedDate } </span>
         </div>
+        </div>
+      </div>
         <div className='activity-type-container'>
           <div className='activity-type'>{activity_type}</div>
         </div>
