@@ -47,10 +47,18 @@ class ReviewIndexItem extends React.Component {
 
     return (
       <li className='single-review'>
-        <div className='review-user-name'>
-          <span>{ this.props.user.first_name } </span>
-          <span> { this.props.user.last_name } </span>
-        </div>
+        { this.props.user ? 
+        (<div className='review-user-name'>
+          
+            <span>{ this.props.user.first_name } </span>
+            <span> {this.props.user.last_name} </span>
+        </div>)
+          : 
+          (<div className='review-user-name'>
+            <span>{this.props.currUserName.first_name} </span>
+            <span> {this.props.currUserName.last_name} </span>
+          </div>) }
+
         <div className='date-star-container'>
           <span>
             {stars}

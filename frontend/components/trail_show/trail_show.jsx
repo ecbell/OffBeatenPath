@@ -183,7 +183,7 @@ class TrailShow extends React.Component{
                             {
                               orderedReviews.map((review) => {
                                 // <EditReviewForm review={review} />
-                                return <ReviewIndexItemContainer key={review.id} review={review} currUser={this.props.currUserId} user={this.props.usersObject[review.author_id]} />
+                                return <ReviewIndexItemContainer key={review.id} review={review} currUserName={this.props.currUser} currUser={this.props.currUserId} user={this.props.usersObject[review.author_id]} />
                               })
                             }
                           </ul>

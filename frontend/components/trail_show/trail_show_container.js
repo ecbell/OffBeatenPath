@@ -7,7 +7,7 @@ import { openModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  // console.log(state.session.id)
+  // console.log(Object.values(state.entities.users)[0].first_name)
   // let reviews = Object.values(state.entities.reviews).filter(review => {
   //   review.trail_id === ownProps.match.params.id})
   // console.log(Object.values(state.entities.authors))
@@ -18,6 +18,7 @@ const mapStateToProps = (state, ownProps) => {
     // users: Object.values(state.entities.users),
     usersObject: state.entities.authors,
     currUserId: state.session.id,
+    currUser: Object.values(state.entities.users)[0],
     park: Object.values(state.entities.parks)[0]
   };
 };
