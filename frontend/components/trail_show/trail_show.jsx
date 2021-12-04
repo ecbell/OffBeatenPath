@@ -202,7 +202,7 @@ class TrailShow extends React.Component{
                 <div className='related-trails-box'>
                   <h1 className='related-trails-title'>Nearby Trails</h1>
                   <div className='related-trails'>
-                      <TrailIndex allTrails={nearbyTrails} />
+                      <TrailIndex allTrails={nearbyTrails} park={this.props.park} />
                   </div>
                 </div>
               </div>
