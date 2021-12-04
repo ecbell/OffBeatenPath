@@ -5,8 +5,6 @@ import { withRouter } from 'react-router-dom'
 import {closeModal} from '../../actions/modal_actions'
 
 const mSTP = (state, ownProps) => {
-console.log(state.session.id)
-console.log(ownProps)
   return {
     review: {
       star_rating: "",
