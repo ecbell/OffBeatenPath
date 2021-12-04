@@ -32,9 +32,9 @@ class TrailShow extends React.Component{
   }
 
   componentDidMount() {
-    // this.props.fetchTrails()
     this.props.fetchTrail(this.props.match.params.id)
-    // this.props.requestReviews()
+    window.scrollTo(0, 0)
+    
     
   }
 
@@ -198,8 +198,8 @@ class TrailShow extends React.Component{
               </div>
               <div className='right-column'>
                 <div className='link-map-box'>
-                    <img className='img-map' onClick={this.showComponent} src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${lng},${lat},12,0/300x200?access_token=${mapboxgl.accessToken}`}/>
-                    <button className='link-to-map' onClick={this.showComponent}>View Full Map <FontAwesomeIcon icon={faExpandAlt}/></button>
+                    <img className='img-map' onClick={window.scrollTo(0, 0)} onClick={this.showComponent} src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${lng},${lat},12,0/300x200?access_token=${mapboxgl.accessToken}`}/>
+                    <button className='link-to-map' onClick={window.scrollTo(0, 0)} onClick={this.showComponent} >View Full Map <FontAwesomeIcon icon={faExpandAlt}/></button>
                 </div>
                 <div className='related-trails-box'>
                   <h1 className='related-trails-title'>Nearby Trails</h1>
@@ -221,7 +221,7 @@ class TrailShow extends React.Component{
               <div >
                 {/* <div className='left-trail-side-bar'> */}
                 <div className='link-to-trail-box'>
-                  <button className='link-to-trail' onClick={this.showComponent}> View Trail Details  <FontAwesomeIcon id='expand-icon' icon={faExpandAlt} /></button>
+                  <button className='link-to-trail' onClick = { window.scrollTo(0, 0)} onClick={this.showComponent} > View Trail Details  <FontAwesomeIcon id='expand-icon' icon={faExpandAlt} /></button>
                 </div>
                 <TrailMap className='second-screen-map' trail={this.props.trail} reviews={orderedReviews} parkName={this.props.park.park_name} currUserId={this.props.currUserId} usersObject={this.props.usersObject} isActive={this.state.isActive} />
               </div>
