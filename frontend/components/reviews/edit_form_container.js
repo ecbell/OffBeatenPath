@@ -5,9 +5,10 @@ import EditReviewForm from './edit_review_form';
 import {closeModal} from '../../actions/modal_actions'
 
 const mSTP = (state, ownProps) => {
+
   return {
     formType: 'edit',
-    review: state.entities.reviews[ownProps.reviewId]
+    review: state.entities.reviews[ownProps.reviewId],
 
   }
 }

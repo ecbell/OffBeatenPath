@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom'
 import {closeModal} from '../../actions/modal_actions'
 
 const mSTP = (state, ownProps) => {
-  
   let curr = new Date();
   curr.setDate(curr.getDate() + 3);
   let date = curr.toISOString().substr(0, 10);
@@ -19,7 +18,8 @@ const mSTP = (state, ownProps) => {
       author_id: state.session.id,
       trail_id: ownProps.match.params.id
     },
-    formType: 'create'
+    formType: 'create',
+    trail: state.entities.trails[ownProps.match.params.id]
   }
 }
 

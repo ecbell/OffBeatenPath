@@ -41,7 +41,9 @@ class ReviewForm extends React.Component {
 
     return (
       <form className='form-container' onSubmit={this.handleSubmit}>
-        <h1 className='create-form-title'> Review this Trail! </h1>
+        {this.props.trail ? <h1 className='create-form-title'> Review {this.props.trail.trail_name}! </h1> : 
+          <h1 className='create-form-title'>Edit your Review! </h1> 
+          }
         <label>
           {/* <input type='text' value={this.state.star_rating} onChange={this.update('star_rating')} /> */}
           <input className='radio' type='radio' name='rating' value='1' onClick={this.update('star_rating')}/>
