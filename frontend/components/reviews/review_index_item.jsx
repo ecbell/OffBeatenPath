@@ -2,13 +2,6 @@ import React from 'react';
 import EditReviewForm from './edit_review_form'
 import { FaStar, FaUserCircle } from 'react-icons/fa'
 import Modal from '../modal/modal';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
-
-
-
-
-
 
 
 class ReviewIndexItem extends React.Component {

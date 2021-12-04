@@ -9,7 +9,9 @@ import ReviewIndexItemContainer from '../reviews/review_item_container'
 import Modal from '../modal/modal';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import mapboxgl from 'mapbox-gl';
 
+mapboxgl.accessToken = window.mapboxAPIKey;
 
 
 class TrailShow extends React.Component{
@@ -54,7 +56,7 @@ class TrailShow extends React.Component{
       return '...loading'
     }
     // add reviews back in here
-    const { photo, difficulty, length, elevation_gain, route_type, description, trail_name, park_id, average_rating, details} = this.props.trail
+    const { photo, difficulty, length, elevation_gain, route_type, description, trail_name, park_id, average_rating, details, lng, lat} = this.props.trail
     
     const nearbyTrails = []
     // console.log(this.props.allTrails)
@@ -196,7 +198,7 @@ class TrailShow extends React.Component{
               </div>
               <div className='right-column'>
                 <div className='link-map-box'>
-                    {/* <img src=''/> */}
+                    <img className='img-map' onClick={this.showComponent} src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${lng},${lat},12,0/300x200?access_token=${mapboxgl.accessToken}`}/>
                     <button className='link-to-map' onClick={this.showComponent}>View Full Map <FontAwesomeIcon icon={faExpandAlt}/></button>
                 </div>
                 <div className='related-trails-box'>
