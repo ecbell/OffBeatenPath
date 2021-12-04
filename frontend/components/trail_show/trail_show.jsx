@@ -26,7 +26,7 @@ class TrailShow extends React.Component{
 
     this.showComponent = this.showComponent.bind(this)
     this.getReviewForm = this.getReviewForm.bind(this);
-    this.toggleDelete = this.toggleDelete.bind(this);
+    // this.toggleDelete = this.toggleDelete.bind(this);
   }
 
   componentDidMount() {
@@ -44,9 +44,9 @@ class TrailShow extends React.Component{
       this.setState({ isActive: !this.state.isActive }) 
   } 
 
-  toggleDelete() {
-    this.setState({ deleteToggle: !this.state.deleteToggle })
-  }
+  // toggleDelete() {
+  //   this.setState({ deleteToggle: !this.state.deleteToggle })
+  // }
 
   
   render() {
@@ -64,9 +64,20 @@ class TrailShow extends React.Component{
       }
     })
 
+    const numReviews = this.props.reviews.length
+
+    let addRating = 0
+    this.props.reviews.forEach(review => {
+      addRating += review.star_rating 
+    })
+
+    const avgRating = (addRating / numReviews).toFixed(1)
+
+    // console.log(avgRating)
+
     let stars = []
-    for (let i = 0; i < average_rating; i++) {
-      if ((average_rating - i) < 1 && (average_rating - i) > 0.1) { 
+    for (let i = 0; i < avgRating; i++) {
+      if ((avgRating - i) < 1 && (avgRating - i) > 0.1) {
         stars.push(<FaStarHalfAlt key={i} size={20} color={'gold'} />)
       } else {
         stars.push(<FaStar key={i} size={20} color={'gold'} />)
@@ -78,7 +89,6 @@ class TrailShow extends React.Component{
       stars.push(<FaStar key={i} size={20} color={'#e9e9e9'} />)
     }
 
-    const numReviews = this.props.reviews.length
     const orderedReviews = []
     const order = [].concat(this.props.reviews)
     .sort((a, b) => a.activity_date < b.activity_date ? 1: -1)
@@ -156,7 +166,7 @@ class TrailShow extends React.Component{
                         </div>
                       <div className='create-form-container'>
                           <div className='average-rating'>
-                            <div className='average-rating-bucket'>{average_rating}</div>
+                            <div className='average-rating-bucket'>{avgRating}</div>
                             <div className='stars-bucket'>{stars}</div>
                             <div className='average-rating-subtext'> {numReviews} Reviews </div>
                           </div>
