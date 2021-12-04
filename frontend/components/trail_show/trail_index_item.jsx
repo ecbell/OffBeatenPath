@@ -31,7 +31,6 @@ const TrailIndexItem = ({ trail, park }) => {
       minutes += Math.round(ascentTime)
     }
 
-    console.log(ascentTime)
     let hikingMiles = 0
 
     // 20 min per mile
