@@ -23,13 +23,17 @@ const TrailIndexItem = ({ trail, park }) => {
     let hours = 0
     let minutes = 0
     // 1 min for every 10 meters ascent
-    let ascentTime = (trail.length * 0.3048) / 10
+    let ascentTime = (trail.elevation_gain * 0.3048) / 10
     if (ascentTime >= 60) {
       hours += Math.round(ascentTime / 60)
-      minutes += ascentTime % 60
+      minutes += Math.round(ascentTime % 60)
+    } else {
+      minutes += Math.round(ascentTime)
     }
 
+    console.log(ascentTime)
     let hikingMiles = 0
+
     // 20 min per mile
       for (let i = 0; i < trail.length; i++) {
         hikingMiles += 20
@@ -37,9 +41,15 @@ const TrailIndexItem = ({ trail, park }) => {
     
     if (hikingMiles >= 60) {
       hours += Math.round(hikingMiles / 60)
-      minutes += hikingMiles % 60
+      minutes += Math.round(hikingMiles % 60)
+    } else {
+      minutes += Math.round(hikingMiles)
     }
 
+    if (minutes >= 60) {
+      hours += Math.round(minutes / 60)
+      minutes = Math.round(minutes % 60)
+    }
     
 
   return (
