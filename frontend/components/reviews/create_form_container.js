@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createReview } from '../../actions/review_actions';
+import { createReview, removeReviewErrors } from '../../actions/review_actions';
 import ReviewForm from './review_form';
 import { withRouter } from 'react-router-dom'
 import {closeModal} from '../../actions/modal_actions'
@@ -19,7 +19,8 @@ const mSTP = (state, ownProps) => {
       trail_id: ownProps.match.params.id
     },
     formType: 'create',
-    trail: state.entities.trails[ownProps.match.params.id]
+    trail: state.entities.trails[ownProps.match.params.id],
+    errors: state.errors.reviews
   }
 }
 
@@ -27,6 +28,7 @@ const mDTP = (dispatch) => {
   return {
     submitReview: ((review) => dispatch(createReview(review))),
     closeModal: () => dispatch(closeModal()),
+    clearErrors: () => dispatch(removeReviewErrors())
   
 
   }

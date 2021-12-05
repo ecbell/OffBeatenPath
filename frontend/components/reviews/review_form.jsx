@@ -18,6 +18,11 @@ class ReviewForm extends React.Component {
     }
   }
 
+  componentDidMount() {
+    if (this.props.formType === 'create') {this.props.clearErrors()}
+  }
+
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -29,6 +34,16 @@ class ReviewForm extends React.Component {
       } else {
         this.props.submitReview(this.state).then(this.props.closeModal).then(() => window.location.reload())
       }
+  }
+
+  errors() {
+    return this.props.errors.map(error => {
+      return (
+        <li className="login-error" key={error}>
+          {error}
+        </li>
+      );
+    });
   }
 
 
@@ -108,6 +123,9 @@ class ReviewForm extends React.Component {
           <button className='review-close-button' onClick={() => this.props.closeModal()}>cancel</button>
         <input className='review-submit-button' type='submit' value={this.props.formType} />
         </div>
+        <ul>
+          { this.props.formType === 'create' ? this.errors(): ""}
+        </ul>
       </form>
     )
   }
