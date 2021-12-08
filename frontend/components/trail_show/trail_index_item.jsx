@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 
 
-const TrailIndexItem = ({ trail, park }) => {
+const TrailIndexItem = ({ trail, park, parks }) => {
     let stars = []
     for (let i = 0; i < trail.average_rating; i++) {
       // stars.push(<FaStar key={i} size={20} color={'gold'} />)
@@ -49,7 +49,16 @@ const TrailIndexItem = ({ trail, park }) => {
       hours += Math.round(minutes / 60)
       minutes = Math.round(minutes % 60)
     }
-    
+
+    // add park name to trail index
+    let parkName = ""
+    if (parks) {
+      for (let i = 0; i < parks.length; i++) {
+        if (trail.park_id === parks[i].id) {
+          parkName += parks[i].park_name
+        }
+      }
+    }
 
   return (
     <Link className='module-trail-link' to={`${trail.id}`}>
@@ -57,7 +66,8 @@ const TrailIndexItem = ({ trail, park }) => {
         <img className='module-trail-photo' src={`${trail.photoUrl}`} />
         <div className='module-title-bucket'>
           <h1 className='module-trail-title'>{trail.trail_name}</h1>
-          <div className='module-link-to-park'>{park.park_name}</div>
+          {park ? <div className='module-link-to-park'>{park.park_name}</div> : ""}
+          {parks ? <div className='module-link-to-park'>{parkName}</div>: ""}
           <div className='module-trail-specs'>
             <span className='module-difficulty' style={trail.difficulty === 'easy' ? { backgroundColor: '#428a13' } : trail.difficulty === 'moderate' ? { backgroundColor: '#4bafe1' } : { backgroundColor: '#676767' }}>{trail.difficulty}</span>
             <span id='agg-rating'>

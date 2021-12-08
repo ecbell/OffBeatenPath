@@ -5,7 +5,7 @@ const trailsReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state)
   switch (action.type) {
     case RECEIVE_TRAILS:
-      return action.trails;
+      return action.payload.trails;
     case RECEIVE_TRAIL:
       nextState[action.payload.trail.id] = action.payload.trail
       for (let i = 0; i < action.payload.nearbyTrails.length; i++) {

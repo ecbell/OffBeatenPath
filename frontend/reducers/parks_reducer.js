@@ -8,6 +8,12 @@ const parksReducer = (state = {}, action) => {
       if (action.payload.park) {
         return action.payload.park
       } else return {};
+    case RECEIVE_TRAILS: 
+      if (action.payload.parks) {
+        return action.payload.parks
+      } else {
+        return {}
+      }
     default:
       return state;
   };

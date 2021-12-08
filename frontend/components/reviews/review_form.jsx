@@ -39,7 +39,7 @@ class ReviewForm extends React.Component {
   errors() {
     return this.props.errors.map(error => {
       return (
-        <li className="login-error" key={error}>
+        <li className="login-error-review" key={error}>
           {error}
         </li>
       );

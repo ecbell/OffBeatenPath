@@ -182,3 +182,10 @@ body {
   justify-content: flex-end;
   align-items: center;
 }
+
+.explore-container{
+  display: grid;
+  grid-template-rows: 250px 250px 250px 250px;
+  grid-template-columns: 250px 250px 250px 250px;
+  /* margin: 20px; */
+}

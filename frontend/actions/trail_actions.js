@@ -3,9 +3,9 @@ import * as APIUtil from '../util/trail_api_util'
 export const RECEIVE_TRAILS = 'RECEIVE_TRAILS'
 export const RECEIVE_TRAIL = 'RECEIVE TRAIL'
 
-export const receiveTrails = trails => ({
+export const receiveTrails = payload => ({
   type: RECEIVE_TRAILS,
-  trails,
+  payload,
 });
 
 export const receiveTrail = (payload) => ({

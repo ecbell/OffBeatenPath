@@ -1,6 +1,7 @@
 class Api::TrailsController < ApplicationController
   def index 
     @trails = Trail.all
+    @parks = Park.all
     render :index 
   end
 
