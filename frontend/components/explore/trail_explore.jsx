@@ -17,7 +17,9 @@ class ExploreTrails extends React.Component{
     
     return (
       <div className='explore-container'>
+        <div id='trail-card'>
         <TrailIndex allTrails={this.props.allTrails} parks={this.props.parks} />
+        </div>
       </div>
     )
   }

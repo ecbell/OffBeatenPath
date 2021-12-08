@@ -17,7 +17,7 @@ const App = () => (
   <div>
     <header className='header'>
       <Link to='/trails/'>
-        <div id='explore-btn'>Explore</div>
+        <button id='explore-btn'>Explore</button>
       </Link>
       <Link to="/" className='header-link'>
         <h1>Off The Beaten Path</h1>
