@@ -16,7 +16,9 @@ import TrailExploreContainer from './explore/trail_explore_container'
 const App = () => (
   <div>
     <header className='header'>
-      <button id='explore-btn'>Explore</button>
+      <Link to='/trails/'>
+        <div id='explore-btn'>Explore</div>
+      </Link>
       <Link to="/" className='header-link'>
         <h1>Off The Beaten Path</h1>
         <img id='logo' src='https://splash-page.s3.us-east-2.amazonaws.com/OffBeatenPathLogo.jpg'alt='logo'></img>
