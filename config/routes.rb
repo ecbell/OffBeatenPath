@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :users, only: [:create, :show, :edit, :update]
     resources :trails, only: [:index, :show]
+    resources :parks, only: [:index, :show]
     resources :reviews, only: [:index, :create, :show, :update, :destroy]
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

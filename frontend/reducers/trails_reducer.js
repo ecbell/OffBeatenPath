@@ -1,3 +1,4 @@
+import { RECEIVE_PARK } from '../actions/park_actions';
 import { RECEIVE_TRAILS, RECEIVE_TRAIL } from '../actions/trail_actions'
 
 const trailsReducer = (state = {}, action) => {
@@ -12,7 +13,12 @@ const trailsReducer = (state = {}, action) => {
         const trail = action.payload.nearbyTrails[i];
         nextState[trail.id] = action.payload.nearbyTrails[i]
       }
-      
+      return nextState;
+    case RECEIVE_PARK:
+      for (let i = 0; i < action.payload.nearbyTrails.length; i++) {
+        const trail = action.payload.nearbyTrails[i];
+        nextState[trail.id] = action.payload.nearbyTrails[i]
+      }
       return nextState;
     default:
       return state;
