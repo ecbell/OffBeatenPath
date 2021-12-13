@@ -11,6 +11,7 @@ import TrailMapContainer from './trail_show/trail_map_container'
 import CreateFormContainer from './reviews/create_form_container'
 import Modal from './modal/modal';
 import TrailExploreContainer from './explore/trail_explore_container'
+import ParksShowContainer from './parks/park_show_container'
 
 
 const App = () => (
@@ -29,6 +30,7 @@ const App = () => (
     <Switch>
       {/* <Route exact path="/reviews" component={props => <CreateFormContainer {...props} />} /> */}
       <Route exact path="/trails/:id" component={props => <TrailShowContainer {...props} />} />
+      <Route exact path="/parks/:id" component={props => <ParksShowContainer {...props} />} />
       <Route exact path="/trails/" component={props => <TrailExploreContainer {...props} />} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute className="signup-page" exact path="/signup" component={SignupFormContainer} />
