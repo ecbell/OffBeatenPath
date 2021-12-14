@@ -4,8 +4,6 @@ import ParkShow from './park_show'
 
 const mapStateToProps = (state, ownProps) => {
 
-  console.log(state.entities)
-
   return {
     trails: Object.values(state.entities.trails),
     park: state.entities.parks[ownProps.match.params.id],

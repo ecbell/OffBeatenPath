@@ -13,11 +13,48 @@ mapboxgl.accessToken = window.mapboxAPIKey;
 class ParkShow extends React.Component {
   constructor(props) {
     super(props)
+
+    this.hikeTime = this.hikeTime.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchPark(this.props.match.params.id)
     window.scrollTo(0, 0)
+  }
+
+  hikeTime(trail){
+    let hours = 0
+    let minutes = 0
+    // 1 min for every 10 meters ascent
+    let ascentTime = (trail.elevation_gain * 0.3048) / 10
+    if (ascentTime >= 60) {
+      hours += Math.round(ascentTime / 60)
+      minutes += Math.round(ascentTime % 60)
+    } else {
+      minutes += Math.round(ascentTime)
+    }
+    
+    let hikingMiles = 0
+
+    // 20 min per mile
+    for (let i = 0; i < trail.length; i++) {
+      hikingMiles += 20
+    }
+
+    if (hikingMiles >= 60) {
+      hours += Math.round(hikingMiles / 60)
+      minutes += Math.round(hikingMiles % 60)
+    } else {
+      minutes += Math.round(hikingMiles)
+    }
+
+    if (minutes >= 60) {
+      hours += Math.round(minutes / 60)
+      minutes = Math.round(minutes % 60)
+    }
+
+    return (hours + ' h ' + minutes + ' m')
+
   }
 
   render(){
@@ -48,11 +85,6 @@ class ParkShow extends React.Component {
       let i = stars.length
       stars.push(<FaStar key={i} size={20} color={'#e9e9e9'} />)
     }
-
-    // trails.forEach(trail => {
-    //   numReviews += trail.reviews.length
-    // })
-
 
     return(
       <div>
@@ -96,7 +128,7 @@ class ParkShow extends React.Component {
             </div>
             <div className='park-trails-container'>
               <div id='trail-list-title'>
-                Top Trails (113)
+                Top Trails ({trails.length})
               </div>
 
               <div>
@@ -117,23 +149,17 @@ class ParkShow extends React.Component {
                           <div>
                             <span className='module-length'>{trail.length} mi </span>
                             <span>&nbsp;•&nbsp;</span>
-                            {/* <span className='module-length'> Est. {hours} h {minutes} m </span> */}
+                            <span className='module-length'> {this.hikeTime(trail)} </span>
                           </div>
                         </div>
                         <div className='module-trail-description'>
-                          {park_description}
+                          {trail.description}
                         </div>
                       </div>
                     </div>
                   </Link>})
                 }
               </div>
-              
-        
-              
-              
-
-
             </div>
           </div>
         </div>
