@@ -49,10 +49,10 @@ class ParkShow extends React.Component {
       stars.push(<FaStar key={i} size={20} color={'#e9e9e9'} />)
     }
 
-    let numReviews = 0
-    trails.forEach(trail => {
-      numReviews += trail.reviews.length
-    })
+    // trails.forEach(trail => {
+    //   numReviews += trail.reviews.length
+    // })
+
 
     return(
       <div>
@@ -69,7 +69,7 @@ class ParkShow extends React.Component {
             </div>
             <span id='agg-rating'>
               <span>
-                {stars} <span className='num-reviews'>( {numReviews} Reviews )</span>
+                {stars} <span className='num-reviews'>( {this.props.numReviews} Reviews )</span>
               </span>
             </span>
             <div className='park-information'>

@@ -9,6 +9,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     trails: Object.values(state.entities.trails),
     park: state.entities.parks[ownProps.match.params.id],
+    numReviews: state.entities.reviews.length
   };
 };
 

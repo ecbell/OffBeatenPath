@@ -15,10 +15,10 @@ const trailsReducer = (state = {}, action) => {
       }
       return nextState;
     case RECEIVE_PARK:
-      for (let i = 0; i < action.payload.nearbyTrails.length; i++) {
-        const trail = action.payload.nearbyTrails[i];
-        nextState[trail.id] = action.payload.nearbyTrails[i]
-      }
+      // for (let i = 0; i < action.payload.nearbyTrails.length; i++) {
+      //   const trail = action.payload.nearbyTrails[i];
+      //   nextState[trail.id] = action.payload.nearbyTrails[i]
+      // }
       return action.payload.nearbyTrails;
     default:
       return state;
