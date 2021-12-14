@@ -19,6 +19,7 @@ class ParkShow extends React.Component {
     }
 
     const { photo, park_name, reviews, city, state, country, acreage, park_description, contact, lng, lat } = this.props.park;
+    const { trails } = this.props;
 
     let park_average = 0
     this.props.trails.forEach(trail => {
@@ -41,8 +42,10 @@ class ParkShow extends React.Component {
       stars.push(<FaStar key={i} size={20} color={'#e9e9e9'} />)
     }
 
-
-
+    let numReviews = 0
+    trails.forEach(trail => {
+      numReviews += trail.reviews.length
+    })
 
     return(
       <div>
@@ -53,21 +56,19 @@ class ParkShow extends React.Component {
 
           <div id='park-information-box'>
             <img className='trail-photo' src={`${this.props.park.photoUrl}`} />
-            <span> 1 of 60 national parks in {country} </span>
-            <div className='title-bucket'>
+            <span id='ranking'> #1 of 60 national parks in {country} </span>
+            <div className='title-container'>
               <h1 className='park-title'> Best Trails in {park_name}</h1>
             </div>
             <span id='agg-rating'>
               <span>
-                {stars} <span id='num-reviews'>( 20,000 Reviews )</span>
+                {stars} <span className='num-reviews'>( {numReviews} Reviews )</span>
               </span>
             </span>
-            <div className='park_information'>
-              <div>
+            <div className='park-information'>
                 {park_description}
-              </div>
             </div>
-            <div>
+            <div className='park-map-container'>
               MAPBOX HERE!!! 
             </div>
             <div className='route-container' >
