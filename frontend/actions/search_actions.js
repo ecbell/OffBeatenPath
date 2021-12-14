@@ -8,7 +8,7 @@ export const receiveSearch = payload => ({
 });
 
 
-export const fetchSearch = () => dispatch => (
-  APIUtil.fetchSearch()
-    .then(q => (dispatch(receiveSearch(q))))
+export const fetchSearch = (query) => dispatch => (
+  APIUtil.fetchSearch(query)
+    .then(results => (dispatch(receiveSearch(results))))
 );

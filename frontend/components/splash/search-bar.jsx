@@ -34,7 +34,7 @@ class SearchBar extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.fetchSearch(this.state.query);
+    this.props.fetchResults(this.state.query);
     this.toggleShowResults()
   }
 
@@ -54,7 +54,7 @@ class SearchBar extends React.Component{
           <input type='submit'></input>
           {<FontAwesomeIcon className='arrow-icon' icon={faArrowCircleRight} />}
         </form>
-        <Results result={this.state.showResults} />
+        <Results results={this.state.showResults} query={this.state.query} />
       </div>
     )
   }
