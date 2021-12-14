@@ -8,6 +8,14 @@ class Api::ParksController < ApplicationController
     @park = Park.find(params[:id])
     @nearby_trails = Trail.where(park_id: @park.id)
 
+    @numReviews = 0
+    
+    @nearby_trails.each do |trail|
+      @numReviews += trail.reviews.length 
+    end
+
+    
+
     render :show 
   end
 
