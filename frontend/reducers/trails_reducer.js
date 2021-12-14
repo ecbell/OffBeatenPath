@@ -19,7 +19,7 @@ const trailsReducer = (state = {}, action) => {
         const trail = action.payload.nearbyTrails[i];
         nextState[trail.id] = action.payload.nearbyTrails[i]
       }
-      return nextState;
+      return action.payload.nearbyTrails;
     default:
       return state;
   };

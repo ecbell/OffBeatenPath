@@ -149,6 +149,7 @@
   position: relative;
   padding: 16px;
   margin-top: 20px;
+  cursor:pointer;
 }
 
 .module-park-trail-photo{

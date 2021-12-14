@@ -16,16 +16,16 @@ class ParkShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchPark(this.props.match.params.id).then(res => console.log(res))
+    this.props.fetchPark(this.props.match.params.id)
     window.scrollTo(0, 0)
   }
 
   render(){
-    if(!this.props.park) {
+    if(!this.props.park ) {
       return '...loading'
     }
 
-    const { photo, park_name, reviews, city, state, country, acreage, park_description, contact, lng, lat } = this.props.park;
+    const { photo, park_name, city, state, country, acreage, park_description, contact, lng, lat } = this.props.park;
     const { trails } = this.props;
 
     let park_average = 0
