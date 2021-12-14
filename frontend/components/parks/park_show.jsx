@@ -2,6 +2,8 @@ import React from 'react';
 import SearchNav from '../search/nav_search';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import mapboxgl from 'mapbox-gl';
+import TrailIndex from '../trail_show/trail_index';
+
 
 mapboxgl.accessToken = window.mapboxAPIKey;
 
@@ -79,7 +81,6 @@ class ParkShow extends React.Component {
                 <img className='route-icon-park' src='https://cdn-assets.alltrails.com/assets/packs/ed305b8cebf7bc15eec3.png' />
               </div>
             </div>
-            {/* <section className='trail-details'> */}
               <div id='park-information-title'>Park Information</div>
               <div id='park-info-flex-container'>
               <span className='park-details-styling'>
@@ -91,7 +92,15 @@ class ParkShow extends React.Component {
                 <span className='park-detail-stat'>{contact}</span>
               </span>
             </div>
-            {/* </section> */}
+            <div className='park-trails-container'>
+              <div id='trail-list-title'>
+                Top Trails (113)
+              </div>
+              <div id='trail-card'>
+                <TrailIndex allTrails={this.props.trails} parks={this.props.park} />
+              </div>
+
+            </div>
           </div>
         </div>
       </div>

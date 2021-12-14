@@ -119,3 +119,20 @@
   color: #5a5a5a;
   line-height: 1.5;
 }
+
+.park-trails-container{
+
+}
+
+#trail-list-title{
+  margin-bottom: 18px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.17;
+  letter-spacing: -.2px;
+  color: #414141;
+  font-family: Proxima Nova,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  margin-top: 18px;
+}
