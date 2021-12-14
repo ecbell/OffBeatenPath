@@ -136,3 +136,62 @@
   text-rendering: optimizeLegibility;
   margin-top: 18px;
 }
+
+.module-park-trail-container{
+  display: flex;
+  height: 224px;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 8%), 0 0 4px 0 rgb(0 0 0 / 8%);
+  background-color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  padding: 16px;
+  margin-top: 20px;
+}
+
+.module-park-trail-photo{
+  object-fit: cover;
+  width: 35%;
+  height: 95%;
+  border-radius: 8px;
+}
+
+.module-park-title-bucket{
+  padding: 10px 16px;
+}
+
+.module-park-trail-title{
+    color: #414141;
+    font-family: Proxima Nova,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    width: 100%;
+    line-height: 1.5; 
+}
+
+.module-park-link-to-park{
+  display: flex;
+  align-items: center;
+  font-family: Proxima Nova,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #767676;
+  line-height: 1.5;
+}
+
+.module-trail-description{
+  height: 48px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-height: 1em;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #5a5a5a;
+  margin-top: 24px;
+}
+

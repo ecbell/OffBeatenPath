@@ -61,7 +61,7 @@ const TrailIndexItem = ({ trail, park, parks }) => {
     }
 
   return (
-    <Link className='module-trail-link' to={`${trail.id}`}>
+    <Link className='module-trail-link' to={`/trails/${trail.id}`}>
       <div className='module-trail-photo-container'>
         <img className='module-trail-photo' src={`${trail.photoUrl}`} />
         <div className='module-title-bucket'>

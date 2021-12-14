@@ -3,6 +3,8 @@ import SearchNav from '../search/nav_search';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import mapboxgl from 'mapbox-gl';
 import TrailIndex from '../trail_show/trail_index';
+import { Link } from 'react-router-dom'
+
 
 
 mapboxgl.accessToken = window.mapboxAPIKey;
@@ -96,9 +98,41 @@ class ParkShow extends React.Component {
               <div id='trail-list-title'>
                 Top Trails (113)
               </div>
-              <div id='trail-card'>
-                <TrailIndex allTrails={this.props.trails} parks={this.props.park} />
+
+              <div>
+                {trails.map(trail => {
+                  return <Link key={trail.id} className='module-trail-link' to={`/trails/${trail.id}`}>
+                    <div className='module-park-trail-container'>
+                      <img className='module-park-trail-photo' src={`${trail.photoUrl}`} />
+                      <div className='module-park-title-bucket'>
+                        <h1 className='module-park-trail-title'>{trail.trail_name}</h1>
+                        <div className='module-park-link-to-park'>{park_name}</div>
+                        <div className='module-park-trail-specs'>
+                          <span className='module-difficulty' style={trail.difficulty === 'easy' ? { backgroundColor: '#428a13' } : trail.difficulty === 'moderate' ? { backgroundColor: '#4bafe1' } : { backgroundColor: '#676767' }}>{trail.difficulty}</span>
+                          <span id='agg-rating'>
+                            <span>
+                              {stars}
+                            </span>
+                          </span>
+                          <div>
+                            <span className='module-length'>{trail.length} mi </span>
+                            <span>&nbsp;•&nbsp;</span>
+                            {/* <span className='module-length'> Est. {hours} h {minutes} m </span> */}
+                          </div>
+                        </div>
+                        <div className='module-trail-description'>
+                          {park_description}
+                        </div>
+                      </div>
+                    </div>
+                  </Link>})
+                }
               </div>
+              
+        
+              
+              
+
 
             </div>
           </div>
