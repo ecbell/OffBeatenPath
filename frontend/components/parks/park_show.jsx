@@ -1,6 +1,9 @@
 import React from 'react';
 import SearchNav from '../search/nav_search';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
+import mapboxgl from 'mapbox-gl';
+
+mapboxgl.accessToken = window.mapboxAPIKey;
 
 
 class ParkShow extends React.Component {
@@ -68,23 +71,27 @@ class ParkShow extends React.Component {
             <div className='park-information'>
                 {park_description}
             </div>
-            <div className='park-map-container'>
-              MAPBOX HERE!!! 
+              <div className='park-map-container'>
+                <img className='park_map' onClick={window.scrollTo(0, 0)} src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${lng},${lat},9,0/1000x200?access_token=${mapboxgl.accessToken}`} />
+              </div>
+            <div id='route-container-border'>
+              <div className='route-container-park' >
+                <img className='route-icon-park' src='https://cdn-assets.alltrails.com/assets/packs/ed305b8cebf7bc15eec3.png' />
+              </div>
             </div>
-            <div className='route-container' >
-              <img className='route-icon' src='https://cdn-assets.alltrails.com/assets/packs/ed305b8cebf7bc15eec3.png' />
+            {/* <section className='trail-details'> */}
+              <div id='park-information-title'>Park Information</div>
+              <div id='park-info-flex-container'>
+              <span className='park-details-styling'>
+                <span className='park-stat'>Acreage</span>
+                <span className='park-detail-stat'>{acreage} acres</span>
+              </span>
+              <span className='park-details-styling'>
+                <span className='park-stat'>Contact</span>
+                <span className='park-detail-stat'>{contact}</span>
+              </span>
             </div>
-            <section className='trail-details'>
-              <h2>Park Information</h2>
-              <span className='trail-details-styling'>
-                <span className='trail-stat'>Acreage</span>
-                <span className='trail-detail-stat'>{acreage} acres</span>
-              </span>
-              <span className='trail-details-styling'>
-                <span className='trail-stat'>Contact</span>
-                <span className='trail-detail-stat'>{contact}</span>
-              </span>
-            </section>
+            {/* </section> */}
           </div>
         </div>
       </div>
