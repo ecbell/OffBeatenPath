@@ -46,6 +46,7 @@ class SearchBar extends React.Component{
     return (
       <div className='search-container' onSubmit={this.handleSubmit}>
         <form className='search-form'>
+          
           <Search className='search-icon' />
           <input
             type='text'
@@ -53,6 +54,7 @@ class SearchBar extends React.Component{
             onChange={this.handleChange} 
             placeholder='Search by city, park, or trail name'
           />
+  
           {/* <input type='submit'></input> */}
           {<FontAwesomeIcon className='arrow-icon' icon={faArrowCircleRight} />}
           <ul className='search-results-container'>
