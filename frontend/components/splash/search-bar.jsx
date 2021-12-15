@@ -35,9 +35,7 @@ class SearchBar extends React.Component{
     e.preventDefault()
     this.props.fetchResults(this.state.query)
       .then(action => this.setState({ results: action.payload.reverse()}))
-      .then(res => console.log(this.state.results.length))
-    
-    // this.state.results.length < 1 ? this.setState({ results: [] }) : ''
+      .then(res => console.log(this.state.results))
   }
 
   showSearchResults(){
@@ -60,7 +58,8 @@ class SearchBar extends React.Component{
           {<FontAwesomeIcon className='arrow-icon' icon={faArrowCircleRight} />}
 
           <ul className='search-results-container'>
-            {this.state.results.map((result, i) => {
+            {this.state.query.length < 1 ? "" : 
+            (this.state.results.map((result, i) => {
               return result.park_name ? 
               <li className='search-result' key={i}> 
                   <Link className='result' to={`/parks/${result.id}`}>
@@ -74,7 +73,8 @@ class SearchBar extends React.Component{
                   <div className='result'>{result.trail_name}</div>
                 </Link>
               </li>
-            })}
+            }))
+            }
           </ul>
         </form>
   
