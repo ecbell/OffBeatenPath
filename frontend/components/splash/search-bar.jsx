@@ -10,7 +10,8 @@ class SearchBar extends React.Component{
 
     this.state = {
       query: '',
-      displayResults: false
+      displayResults: false,
+      results: []
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -20,24 +21,25 @@ class SearchBar extends React.Component{
   }
 
   toggleShowResults() {
-    this.setState(state => ({
-      displayResults: true
-    }));
+    this.setState({ displayResults: !displayResults});
   }
 
   handleChange(e) {
-    this.setState({
-      query: e.target.value
-    })
-    console.log(this.state.query)
+    this.setState({query: e.target.value})
+    this.handleSubmit(e)
+    
   };
 
   handleSubmit(e) {
     e.preventDefault()
-    this.props.fetchResults(this.state.query);
-    this.toggleShowResults()
+    this.props.fetchResults(this.state.query)
+      .then(action => this.setState({ results: action.payload}))
+      .then(res => console.log(this.state.results))
   }
 
+  showSearchResults(){
+
+  }
 
 
   render(){
@@ -51,10 +53,16 @@ class SearchBar extends React.Component{
             onChange={this.handleChange} 
             placeholder='Search by city, park, or trail name'
           />
-          <input type='submit'></input>
+          {/* <input type='submit'></input> */}
           {<FontAwesomeIcon className='arrow-icon' icon={faArrowCircleRight} />}
+          <ul className='search-results-container'>
+            {this.state.results.map((result, i) => {
+              return <li className='search-result' key={i}>{result.id}</li>
+            })}
+          </ul>
         </form>
-        <Results results={this.state.showResults} query={this.state.query} />
+  
+        
       </div>
     )
   }

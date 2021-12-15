@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchBar from './search-bar'
+import SearchBarContainer from './searchbar_container'
 
 class splashPage extends React.Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class splashPage extends React.Component {
         <img id='beach-image' src='https://splash-page.s3.us-east-2.amazonaws.com/IMG_5994.jpeg' />
         <div className='home-container'>
           <h1 className='welcomeMessage'>Are you ready for an adventure?</h1>
-          <SearchBar/>
+          <SearchBarContainer/>
         </div>
       </div>
     )

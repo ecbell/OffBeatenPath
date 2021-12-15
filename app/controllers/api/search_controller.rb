@@ -1,8 +1,10 @@
 class Api::SearchController < ApplicationController
 
-    def index
-    @trails = Trail.where("trail_name LIKE ?", "%" + params[:q] + "%")
-    @parks = Park.where ("park_name LIKE ?"), "%" + params[:q] + "%")
-    render json: index
+  def index
+      query = params[:query]
+      @trails = Trail.where("trail_name ILIKE ?", "%#{query}%")
+      @parks = Park.where("park_name ILIKE ?", "%#{query}%")
+
+      render :index
   end
 end
