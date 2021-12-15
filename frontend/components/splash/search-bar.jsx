@@ -2,7 +2,9 @@ import React from 'react'
 import Search from '@mui/icons-material/Search';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
-import Results from './results'
+import Results from './results';
+import { Link } from 'react-router-dom';
+import { FaTree, FaMapMarkerAlt } from 'react-icons/fa';
 
 class SearchBar extends React.Component{
   constructor(props){
@@ -27,14 +29,15 @@ class SearchBar extends React.Component{
   handleChange(e) {
     this.setState({query: e.target.value})
     this.handleSubmit(e)
-    
   };
 
   handleSubmit(e) {
     e.preventDefault()
     this.props.fetchResults(this.state.query)
-      .then(action => this.setState({ results: action.payload}))
-      .then(res => console.log(this.state.results))
+      .then(action => this.setState({ results: action.payload.reverse()}))
+      .then(res => console.log(this.state.results.length))
+    
+    // this.state.results.length < 1 ? this.setState({ results: [] }) : ''
   }
 
   showSearchResults(){
@@ -54,12 +57,23 @@ class SearchBar extends React.Component{
             onChange={this.handleChange} 
             placeholder='Search by city, park, or trail name'
           />
-  
-          {/* <input type='submit'></input> */}
           {<FontAwesomeIcon className='arrow-icon' icon={faArrowCircleRight} />}
+
           <ul className='search-results-container'>
             {this.state.results.map((result, i) => {
-              return <li className='search-result' key={i}>{result.id}</li>
+              return result.park_name ? 
+              <li className='search-result' key={i}> 
+                  <Link className='result' to={`/parks/${result.id}`}>
+                  <FaTree className='searching-icon' size={20} color={'#428A13'}/> 
+                  {result.park_name}
+                </Link>
+              </li> :
+              <li className='search-result' key={i}> 
+                  <Link className='result' to={`/trails/${result.id}`}>
+                  <FaMapMarkerAlt className='searching-icon' size={20} color={'#428A13'} /> 
+                  <div className='result'>{result.trail_name}</div>
+                </Link>
+              </li>
             })}
           </ul>
         </form>

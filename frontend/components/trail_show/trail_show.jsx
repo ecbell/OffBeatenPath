@@ -11,6 +11,8 @@ import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import mapboxgl from 'mapbox-gl';
 
+
+
 mapboxgl.accessToken = window.mapboxAPIKey;
 
 
