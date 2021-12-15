@@ -35,7 +35,7 @@ class SearchBar extends React.Component{
     e.preventDefault()
     this.props.fetchResults(this.state.query)
       .then(action => this.setState({ results: action.payload.reverse()}))
-      .then(res => console.log(this.state.results))
+      // .then(res => console.log(this.state.results))
   }
 
   showSearchResults(){
@@ -65,6 +65,7 @@ class SearchBar extends React.Component{
                   <Link className='result' to={`/parks/${result.id}`}>
                   <FaTree className='searching-icon' size={20} color={'#428A13'}/> 
                   {result.park_name}
+                    <div className='search-location'>{result.city}, {result.state}, {result.country}</div>
                 </Link>
               </li> :
               <li className='search-result' key={i}> 

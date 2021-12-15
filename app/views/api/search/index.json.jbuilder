@@ -3,5 +3,5 @@
 end
 
   json.array! @parks do |park|
-      json.extract! park, :id, :park_name
+      json.extract! park, :id, :park_name, :city, :state, :country
 end
