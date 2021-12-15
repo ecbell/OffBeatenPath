@@ -100,7 +100,7 @@
 }
 
 .search-location{
-  
+
 }
 
 .welcomeMessage{
@@ -116,6 +116,10 @@
   font-weight: 700;
   color: #fff;
   font-family: Proxima Nova,Arial,sans-serif;
+}
+
+.search-result-active{
+  background-color: #64bc29;
 }
 
 .home-container{

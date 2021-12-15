@@ -16,13 +16,15 @@ class SearchBar extends React.Component{
     this.state = {
       query: '',
       displayResults: false,
-      results: []
+      results: [],
+      cursor: 0
     }
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleShowResults = this.toggleShowResults.bind(this);
     this.topResult = this.topResult.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
 
   }
 
@@ -50,14 +52,28 @@ class SearchBar extends React.Component{
     let topResult = this.state.results[0]
     // console.log(topResult)
     return topResult.park_name ? this.props.history.push(`/parks/${topResult.id}`) :
-      <Link to={`/trails/${topResult.id}`} />
+      this.props.history.push(`/trails/${topResult.id}`)
+  }
+
+  handleKeyDown(e) {
+    const { cursor, results } = this.state
+    // arrow up/down button should select next/previous list element
+    if (e.keyCode === 38 && cursor > 0) {
+      this.setState(prevState => ({
+        cursor: prevState.cursor - 1
+      }))
+    } else if (e.keyCode === 40 && cursor < results.length - 1) {
+      this.setState(prevState => ({
+        cursor: prevState.cursor + 1
+      }))
+    }
   }
 
 
   render(){
     return (
       <div className='search-container' onSubmit={this.handleSubmit}>
-        <form className='search-form'>
+        <form className='search-form' onKeyDown={this.handleKeyDown}>
           
           <Search className='search-icon' />
           <input
@@ -72,14 +88,14 @@ class SearchBar extends React.Component{
             {this.state.query.length < 1 ? "" : 
             (this.state.results.map((result, i) => {
               return result.park_name ? 
-              <li className='search-result' key={i}> 
+                <li className={this.state.cursor === i ? 'search-result-active' : 'search-result'} key={i}>
                   <Link className='result' to={`/parks/${result.id}`}>
                   <FaTree className='searching-icon' size={20} color={'#428A13'}/> 
                   {result.park_name}
                     <div className='search-location'>{result.city}, {result.state}, {result.country}</div>
                 </Link>
               </li> :
-              <li className='search-result' key={i}> 
+                <li className={this.state.cursor === i ? 'search-result-active' : 'search-result'} key={i}>
                   <Link className='result' to={`/trails/${result.id}`}>
                   <FaMapMarkerAlt className='searching-icon' size={20} color={'#428A13'} /> 
                   <div className='result'>{result.trail_name}</div>
