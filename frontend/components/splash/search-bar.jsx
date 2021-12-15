@@ -3,8 +3,11 @@ import Search from '@mui/icons-material/Search';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
 import Results from './results';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { FaTree, FaMapMarkerAlt } from 'react-icons/fa';
+import { result } from 'lodash';
+
+
 
 class SearchBar extends React.Component{
   constructor(props){
@@ -19,6 +22,7 @@ class SearchBar extends React.Component{
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleShowResults = this.toggleShowResults.bind(this);
+    this.topResult = this.topResult.bind(this);
 
   }
 
@@ -42,6 +46,13 @@ class SearchBar extends React.Component{
 
   }
 
+  topResult(){
+    let topResult = this.state.results[0]
+    // console.log(topResult)
+    return topResult.park_name ? this.props.history.push(`/parks/${topResult.id}`) :
+      <Link to={`/trails/${topResult.id}`} />
+  }
+
 
   render(){
     return (
@@ -55,7 +66,7 @@ class SearchBar extends React.Component{
             onChange={this.handleChange} 
             placeholder='Search by city, park, or trail name'
           />
-          {<FontAwesomeIcon className='arrow-icon' icon={faArrowCircleRight} />}
+          <FontAwesomeIcon type='submit' onClick={this.topResult} className='arrow-icon' icon={faArrowCircleRight} />
 
           <ul className='search-results-container'>
             {this.state.query.length < 1 ? "" : 
@@ -87,4 +98,4 @@ class SearchBar extends React.Component{
 
 
 
-export default SearchBar
+export default withRouter(SearchBar)
