@@ -66,8 +66,14 @@ class SearchBar extends React.Component{
       this.setState(prevState => ({
         cursor: prevState.cursor + 1
       }))
+    } else if (e.key === "Enter") {
+        console.log(this.state.cursor)
+        let i = this.state.cursor;
+        results[i].trail_name ? this.props.history.push(`/trails/${this.state.results[i].id}`) :
+        this.props.history.push(`/parks/${this.state.results[i].id}`)
     }
   }
+
 
 
   render(){
@@ -89,17 +95,17 @@ class SearchBar extends React.Component{
             (this.state.results.map((result, i) => {
               return result.park_name ? 
                 <li className={this.state.cursor === i ? 'search-result-active' : 'search-result'} key={i}>
-                  <Link className='result' to={`/parks/${result.id}`}>
+                  <div className='result'>
                   <FaTree className='searching-icon' size={20} color={'#428A13'}/> 
                   {result.park_name}
                     <div className='search-location'>{result.city}, {result.state}, {result.country}</div>
-                </Link>
+                </div>
               </li> :
                 <li className={this.state.cursor === i ? 'search-result-active' : 'search-result'} key={i}>
-                  <Link className='result' to={`/trails/${result.id}`}>
+                  <div className='result'>
                   <FaMapMarkerAlt className='searching-icon' size={20} color={'#428A13'} /> 
                   <div className='result'>{result.trail_name}</div>
-                </Link>
+                </div>
               </li>
             }))
             }
