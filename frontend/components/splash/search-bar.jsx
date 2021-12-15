@@ -67,7 +67,6 @@ class SearchBar extends React.Component{
         cursor: prevState.cursor + 1
       }))
     } else if (e.key === "Enter") {
-        console.log(this.state.cursor)
         let i = this.state.cursor;
         results[i].trail_name ? this.props.history.push(`/trails/${this.state.results[i].id}`) :
         this.props.history.push(`/parks/${this.state.results[i].id}`)
@@ -78,7 +77,7 @@ class SearchBar extends React.Component{
 
   render(){
     return (
-      <div className='search-container' onSubmit={this.handleSubmit}>
+      <div className='search-container' onSubmit={this.handleSubmit} >
         <form className='search-form' onKeyDown={this.handleKeyDown}>
           
           <Search className='search-icon' />
@@ -95,17 +94,17 @@ class SearchBar extends React.Component{
             (this.state.results.map((result, i) => {
               return result.park_name ? 
                 <li className={this.state.cursor === i ? 'search-result-active' : 'search-result'} key={i}>
-                  <div className='result'>
-                  <FaTree className='searching-icon' size={20} color={'#428A13'}/> 
-                  {result.park_name}
+                  <Link to={`/parks/${result.id}`} className='result'>
+                    <FaTree className='searching-icon' size={20} color={'#428A13'}/> 
+                    {result.park_name}
                     <div className='search-location'>{result.city}, {result.state}, {result.country}</div>
-                </div>
+                </Link>
               </li> :
                 <li className={this.state.cursor === i ? 'search-result-active' : 'search-result'} key={i}>
-                  <div className='result'>
-                  <FaMapMarkerAlt className='searching-icon' size={20} color={'#428A13'} /> 
-                  <div className='result'>{result.trail_name}</div>
-                </div>
+                  <Link to={`/trails/${result.id}`} className='result'>
+                    <FaMapMarkerAlt className='searching-icon' size={20} color={'#428A13'} /> 
+                    <div className='result'>{result.trail_name}</div>
+                </Link>
               </li>
             }))
             }
