@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html>
+    <meta property="og:title" content="Project Title" />
+    <meta property='og:image' content="<%= image_url('profile_page.png') %>"/>
+    <meta property="og:description"
+      content="A fullstack clone of Alltrails.com implemented using Rails, AWS, and PosgreSQL on the backend and Javascript, React-Redux, and MapBox API on the frontend. Users can search and view specs for parks and trails as well as interact with maps of the trails"
+     />
+     <meta property="og:url"
+       content="https://off-the-beaten-path-2021.herokuapp.com/"
+     />
     <script type="text/javascript">
       window.mapboxAPIKey = "<%= Rails.application.credentials.mapbox[:api_key] %>"
     </script>
