@@ -37,7 +37,7 @@ class SearchNav extends React.Component {
     e.preventDefault()
     this.props.fetchResults(this.state.query)
       .then(action => this.setState({ results: action.payload.reverse() }))
-      .then(res => console.log(this.state.results))
+      // .then(res => console.log(this.state.results))
   }
 
 
