@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Link, withRouter } from 'react-router-dom';
+import { FaTree, FaMapMarkerAlt } from 'react-icons/fa';
 
 
 class SearchNav extends React.Component {
@@ -29,6 +30,7 @@ class SearchNav extends React.Component {
   handleChange(e) {
     this.setState({ query: e.target.value })
     this.handleSubmit(e)
+    console.log(this.state.results)
   };
 
   handleSubmit(e) {
@@ -38,9 +40,6 @@ class SearchNav extends React.Component {
       .then(res => console.log(this.state.results))
   }
 
-  showSearchResults() {
-
-  }
 
   topResult() {
     let topResult = this.state.results[0]
@@ -69,37 +68,37 @@ class SearchNav extends React.Component {
   }
 
 
-
   render(){
     return (
-      <div onSubmit={this.handleSubmit}>
+      <div className='search-nav-form-container' onSubmit={this.handleSubmit}>
         <form className='mini-search-form' onKeyDown={this.handleKeyDown}>
           <input
             type='text'
             className='mini-search-bar'
-            placeholder='Search by city, park, or trail name'
+            onChange={this.handleChange}
+            placeholder='Search by city, park, or trail'
           />
-          <FontAwesomeIcon id='mini-search-icon' icon={faSearch} onClick={this.topResult} />
-          {/* <ul className='search-results-container'>
+          <FontAwesomeIcon type='submit' id='mini-search-icon' icon={faSearch} onClick={this.topResult} />
+          <ul className='mini-search-results-container'>
             {this.state.query.length < 1 ? "" :
               (this.state.results.map((result, i) => {
                 return result.park_name ?
-                  <li className={this.state.cursor === i ? 'search-result-active' : 'search-result'} key={i}>
-                    <Link to={`/parks/${result.id}`} className='result'>
-                      <FaTree className='searching-icon' size={20} color={'#428A13'} />
+                  <li className={this.state.cursor === i ? 'mini-search-result-active' : 'mini-search-result'} key={i}>
+                    <Link to={`/parks/${result.id}`} className='mini-result'>
+                      <FaTree className='mini-searching-icon' size={10}  />
                       {result.park_name}
-                      <div className='search-location'>{result.city}, {result.state}, {result.country}</div>
+                      {/* <div className='mini-search-location'>{result.city}, {result.state}, {result.country}</div> */}
                     </Link>
                   </li> :
-                  <li className={this.state.cursor === i ? 'search-result-active' : 'search-result'} key={i}>
-                    <Link to={`/trails/${result.id}`} className='result'>
-                      <FaMapMarkerAlt className='searching-icon' size={20} color={'#428A13'} />
-                      <div className='result'>{result.trail_name}</div>
+                  <li className={this.state.cursor === i ? 'mini-search-result-active' : 'mini-search-result'} key={i}>
+                    <Link to={`/trails/${result.id}`} className='mini-result'>
+                      <FaMapMarkerAlt className='mini-searching-icon' size={10} />
+                      <div className='mini-result'>{result.trail_name}</div>
                     </Link>
                   </li>
               }))
             }
-          </ul> */}
+          </ul>
         </form>
       </div>
     )

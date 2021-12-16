@@ -2,10 +2,8 @@ import React from 'react'
 import Search from '@mui/icons-material/Search';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleRight } from '@fortawesome/free-solid-svg-icons';
-import Results from './results';
 import { Link, withRouter } from 'react-router-dom';
 import { FaTree, FaMapMarkerAlt } from 'react-icons/fa';
-import { result } from 'lodash';
 
 class SearchBar extends React.Component{
   constructor(props){

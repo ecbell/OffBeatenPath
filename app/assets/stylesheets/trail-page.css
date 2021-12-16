@@ -2,49 +2,6 @@ body{
   background-color: #f2f2f2;
 }
 
-.secondary-search {
-  height: 40px;
-  margin: 5px;
-  position: relative;
-  width: 100%;
-  text-align: center;
-  float: right;
-  align-items: center;
-  
-}
-
-.mini-search-bar{
-  width: 250px;
-  padding: 0 8px;
-  border: 1px solid #e6e6e6;
-  border-right: none;
-  border-top-left-radius: inherit;
-  border-bottom-left-radius: inherit;
-  color: #414141; 
-  padding: 10px;
-
-}
-
-.mini-search-form{
-  border-radius: 8px;
-  align-items: center;
-  justify-content: flex-end;
-  display: flex;
-  width: 100%;
-
-}
-
-#mini-search-icon{
-  background-color: #428a13;
-  color: #fff;
-  font-size: 18px;
-  padding: 10px;
-  border-radius: 0px 8px 8px 0px;
-  min-height: 100%;
-  color: #fff;
-  font-weight: 700;
-  background: #428a13;
-}
 
 #cover-container{
   display: flex;
@@ -149,7 +106,7 @@ body{
 
 .link-to-park{
   margin-top: 6px;
-  color: #fff!important;
+  color: #fff;
   display: block;
   font-size: 14px;
   font-weight: 400;

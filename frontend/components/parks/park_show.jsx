@@ -4,6 +4,7 @@ import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import mapboxgl from 'mapbox-gl';
 import TrailIndex from '../trail_show/trail_index';
 import { Link } from 'react-router-dom'
+import SearchNavContainer from '../search/nav_search_container';
 
 
 
@@ -90,7 +91,7 @@ class ParkShow extends React.Component {
       <div>
         <div id='cover-container'>
           <div className='secondary-search'>
-            <SearchNav />
+            <SearchNavContainer />
           </div>
 
           <div id='park-information-box'>

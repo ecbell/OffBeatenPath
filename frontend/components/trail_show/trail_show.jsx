@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import TrailMap from './trail_map';
 import TrailIndex from './trail_index';
-import SearchNav from '../search/nav_search';
+import SearchNavContainer from '../search/nav_search_container';
 import { faExpandAlt } from '@fortawesome/free-solid-svg-icons';
 import CreateFormContainer from '../reviews/create_form_container'
 import ReviewIndexItemContainer from '../reviews/review_item_container'
@@ -104,7 +104,7 @@ class TrailShow extends React.Component{
         <Modal />
         <div id='cover-container'>
           <div className='secondary-search'>
-            <SearchNav />
+            <SearchNavContainer />
           </div>
           {!this.state.isActive ? 
           (<div id='trail-photo-box'>
