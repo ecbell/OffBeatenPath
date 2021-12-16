@@ -103,7 +103,7 @@ class TrailShow extends React.Component{
       <div>
         <Modal />
         <div id='cover-container'>
-        <div id='trial-box'>
+        <div id='search-box'>
           <div className='secondary-search'>
             <SearchNavContainer />
           </div>

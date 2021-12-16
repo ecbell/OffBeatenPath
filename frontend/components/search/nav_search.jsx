@@ -30,7 +30,7 @@ class SearchNav extends React.Component {
   handleChange(e) {
     this.setState({ query: e.target.value })
     this.handleSubmit(e)
-    console.log(this.state.results)
+    // console.log(this.state.results)
   };
 
   handleSubmit(e) {

@@ -293,8 +293,7 @@ body{
   height: 14vh;
   border-radius: 8px 8px 0px 0px;
   object-fit: cover;
-  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
-
+  box-shadow: #414141 0px -7px 8px -8px;
 
 }
 

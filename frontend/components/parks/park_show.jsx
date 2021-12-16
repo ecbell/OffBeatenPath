@@ -94,7 +94,7 @@ class ParkShow extends React.Component {
     return(
       <div>
         <div id='cover-container'>
-          <div>
+          <div id='search-box'>
             <div className='secondary-search'>
               <SearchNavContainer />
             </div>
