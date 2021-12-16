@@ -7,8 +7,6 @@ import { Link, withRouter } from 'react-router-dom';
 import { FaTree, FaMapMarkerAlt } from 'react-icons/fa';
 import { result } from 'lodash';
 
-
-
 class SearchBar extends React.Component{
   constructor(props){
     super(props)
@@ -41,7 +39,7 @@ class SearchBar extends React.Component{
     e.preventDefault()
     this.props.fetchResults(this.state.query)
       .then(action => this.setState({ results: action.payload.reverse()}))
-      // .then(res => console.log(this.state.results))
+      
   }
 
   showSearchResults(){
@@ -50,9 +48,10 @@ class SearchBar extends React.Component{
 
   topResult(){
     let topResult = this.state.results[0]
-    // console.log(topResult)
-    return topResult.park_name ? this.props.history.push(`/parks/${topResult.id}`) :
-      this.props.history.push(`/trails/${topResult.id}`)
+    if (this.state.results.length > 0) {
+      return topResult.park_name ? this.props.history.push(`/parks/${topResult.id}`) :
+        this.props.history.push(`/trails/${topResult.id}`)
+    }
   }
 
   handleKeyDown(e) {
@@ -72,7 +71,6 @@ class SearchBar extends React.Component{
         this.props.history.push(`/parks/${this.state.results[i].id}`)
     }
   }
-
 
 
   render(){
@@ -110,8 +108,6 @@ class SearchBar extends React.Component{
             }
           </ul>
         </form>
-  
-        
       </div>
     )
   }

@@ -62,6 +62,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+  cursor:pointer;
 }
 
 .search-result{
@@ -70,6 +71,15 @@
   align-items: center;
   border-bottom: 1px solid #e6e6e6;
   padding: 10px;
+}
+
+.search-result:hover{
+  /* z-index: 0; */
+  /* display: flex; */
+  /* align-items: center; */
+  border-bottom: 1px solid #e6e6e6;
+  /* padding: 10px; */
+  background-color: #e6e6e6;
 }
 
 .search-result-active{
