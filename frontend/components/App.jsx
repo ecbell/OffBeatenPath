@@ -17,14 +17,20 @@ import ParksShowContainer from './parks/park_show_container'
 const App = () => (
   <div>
     <header className='header'>
+      <div>
       <Link to='/trails/'>
         <button id='explore-btn'>Explore</button>
       </Link>
-      <Link to="/" className='header-link'>
-        <h1>Off The Beaten Path</h1>
-        <img id='logo' src='https://splash-page.s3.us-east-2.amazonaws.com/OffBeatenPathLogo.jpg'alt='logo'></img>
-      </Link>
-      <NavBarContainer/>
+    </div>
+      <div className='app-title'>
+        <Link to="/" className='header-link'>
+          <img id='logo' src='https://splash-page.s3.us-east-2.amazonaws.com/OffBeatenPathLogo.jpg' alt='logo'></img>
+          <h1>Off The Beaten Path</h1>
+        </Link>
+      </div>
+      <div className='signup-login-container'>
+        <NavBarContainer/>
+      </div>
     </header>
 
     <Switch>

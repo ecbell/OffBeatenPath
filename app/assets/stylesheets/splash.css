@@ -124,12 +124,12 @@
 }
 
 .welcomeMessage{
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  left: 15vw;
+  left: 15vw; */
   position: relative;
   top: 20vh;
-  width: 80vw;
+  /* width: 80vw; */
   text-align: center;
   z-index: 1;
   font-size: 64px;
@@ -183,7 +183,7 @@
   position: absolute;
   display: block; 
   width: 100vw;
-  height: 100vh;
+  height: 99%;
   object-fit: cover;
 }
 

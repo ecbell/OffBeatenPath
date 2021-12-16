@@ -17,7 +17,7 @@ const Footer = () => {
           <SocialIcon url="https://github.com/ecbell" bgColor="#414141"/>
         </div>
         <div className='favicons'>
-          <SocialIcon url="https://angel.co/" bgColor="#414141"/>
+          <SocialIcon url="https://angel.co/u/emily-bell-11" bgColor="#414141"/>
         </div>
       </div>
     </div>

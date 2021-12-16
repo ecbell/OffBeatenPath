@@ -29,9 +29,9 @@ export default ({ currentUser, logout }) => {
         <li>
           <button className='dropdown-item' onClick={logout}>Logout</button>
         </li>
-        <li >
+        {/* <li >
           <button className='dropdown-item'>Profile</button>
-        </li>
+        </li> */}
       </ul>
       </div>)}
     </div>
