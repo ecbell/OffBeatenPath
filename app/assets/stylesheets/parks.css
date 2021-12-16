@@ -68,7 +68,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  box-shadow: 0 2px 8px 0 rgba(0 0 0 .20);
+  box-shadow: #414141 0 2px 6px 0 ;
   width: 52px;
   height: 52px;
   margin: 20px auto 20px;
@@ -142,7 +142,7 @@
   height: 224px;
   width: 100%;
   border-radius: 8px;
-  box-shadow: 0 8px 16px 0 rgba(0 0 0 .08), 0 0 4px 0 rgba(0 0 0 .08);
+  box-shadow: #414141 0px 2px 5px 0px;
   background-color: #fff;
   overflow: hidden;
   cursor: pointer;
