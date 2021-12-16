@@ -19,7 +19,7 @@
   background: #fff; */
   /* height: 200px; */
   position: absolute;
-  box-shadow: 0 2px 24px 0 rgba(0 0 0 .24);
+  box-shadow: #414141 0 2px 18px 0;
   overflow-x: hidden;
   top: 36px;
   white-space: nowrap;
