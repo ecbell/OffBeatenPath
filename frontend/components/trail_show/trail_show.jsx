@@ -63,7 +63,7 @@ class TrailShow extends React.Component{
     const nearbyTrails = []
     // console.log(this.props.allTrails)
     this.props.allTrails.forEach(trail => {
-      if (trail.park_id === park_id && trail.trail_name !== trail_name) {
+      if (trail.park_id === park_id && trail.trail_name !== trail_name && !nearbyTrails.includes(trail)) {
         nearbyTrails.push(trail)
       }
     })
@@ -103,9 +103,11 @@ class TrailShow extends React.Component{
       <div>
         <Modal />
         <div id='cover-container'>
+        <div id='trial-box'>
           <div className='secondary-search'>
             <SearchNavContainer />
           </div>
+        </div>
           {!this.state.isActive ? 
           (<div id='trail-photo-box'>
             <div className='trail-photo-container'>

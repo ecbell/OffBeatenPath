@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { fetchPark } from '../../actions/park_actions'
+import { fetchPark, removePark } from '../../actions/park_actions'
 import ParkShow from './park_show'
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,6 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchPark: (id) => dispatch(fetchPark(id)),
+  removePark: () => dispatch(removePark())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ParkShow);

@@ -1,4 +1,4 @@
-import { RECEIVE_PARK } from '../actions/park_actions';
+import { RECEIVE_PARK, REMOVE_PARK } from '../actions/park_actions';
 import { RECEIVE_TRAILS, RECEIVE_TRAIL } from '../actions/trail_actions'
 
 const trailsReducer = (state = {}, action) => {
@@ -20,6 +20,8 @@ const trailsReducer = (state = {}, action) => {
       //   nextState[trail.id] = action.payload.nearbyTrails[i]
       // }
       return action.payload.nearbyTrails;
+    case REMOVE_PARK:
+      return {}
     default:
       return state;
   };

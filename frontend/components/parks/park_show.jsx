@@ -23,6 +23,10 @@ class ParkShow extends React.Component {
     window.scrollTo(0, 0)
   }
 
+  componentWillUnmount() {
+    this.props.removePark()
+  }
+
   hikeTime(trail){
     let hours = 0
     let minutes = 0
@@ -90,10 +94,11 @@ class ParkShow extends React.Component {
     return(
       <div>
         <div id='cover-container'>
-          <div className='secondary-search'>
-            <SearchNavContainer />
+          <div>
+            <div className='secondary-search'>
+              <SearchNavContainer />
+            </div>
           </div>
-
           <div id='park-information-box'>
             <img className='trail-photo' src={`${this.props.park.photoUrl}`} />
             <span id='ranking'> #1 of 60 national parks in {country} </span>

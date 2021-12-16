@@ -1,4 +1,4 @@
-import { RECEIVE_PARK } from '../actions/park_actions';
+import { RECEIVE_PARK, REMOVE_PARK } from '../actions/park_actions';
 import { 
   RECEIVE_REVIEWS,
   RECEIVE_REVIEW,
@@ -28,6 +28,8 @@ const ReviewsReducer = (oldState = {}, action) => {
       return nextState;
     case RECEIVE_PARK:
       return action.payload.reviews
+    case REMOVE_PARK:
+      return {}
     default:
       return oldState;
   }
