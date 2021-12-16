@@ -8,12 +8,6 @@ class ExploreTrails extends React.Component{
   constructor(props) {
     super(props)
 
-    this.state = {
-      index: 0,
-      direction: null,
-      carouselItemCount: 5
-    }
-
 
   }
 
@@ -63,10 +57,10 @@ class ExploreTrails extends React.Component{
       </div>
       </div>
 
-        <h1 className='explore-title'>All Parks</h1>
+        {/* <h1 className='explore-title'>All Parks</h1> */}
         <div className='explore-inner-container'>
 
-          <div className='track'>
+          {/* <div className='track'>
             <div id='trail-card'>
               <ul className='list-trail-items'>
                 {this.props.parks.map((park, i) => {
@@ -93,7 +87,7 @@ class ExploreTrails extends React.Component{
                 }
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
         {/* <div className="nav">
           <button className="prev" onClick={() => this.toggleCarousel('prev')}>
