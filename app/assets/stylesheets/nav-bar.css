@@ -24,10 +24,10 @@
   height: 50px;
   color: #666666;
   font-size: 30px;
-  margin-left: 30px;
   margin-top: 33px;
   text-align: center;
   letter-spacing: -2px;
+  margin-left: 5px;
 }
 
 .header-link{
@@ -60,6 +60,9 @@
   justify-content: space-between;
   min-width: 700;
   padding-top: 6px; */
+  width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
 
 
 }
