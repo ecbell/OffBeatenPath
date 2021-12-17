@@ -69,6 +69,11 @@ class SearchNav extends React.Component {
 
 
   render(){
+
+    if (!this.props.results) {
+      return '...loading'
+    }
+    
     return (
       <div className='search-nav-form-container' onSubmit={this.handleSubmit}>
         <form className='mini-search-form' onKeyDown={this.handleKeyDown}>

@@ -154,7 +154,7 @@
 
 .module-park-trail-photo{
   object-fit: cover;
-  width: 35%;
+  min-width: 340px;;
   height: 95%;
   border-radius: 8px;
 }

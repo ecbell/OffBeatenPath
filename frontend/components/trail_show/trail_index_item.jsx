@@ -5,6 +5,7 @@ import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 
 
 const TrailIndexItem = ({ trail, park, parks }) => {
+
     let stars = []
     for (let i = 0; i < trail.average_rating; i++) {
       // stars.push(<FaStar key={i} size={20} color={'gold'} />)
