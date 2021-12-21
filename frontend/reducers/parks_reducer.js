@@ -10,8 +10,8 @@ const parksReducer = (state = {}, action) => {
     case RECEIVE_PARK:
       nextState[action.payload.park.id] = action.payload.park;
       return nextState;
-    case REMOVE_PARK:
-      return {}
+    // case REMOVE_PARK:
+    //   return {}
     case RECEIVE_TRAIL:
       if (action.payload.park) {
         return action.payload.park

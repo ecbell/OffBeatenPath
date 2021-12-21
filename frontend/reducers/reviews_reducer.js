@@ -28,8 +28,8 @@ const ReviewsReducer = (oldState = {}, action) => {
       return nextState;
     case RECEIVE_PARK:
       return action.payload.reviews
-    case REMOVE_PARK:
-      return {}
+    // case REMOVE_PARK:
+    //   return {}
     default:
       return oldState;
   }
