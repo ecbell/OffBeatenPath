@@ -49,7 +49,6 @@ class ReviewForm extends React.Component {
 
   render() {
     if (!this.props.review) {
-      // console.log('it hit this')
       return '...loading'
     }
     

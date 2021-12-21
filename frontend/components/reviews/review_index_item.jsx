@@ -53,7 +53,7 @@ class ReviewIndexItem extends React.Component {
         <div className='flexbox-pic-name'>
         <span className='profile-pic'><FaUserCircle size={50} color={'#f2f2f2'} /></span>
         <div className='flexbox-name-date'>
-        { this.props.user ? 
+        { this.props.user.first_name ? 
         (<div className='review-user-name'>
             <div id='reviewer-name'>
               <span >{ this.props.user.first_name } </span>
