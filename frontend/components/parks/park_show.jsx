@@ -114,7 +114,7 @@ class ParkShow extends React.Component {
                 {park_description}
             </div>
               <div className='park-map-container'>
-                <img className='park_map' onClick={window.scrollTo(0, 0)} src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${lng},${lat},9,0/1000x200?access_token=${mapboxgl.accessToken}`} />
+                {/* <img className='park_map' onClick={window.scrollTo(0, 0)} src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${lng},${lat},9,0/1000x200?access_token=${mapboxgl.accessToken}`} /> */}
               </div>
             <div id='route-container-border'>
               <div className='route-container-park' >

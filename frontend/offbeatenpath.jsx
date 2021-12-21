@@ -25,15 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store}/>, root);
 
-  window.postUser = postUser
-  window.postSession = postSession
-  window.deleteSession = deleteSession
-  window.login = login
+  // window.postUser = postUser
+  // window.postSession = postSession
+  // window.deleteSession = deleteSession
+  // window.login = login
 
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  // window.fetchTrails = fetchTrails;
-  window.fetchTrail = fetchTrail;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
+  // // window.fetchTrails = fetchTrails;
+  // window.fetchTrail = fetchTrail;
 });
 
 // dispatch(fetchTrail()).then(console.log)
