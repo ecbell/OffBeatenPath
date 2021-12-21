@@ -34,7 +34,7 @@ class TrailShow extends React.Component{
   }
 
   componentDidMount() {
-    this.props.fetchTrail(this.props.match.params.id).then(res => console.log(this.props.usersObject))
+    this.props.fetchTrail(this.props.match.params.id)
 
     window.scrollTo(0, 0)
     
