@@ -6,7 +6,7 @@ import {closeModal} from '../../actions/modal_actions'
 
 const mSTP = (state, ownProps) => {
   let curr = new Date();
-  curr.setDate(curr.getDate() + 3);
+  curr.setDate(curr.getDate());
   let date = curr.toISOString().substr(0, 10);
 
   return {

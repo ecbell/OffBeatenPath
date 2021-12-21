@@ -63,7 +63,7 @@ class ParkShow extends React.Component {
   }
 
   render(){
-    if(!this.props.park ) {
+    if(!this.props.park) {
       return '...loading'
     }
 

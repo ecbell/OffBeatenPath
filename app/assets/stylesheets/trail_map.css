@@ -59,7 +59,7 @@
 
 .left-trail-side-bar{
   width: 34%;
-  height: 792px;
+  height: auto;
   float: right;
   overflow: scroll;
 }

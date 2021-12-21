@@ -122,7 +122,7 @@ class TrailShow extends React.Component{
                     </span>
                   </span>
                 </div>
-                <div className='link-to-park'>{this.props.park.park_name}</div>
+                  <div className='link-to-park'><Link className='link-to-park' to={`/parks/${this.props.park.id}`}>{this.props.park.park_name}</Link></div>
               </div>
             </div>
             <div className='main-container' >
