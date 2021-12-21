@@ -6,9 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# json.array! @posts do |post|
-#   json.partial! 'api/posts/post', post: post
-# end
 
 # heroku run bundle exec rails db:seed
 require 'open-uri'
@@ -20,7 +17,7 @@ Review.destroy_all
 
 
 demo_user = User.create([{first_name: "demo-user", last_name: "user", email: "demo@demo.com", city: "", state: "", password: "password"}])
-user2 = User.create!([{first_name: "Henry David", last_name: "Thoreau", email: "walkinthewoods@fake.com", city: "Concord", state: "Massachusetts", password: "password"}])
+user2 = User.create!([{first_name: "Mary", last_name: "Shelley", email: "walkinthewoods@fake.com", city: "Concord", state: "Massachusetts", password: "password"}])
 user3 = User.create!([{first_name: "Johann Wolfgang", last_name: "von Goethe", email: "werther@naturalistfake.org", city: "Weimar", state: "Vermont", password: "password"}])
 user4 = User.create!([{first_name: "Emmylou", last_name: "Harris", email: "bluegrass@hikefake.com", city: "Nashville", state: "Tennessee", password: "password"}])
 user5 = User.create!([{first_name: "Franz", last_name: "Kafka", email: "coach@metamorphosiscoachingfake.com", city: "Vienna", state: "Vermont", password: "password"}])
