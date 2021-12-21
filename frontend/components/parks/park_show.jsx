@@ -91,6 +91,14 @@ class ParkShow extends React.Component {
       stars.push(<FaStar key={i} size={20} color={'#e9e9e9'} />)
     }
 
+    let pins = []
+    for (let i = 0; i < trails.length; i++) {
+      const trail = trails[i];
+      pins.push('pin-s+555555(' + trail.lng + ',' + trail.lat + ')')
+    }
+
+    let urlPins = pins.join(',')
+
     return(
       <div>
         <div id='cover-container'>
@@ -114,7 +122,9 @@ class ParkShow extends React.Component {
                 {park_description}
             </div>
               <div className='park-map-container'>
-                {/* <img className='park_map' onClick={window.scrollTo(0, 0)} src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${lng},${lat},9,0/1000x200?access_token=${mapboxgl.accessToken}`} /> */}
+                {/* <img className='park_map' onClick={window.scrollTo(0, 0)} src={`https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/${lng},${lat},11,0/1000x200?access_token=${mapboxgl.accessToken}`} /> */}
+              <img className='park_map' src={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/${urlPins}/${lng},${lat},9,0/1000x200?access_token=${mapboxgl.accessToken}`} />
+
               </div>
             <div id='route-container-border'>
               <div className='route-container-park' >

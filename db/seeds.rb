@@ -48,8 +48,8 @@ park1 = Park.create!(park_name: "Zion National Park",
                                     Please note, however, that not all areas including the entrance and the visitor center are occupied or open. 
                                     Please also note that roads, trails and other parks in the park are closed seasonally. Shuttle buses do not run 
                                     from late November to mid-February.",
-                        lng: -112.83612,
-                        lat: 37.16124,          
+                        lng: -112.9549,
+                        lat: 37.2864,          
                         )
 
 photo6 = open('https://off-beaten-path-seeds.s3.us-east-2.amazonaws.com/Zion-National-Park.jpg')
@@ -64,8 +64,8 @@ park2 = Park.create!(park_name: "Karwendel Nature Park",
                         park_description: "Karwendel Nature Park, located on the border of Bavaria and Tyrol, is Austria's largest Nature Park at 727 sq km. Known for its crystal clear rivers, high alpine meadows, and distinct rocky peaks, this park is one of Austria's most popular protected areas. The diverse landscape provides habitats for a wide range of plant and animal life, including the golden eagle. In the incredible Hall Valley,  hikers can explore the salt mines and take in the panoramic views of the region. A couple of other popular options are Gleirschklamm, Seefeld, and Scharnitz. Whether you plan on visiting in the summer or winter, Karwendel Nature Park is sure to have something to offer nature lovers all year long.",
                         contact: "For Visitor Information, call: 05245/289 14",
                         park_hours: "Monday - Friday: All Day",
-                        lng: 11.86278,
-                        lat: 48.13722,          
+                        lng: 11.5332,
+                        lat: 47.4531,          
                       )
 
 

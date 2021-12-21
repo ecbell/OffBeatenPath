@@ -42,16 +42,14 @@
 }
 
 .park-map-container{
+  display: flex;
+  justify-content: center;
 
 }
 
 .park_map{
   border-radius: 8px;
   width: 100%;
-  cursor: pointer;
-  height: 193px;
-  object-fit: cover!important;
-  max-width: 100%;
 }
 
 .route-icon-park{
