@@ -127,7 +127,14 @@ class ParkShow extends React.Component {
               </div>
             <div id='route-container-border'>
               <div className='route-container-park' >
-                <img className='route-icon-park' src='https://cdn-assets.alltrails.com/assets/packs/ed305b8cebf7bc15eec3.png' />
+                {park_name === 'Zion National Park' ? 
+                <a href={`https://www.google.com/maps/dir/Current+Location/Zion+National+Park,+Utah,+United+States`} target="_blank">
+                  <img className='route-icon-park' src='https://cdn-assets.alltrails.com/assets/packs/ed305b8cebf7bc15eec3.png' />
+                </a> : 
+                  <a href={`https://www.google.com/maps/dir/Current+Location/Naturpark+Karwendel,+Unterer+Stadtplatz,+Hall+in+Tirol,+Austria`} target="_blank">
+                    <img className='route-icon-park' src='https://cdn-assets.alltrails.com/assets/packs/ed305b8cebf7bc15eec3.png' />
+                  </a>
+                }
               </div>
             </div>
               <div id='park-information-title'>Park Information</div>
