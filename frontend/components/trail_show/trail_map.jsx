@@ -196,7 +196,9 @@ export default class TrailMap extends React.PureComponent {
             <div className='main-container-sidebar' >
               <div className='action-bar' />
               <div className='route-container' >
-                <img className='route-icon' src='https://cdn-assets.alltrails.com/assets/packs/ed305b8cebf7bc15eec3.png' />
+                <a href={`https://www.google.com/maps/dir/Current+Location/${this.props.trail.lat},${this.props.trail.lng}`} target="_blank">
+                  <img className='route-icon' src='https://cdn-assets.alltrails.com/assets/packs/ed305b8cebf7bc15eec3.png' />
+                </a>
               </div>
             </div>
             <div className='trail-info'>
