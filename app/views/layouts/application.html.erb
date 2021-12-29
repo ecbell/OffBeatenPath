@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <meta property="og:title" content="Off the Beaten Path" />
-    <meta property='og:image' content="<%= image_url('profile_page.png') %>"/>
-    <meta property="og:description"
-      content="A full stack clone of Alltrails.com implemented using Rails, AWS, and PostgreSQL on the backend and Javascript, React-Redux, and MapBox API on the frontend. Users can search and view specs for parks and trails as well as interact with maps of the trails"
-     />
-     <meta property="og:url"
-       content="https://off-the-beaten-path-2021.herokuapp.com/"
-     />
+    
     <script type="text/javascript">
       window.mapboxAPIKey = "<%= Rails.application.credentials.mapbox[:api_key] %>"
     </script>
@@ -15,6 +8,10 @@
     <title>OffBeatenPath</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta property="og:title" content="Off the Beaten Path" />
+    <meta property='og:image' content="<%= image_url('profile_page.png') %>"/>
+    <meta property="og:description" content="A full stack clone of Alltrails.com implemented using Rails, AWS, and PostgreSQL on the backend and Javascript, React-Redux, and MapBox API on the frontend. Users can search and view specs for parks and trails as well as interact with maps of the trails" />
+    <meta property="og:url" content="https://off-the-beaten-path-2021.herokuapp.com/" />
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
