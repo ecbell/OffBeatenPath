@@ -5,7 +5,7 @@
 Off the Beaten Path, a clone of AllTrails, aims to help guide and plan outdoor adventures. The app provides a variety of trails and nature parks across the world for outdoor-lovers to get off their beaten path and into nature. A notable feature Off the Beaten Path offers is a map of the trail including its spec (route type, elevation gain and difficulty). Users are able to rate and leave reviews on specific trail pages based on their own experiences for other future adventurers to see. A user may also delete and edit their own reviews.  
 
 * LIVE SITE: https://off-the-beaten-path-2021.herokuapp.com/#/
-* Note: search functionality and park pages are still being built.
+
 
 
 ## Technologies Used
@@ -21,6 +21,9 @@ This application makes use of the following technologies: Ruby on rails, Postgre
   Upon clicking 'create', the review will show in the review index on the trail show page, ordered by date of the activity. If the user is logged in, they will be able to delete and edit the review. Editing the review is also carried out using a modal. 
 
   Lastly, based on  ratings that users give a trail, the total average rating is calculated and reviews are tallied as new reviews are written or old ones are deleted. This allows users to gather a bird's eye view of people's experiences on the trail.
+
+
+![This is an image](file:///Users/Emily_1/Desktop/Screen%20Shot%202021-12-29%20at%204.02.02%20PM.png)
 
 
 
