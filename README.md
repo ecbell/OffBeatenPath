@@ -23,7 +23,7 @@ This application makes use of the following technologies: Ruby on rails, Postgre
   Lastly, based on  ratings that users give a trail, the total average rating is calculated and reviews are tallied as new reviews are written or old ones are deleted. This allows users to gather a bird's eye view of people's experiences on the trail.
 
 
-![This is an image]()
+<img width="1175" alt="Screen Shot 2021-12-29 at 4 02 02 PM" src="https://user-images.githubusercontent.com/89127270/147676327-ca77fdc3-cf09-45a1-b895-b1e701d5b177.png">
 
 
 
