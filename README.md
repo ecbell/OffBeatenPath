@@ -23,7 +23,7 @@ This application makes use of the following technologies: Ruby on rails, Postgre
   Lastly, based on  ratings that users give a trail, the total average rating is calculated and reviews are tallied as new reviews are written or old ones are deleted. This allows users to gather a bird's eye view of people's experiences on the trail.
 
 
-<img width="1175" alt="Screen Shot 2021-12-29 at 4 02 02 PM" src="https://user-images.githubusercontent.com/89127270/147676327-ca77fdc3-cf09-45a1-b895-b1e701d5b177.png">
+<img width="500" alt="Screen Shot 2021-12-29 at 4 02 02 PM" src="https://user-images.githubusercontent.com/89127270/147676327-ca77fdc3-cf09-45a1-b895-b1e701d5b177.png">
 
 
 
@@ -31,6 +31,7 @@ This application makes use of the following technologies: Ruby on rails, Postgre
   The trail show page also provides a map toggle on the same frontend route. Clicking 'View full map' on the right-hand sidebar navigates the user to a map (Mapbox GL JS) that draws the route of the trail, while still providing a summary of the trail and reviews in the left-hand sidebar. Users are able interact with the map with the navigation buttons and are able to toggle back to the main page by clicking on 'view trail details'.
 
   
+<img width="500" alt="Screen Shot 2021-12-29 at 4 02 22 PM" src="https://user-images.githubusercontent.com/89127270/147676401-ebe39014-5871-4c46-8bdc-75355b5dbcff.png">
 
 ## Future features
 * build a simple user profile showing a user's information
