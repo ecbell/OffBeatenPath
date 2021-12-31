@@ -35,13 +35,13 @@ This application makes use of the following technologies: Ruby on rails, Postgre
   The trail show page also provides a map toggle on the same frontend route. Clicking 'View full map' on the right-hand sidebar navigates the user to a map (Mapbox GL JS) that draws the route of the trail, while still providing a summary of the trail and reviews in the left-hand sidebar. Users are able interact with the map with the navigation buttons and are able to toggle back to the main page by clicking on 'view trail details'.
 
   
-<img width="800" alt="Screen Shot 2021-12-29 at 4 02 22 PM" src="https://user-images.githubusercontent.com/89127270/147676401-ebe39014-5871-4c46-8bdc-75355b5dbcff.png">
+<img width="700" alt="Screen Shot 2021-12-29 at 4 02 22 PM" src="https://user-images.githubusercontent.com/89127270/147676401-ebe39014-5871-4c46-8bdc-75355b5dbcff.png">
 
 
-<img width="800" alt="Screen Shot 2021-12-29 at 4 19 36 PM" src="https://user-images.githubusercontent.com/89127270/147676978-333a8501-f93c-4d5b-8b3d-2901e956cb78.png">
+<img width="700" alt="Screen Shot 2021-12-29 at 4 19 36 PM" src="https://user-images.githubusercontent.com/89127270/147676978-333a8501-f93c-4d5b-8b3d-2901e956cb78.png">
 
-<img width="800" alt="Screen Shot 2021-12-29 at 4 21 31 PM" src="https://user-images.githubusercontent.com/89127270/147677275-385eba7e-be90-4479-8aca-f61a331bc18f.png">
-<img width="800" alt="Screen Shot 2021-12-29 at 4 22 02 PM" src="https://user-images.githubusercontent.com/89127270/147677283-6f8f46a6-4069-42de-8d8c-09d739084f5c.png">
+<img width="700" alt="Screen Shot 2021-12-29 at 4 21 31 PM" src="https://user-images.githubusercontent.com/89127270/147677275-385eba7e-be90-4479-8aca-f61a331bc18f.png">
+<img width="700" alt="Screen Shot 2021-12-29 at 4 22 02 PM" src="https://user-images.githubusercontent.com/89127270/147677283-6f8f46a6-4069-42de-8d8c-09d739084f5c.png">
 
 
 ## Future features
