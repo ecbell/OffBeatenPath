@@ -42,7 +42,7 @@ This application makes use of the following technologies: Ruby on rails, Postgre
 <img width="700" alt="Screen Shot 2021-12-29 at 4 19 36 PM" src="https://user-images.githubusercontent.com/89127270/147676978-333a8501-f93c-4d5b-8b3d-2901e956cb78.png">
 
 <img width="700" alt="Screen Shot 2021-12-29 at 4 21 31 PM" src="https://user-images.githubusercontent.com/89127270/147677275-385eba7e-be90-4479-8aca-f61a331bc18f.png">
-<img width="700" alt="Screen Shot 2021-12-29 at 4 22 02 PM" src="https://user-images.githubusercontent.com/89127270/147677283-6f8f46a6-4069-42de-8d8c-09d739084f5c.png">
+<img width="1000" alt="Screen Shot 2021-12-29 at 4 22 02 PM" src="https://user-images.githubusercontent.com/89127270/147677283-6f8f46a6-4069-42de-8d8c-09d739084f5c.png">
 
 
 ## Future features
