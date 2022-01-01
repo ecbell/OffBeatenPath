@@ -28,7 +28,8 @@ This application makes use of the following technologies: Ruby on rails, Postgre
 
 <img width="465" alt="Screen Shot 2021-12-29 at 4 26 11 PM" src="https://user-images.githubusercontent.com/89127270/147677766-85b7d0b9-1935-4eb5-8003-7b32d93af1d4.png">
 <img width="503" alt="Screen Shot 2021-12-29 at 4 27 46 PM" src="https://user-images.githubusercontent.com/89127270/147677772-be70efcb-72cd-4fe0-84ef-6ae0607c4f9e.png">
-<img width="444" alt="Screen Shot 2021-12-29 at 4 28 00 PM" src="https://user-images.githubusercontent.com/89127270/147677775-96cd1544-d094-45bc-b0b9-52562c433eb1.png">
+<!-- <img width="444" alt="Screen Shot 2021-12-29 at 4 28 00 PM" src="https://user-images.githubusercontent.com/89127270/147677775-96cd1544-d094-45bc-b0b9-52562c433eb1.png"> -->
+<img width="376" alt="Screen Shot 2022-01-01 at 12 36 14 PM" src="https://user-images.githubusercontent.com/89127270/147849662-93bee180-aa84-4778-9249-005e8ca1564d.png">
 
 
   ## Map

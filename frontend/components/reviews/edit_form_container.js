@@ -15,7 +15,6 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
   return {
-    // requestEvent: (eventId => dispatch(requestEvent(eventId))),
     submitReview: (review => dispatch(updateReview(review))),
     closeModal: () => dispatch(closeModal())
   }
